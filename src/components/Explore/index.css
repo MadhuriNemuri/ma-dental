@@ -8,15 +8,15 @@
 }
 
 .explore-intro { max-width: 355px; }
-.explore-eyebrow { color: #087a72; display: block; font-size: 9px; font-weight: 700; letter-spacing: .8px; margin-bottom: 19px; }
+.explore-eyebrow { color: #2f39a9; display: block; font-size: 9px; font-weight: 700; letter-spacing: .8px; margin-bottom: 19px; }
 .explore-intro h2 { color: #111b31; font-size: clamp(30px, 3.1vw, 40px); letter-spacing: -1.5px; line-height: 1; margin: 0 0 19px; }
-.explore-intro h2 em { color: #087a72; font-style: normal; }
+.explore-intro h2 em { color: #2f39a9; font-style: normal; }
 .explore-intro > p { color: #53627b; font-size: 15px; line-height: 1.6; margin: 0 0 23px; }
 .explore-button { align-items: center; background: #111b31; border-radius: 999px; color: #fff; display: inline-flex; font-size: 12px; font-weight: 700; gap: 10px; padding: 11px 16px; text-decoration: none; }
 .explore-button span { font-size: 14px; line-height: 8px; }
 
 .explore-grid { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.explore-card { background: #f8fffe; border: 1px solid #bcefe8; border-radius: 11px; min-height: 219px; padding: 16px; }
+.explore-card { background: #f7f8ff; border: 1px solid #d5dcff; border-radius: 11px; min-height: 219px; padding: 16px; }
 .explore-card img { border-radius: 8px; display: block; height: 108px; object-fit: cover; width: 100%; }
 .explore-card h3 { color: #172239; font-size: 16px; margin: 15px 0 8px; }
 .explore-card p { color: #718097; font-size: 12px; line-height: 1.55; margin: 0; }

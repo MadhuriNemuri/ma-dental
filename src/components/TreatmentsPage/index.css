@@ -5,7 +5,7 @@
 
 .treatments-breadcrumb {
   background: #f5f6f2;
-  border-bottom: 1px solid #dfe7e0;
+  border-bottom: 1px solid #e1e5f6;
 }
 
 .treatments-page {
@@ -15,7 +15,7 @@
 }
 
 .treatments-hero {
-  background: linear-gradient(90deg, #ebf5f1 0%, #dff0e7 100%);
+  background: linear-gradient(90deg, #f1f3ff 0%, #eef0ff 100%);
   border-radius: 20px;
   padding: 28px 32px 24px;
 }
@@ -47,7 +47,7 @@
 .hero-badge {
   align-items: center;
   background: rgba(255,255,255,.65);
-  border: 1px solid #dfe9e5;
+  border: 1px solid #e1e5f6;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -58,9 +58,9 @@
 
 .badge-icon {
   align-items: center;
-  background: #eafaf5;
+  background: #eef0ff;
   border-radius: 50%;
-  color: #0c7d72;
+  color: #2f39a9;
   display: inline-flex;
   font-size: 16px;
   height: 26px;
@@ -98,8 +98,8 @@
 }
 
 .filter.active {
-  background: #0d5c56;
-  border-color: #0d5c56;
+  background: #2f39a9;
+  border-color: #2f39a9;
   color: #fff;
 }
 
@@ -112,7 +112,7 @@
 
 .treatment-card {
   background: #fff;
-  border: 1px solid #e5eadf;
+  border: 1px solid #e5e8f4;
   border-radius: 18px;
   overflow: hidden;
 }
@@ -132,7 +132,7 @@
 .card-pill {
   background: rgba(255,255,255,.9);
   border-radius: 999px;
-  color: #0a7c73;
+  color: #2f39a9;
   font-size: 8px;
   font-weight: 800;
   letter-spacing: .7px;
@@ -152,9 +152,9 @@
 }
 
 .mini-tag {
-  background: #eafaf5;
+  background: #eef0ff;
   border-radius: 999px;
-  color: #0a7a70;
+  color: #2f39a9;
   display: inline-block;
   font-size: 8px;
   font-weight: 700;
@@ -196,7 +196,7 @@
 }
 
 .stat-box strong {
-  color: #0e7f72;
+  color: #2f39a9;
   font-size: 12px;
 }
 
@@ -230,14 +230,26 @@
 }
 
 .book-btn {
-  background: #0d5c56;
+  background: #2f39a9;
   border: 0;
   border-radius: 999px;
   color: #fff;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   font-size: 11px;
   font-weight: 700;
   padding: 10px 14px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.book-btn:hover {
+  background: #232b85;
+  color: #fff;
+  text-decoration: none;
 }
 
 .journey-section {
@@ -268,10 +280,10 @@
 
 .journey-badge {
   align-items: center;
-  background: #edf9f6;
-  border: 1px solid #dbefe9;
+  background: #eef0ff;
+  border: 1px solid #d5dcff;
   border-radius: 999px;
-  color: #0d7d71;
+  color: #2f39a9;
   display: inline-flex;
   font-size: 12px;
   gap: 8px;
@@ -296,7 +308,7 @@
 
 .step-number {
   align-items: center;
-  background: #0a7a70;
+  background: #2f39a9;
   border-radius: 12px;
   color: #fff;
   display: inline-flex;
@@ -324,7 +336,7 @@
 }
 
 .step-foot {
-  color: #0d7d71;
+  color: #2f39a9;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .5px;
@@ -333,7 +345,7 @@
 
 .pricing-strip {
   background: #f7f9f7;
-  border: 1px solid #dfe7e4;
+  border: 1px solid #e1e5f6;
   border-radius: 20px;
   margin-top: 76px;
   padding: 24px 28px;
@@ -386,7 +398,7 @@
 }
 
 .consult-strip {
-  background: #022f32;
+  background: #111b5e;
   border-radius: 24px;
   color: #fff;
   display: flex;
@@ -434,8 +446,8 @@
 }
 
 .reserve-btn {
-  background: #1d9e83;
-  border-color: #1d9e83;
+  background: #5367e8;
+  border-color: #5367e8;
   color: #fff;
 }
 

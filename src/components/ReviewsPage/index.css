@@ -37,7 +37,7 @@
 
 .review-card {
   background: #fff;
-  border: 1px solid #e7ece9;
+  border: 1px solid #e5e8f4;
   border-radius: 18px;
   padding: 22px 20px;
 }
@@ -66,7 +66,7 @@
 
 .review-avatar {
   align-items: center;
-  background: #0d7d71;
+  background: #2f39a9;
   border-radius: 50%;
   color: #fff;
   display: flex;

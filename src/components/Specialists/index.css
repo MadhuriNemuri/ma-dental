@@ -5,7 +5,7 @@
 }
 
 .specialists-heading { margin: 0 auto 44px; max-width: 760px; text-align: center; }
-.specialists-eyebrow { color: #087a72; display: block; font-size: 9px; font-weight: 700; letter-spacing: .9px; margin-bottom: 9px; }
+.specialists-eyebrow { color: #2f39a9; display: block; font-size: 9px; font-weight: 700; letter-spacing: .9px; margin-bottom: 9px; }
 .specialists-heading h2 { color: #111b31; font-size: clamp(30px, 3.2vw, 42px); letter-spacing: -1.5px; line-height: 1; margin: 0 0 11px; }
 .specialists-heading p { color: #53627b; font-size: 15px; line-height: 1.5; margin: 0; }
 
@@ -13,13 +13,13 @@
 .specialist-card { background: #fff; border: 1px solid #e5edf1; border-radius: 12px; box-shadow: 0 9px 18px rgba(28, 71, 88, .07); overflow: hidden; }
 .specialist-image-wrap { height: 203px; position: relative; }
 .specialist-image-wrap img { display: block; height: 100%; object-fit: cover; width: 100%; }
-.experience-badge { background: rgba(255, 255, 255, .94); border-radius: 4px; color: #087a72; font-size: 8px; font-weight: 700; padding: 5px 6px; position: absolute; right: 8px; top: 9px; }
+.experience-badge { background: rgba(255, 255, 255, .94); border-radius: 4px; color: #2f39a9; font-size: 8px; font-weight: 700; padding: 5px 6px; position: absolute; right: 8px; top: 9px; }
 .specialist-content { padding: 19px 16px 14px; }
 .specialist-content h3 { color: #172239; font-size: 15px; line-height: 1.25; margin: 0 0 8px; }
-.specialist-content > strong { color: #087a72; display: block; font-size: 11px; letter-spacing: .3px; line-height: 1.3; }
+.specialist-content > strong { color: #2f39a9; display: block; font-size: 11px; letter-spacing: .3px; line-height: 1.3; }
 .specialist-content > p { color: #718097; font-size: 12px; line-height: 1.55; margin: 11px 0 14px; min-height: 57px; }
 .specialist-footer { align-items: center; border-top: 1px solid #edf1f3; display: flex; justify-content: space-between; padding-top: 11px; }
-.specialist-footer > span { color: #9aa9b8; font-size: 10px; }.specialist-footer a { color: #087a72; font-size: 11px; font-weight: 700; text-decoration: none; }
+.specialist-footer > span { color: #9aa9b8; font-size: 10px; }.specialist-footer a { color: #2f39a9; font-size: 11px; font-weight: 700; text-decoration: none; }
 .specialist-footer a span { font-size: 13px; margin-left: 2px; }
 
 @media (max-width: 980px) {

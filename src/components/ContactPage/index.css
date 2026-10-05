@@ -37,7 +37,7 @@
 
 .contact-card {
   background: #fff;
-  border: 1px solid #e7ece9;
+  border: 1px solid #e5e8f4;
   border-radius: 20px;
   padding: 26px 22px;
 }
@@ -58,9 +58,9 @@
 
 .info-icon {
   align-items: center;
-  background: #ebfaf5;
+  background: #eef0ff;
   border-radius: 12px;
-  color: #0d7d71;
+  color: #2f39a9;
   display: inline-flex;
   font-size: 18px;
   height: 38px;
@@ -105,7 +105,7 @@
 }
 
 .contact-form button {
-  background: #0d5c56;
+  background: #2f39a9;
   border: 0;
   border-radius: 999px;
   color: #fff;

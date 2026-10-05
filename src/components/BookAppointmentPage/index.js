@@ -165,7 +165,6 @@ function BookAppointmentPage() {
             <small>Step 2 will display vetted orthodontists, endodontists, &amp; surgeons.</small>
           </div>
         </div>
-        <a href="https://wa.me/917799234108" className="floating-button">Chat with Dental Concierge</a>
       </div>
     </div>
   );

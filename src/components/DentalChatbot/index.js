@@ -56,7 +56,13 @@ function DentalChatbot() {
       {isOpen && (
         <section className="chat-panel" aria-label="Ma Dental concierge chat">
           <header className="chat-header">
-            <div className="chat-avatar" aria-hidden="true">M</div>
+            <div className="chat-avatar" aria-hidden="true">
+              <img
+                src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.png`}
+                alt="Ma Dental Concierge"
+                className="chat-avatar-icon"
+              />
+            </div>
             <div>
               <strong>Ma Dental Concierge</strong>
               <span><i /> Usually replies instantly</span>
@@ -88,10 +94,19 @@ function DentalChatbot() {
         </section>
       )}
 
-      <button type="button" className="chat-launcher" onClick={() => setIsOpen((open) => !open)} aria-expanded={isOpen} aria-label={isOpen ? 'Close dental concierge' : 'Open dental concierge'}>
-        <span className="launcher-icon" aria-hidden="true">&#9673;</span>
-        <span className="launcher-copy"><strong>Need help?</strong><small>Chat with us</small></span>
-        <span className="launcher-arrow" aria-hidden="true">{isOpen ? '\u00d7' : '\u2197'}</span>
+      <button
+        type="button"
+        className={`chat-launcher${isOpen ? ' is-open' : ''}`}
+        onClick={() => setIsOpen((open) => !open)}
+        aria-expanded={isOpen}
+        aria-label={isOpen ? 'Close dental concierge' : 'Open dental concierge'}
+      >
+        <img
+          src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.png`}
+          alt="Ma Dental Chatbot"
+          className="chat-rotating-icon"
+        />
+        {isOpen && <span className="launcher-close-badge" aria-hidden="true">&times;</span>}
       </button>
     </div>
   );

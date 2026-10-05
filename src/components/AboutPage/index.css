@@ -7,7 +7,7 @@
 .page-breadcrumb {
   align-items: center;
   background: #f5f6f2;
-  border-bottom: 1px solid #dfe7e0;
+  border-bottom: 1px solid #e1e5f6;
   color: #607086;
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +19,7 @@
 }
 
 .crumb-icon {
-  color: #0b7a72;
+  color: #2f39a9;
   font-size: 14px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .section-kicker {
-  color: #0b7a72;
+  color: #2f39a9;
   display: block;
   font-size: 10px;
   font-weight: 800;
@@ -73,10 +73,10 @@
 
 .protocol-pill {
   align-items: center;
-  background: rgba(176, 226, 214, 0.15);
-  border: 1px solid #d4eadf;
+  background: rgba(210, 216, 255, 0.15);
+  border: 1px solid #d5dcff;
   border-radius: 999px;
-  color: #0f6f67;
+  color: #2f39a9;
   display: inline-flex;
   font-size: 12px;
   gap: 10px;
@@ -85,7 +85,7 @@
 }
 
 .protocol-dot {
-  background: #1ec5b0;
+  background: #5367e8;
   border-radius: 50%;
   display: inline-block;
   height: 10px;
@@ -108,10 +108,10 @@
 
 .card-icon {
   align-items: center;
-  background: #eefbf6;
-  border: 1px solid #d8efe7;
+  background: #eef0ff;
+  border: 1px solid #d5dcff;
   border-radius: 12px;
-  color: #0e7f72;
+  color: #2f39a9;
   display: inline-flex;
   font-size: 18px;
   height: 42px;
@@ -121,7 +121,7 @@
 }
 
 .card-eyebrow {
-  color: #0e7f72;
+  color: #2f39a9;
   display: block;
   font-size: 9px;
   font-weight: 800;
@@ -146,7 +146,7 @@
 }
 
 .distinction-card strong {
-  color: #0d7e72;
+  color: #2f39a9;
   display: inline-block;
   font-size: 12px;
   line-height: 1.5;
@@ -198,9 +198,9 @@
 }
 
 .tech-card__meta span {
-  background: #edf8f7;
+  background: #eef0ff;
   border-radius: 999px;
-  color: #0b7a72;
+  color: #2f39a9;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .6px;
@@ -265,7 +265,7 @@
 }
 
 .care-list li::before {
-  background: #0e7f72;
+  background: #2f39a9;
   border-radius: 50%;
   content: "";
   height: 7px;
@@ -285,7 +285,7 @@
 .visual-small {
   overflow: hidden;
   border-radius: 18px;
-  background: #dfe9e5;
+  background: #e1e5f6;
 }
 
 .visual-large img,
@@ -306,7 +306,7 @@
 }
 
 .doctor-highlight {
-  background: #052f34;
+  background: #111b5e;
   border-radius: 24px;
   color: #fff;
   display: grid;
@@ -365,7 +365,7 @@
 }
 
 .doctor-signature span {
-  color: rgba(219, 245, 242, .8);
+  color: rgba(210, 216, 255, .8);
   font-size: 11px;
   letter-spacing: .8px;
   text-transform: uppercase;
@@ -379,14 +379,14 @@
 }
 
 .doctor-meta span {
-  color: rgba(215, 233, 232, .75);
+  color: rgba(210, 216, 255, .75);
   font-size: 10px;
 }
 
 .about-cta {
   align-items: center;
   background: #f8faf7;
-  border: 1px solid #e1e9e5;
+  border: 1px solid #e3e6f3;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -425,7 +425,7 @@
 }
 
 .primary-button {
-  background: #0a4d4c;
+  background: #111b5e;
   color: #fff;
 }
 

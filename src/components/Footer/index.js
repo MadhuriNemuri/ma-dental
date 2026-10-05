@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 function Footer() {
 	return (
 		<footer className="site-footer" id="contact">
-			<a className="concierge-button" href="https://wa.me/917799234108"><span aria-hidden="true">&#9638;</span> Chat with Dental Concierge</a>
 			<div className="footer-main">
 				<div className="footer-brand-column">
 					<h2>Ma Dental</h2>

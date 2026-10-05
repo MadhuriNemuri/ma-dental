@@ -1,26 +1,24 @@
 .site-footer { background: #020514; color: #fff; position: relative; }
-.concierge-button { background: #087a50; border-radius: 999px 0 0 999px; color: #fff; font-size: 11px; font-weight: 700; padding: 11px 17px; position: absolute; right: 0; text-decoration: none; top: -48px; }
-.concierge-button span { margin-right: 6px; }
 .footer-main { display: grid; gap: clamp(35px, 5vw, 72px); grid-template-columns: 1.45fr .85fr 1.05fr 1.2fr; padding: 87px clamp(26px, 7vw, 100px) 53px; }
 .footer-brand-column h2 { font-size: 20px; margin: 0 0 17px; }
 .footer-brand-column > p { color: #f4f6ff; font-size: 15px; line-height: 1.65; margin: 0; }
 .footer-column { display: flex; flex-direction: column; }
-.footer-column h3 { color: #12cdb9; font-size: 11px; letter-spacing: .7px; margin: 0 0 16px; text-transform: uppercase; }
+.footer-column h3 { color: #5367e8; font-size: 11px; letter-spacing: .7px; margin: 0 0 16px; text-transform: uppercase; }
 .footer-column > a { color: #f4f6ff; font-size: 15px; margin-bottom: 13px; text-decoration: none; }
 .hours-column p, .contact-column p { color: #f4f6ff; font-size: 13px; line-height: 1.35; margin: 0 0 12px; }
 .hours-column small { font-size: 11px; }
 .direct-access { margin-top: 25px !important; text-transform: uppercase; }
-.contact-column p span { color: #0dd1c1; display: inline-block; width: 15px; }
+.contact-column p span { color: #5367e8; display: inline-block; width: 15px; }
 .follow-heading { margin-top: 20px !important; }
 .follow-copy { font-size: 12px !important; }
 .social-links { display: flex; gap: 12px; margin-top: 22px; }
 .social-links a { align-items: center; background: #e1e8ff; border-radius: 8px; color: #07102a; display: flex; font-size: 10px; font-weight: 700; height: 29px; justify-content: center; text-decoration: none; width: 29px; }
 .newsletter-form { display: flex; gap: 6px; margin-top: 50px; max-width: 358px; }
-.newsletter-form input { background: #167e7a; border: 0; color: #fff; font-size: 10px; min-width: 0; padding: 10px 13px; width: 100%; }
-.newsletter-form input::placeholder { color: #e3ffff; }
-.newsletter-form button { background: #1bcabb; border: 0; color: #fff; font-size: 9px; font-weight: 700; padding: 0 18px; text-transform: uppercase; }
-.footer-bottom { align-items: center; border-top: 1px solid #4a5369; color: #09cdbd; display: flex; font-size: 9px; justify-content: space-between; padding: 31px clamp(26px, 7vw, 100px) 43px; }
-.footer-bottom div { display: flex; gap: 25px; }.footer-bottom a { color: #09cdbd; text-decoration: none; }
+.newsletter-form input { background: #2f39a9; border: 0; color: #fff; font-size: 10px; min-width: 0; padding: 10px 13px; width: 100%; }
+.newsletter-form input::placeholder { color: #e3e8ff; }
+.newsletter-form button { background: #5367e8; border: 0; color: #fff; font-size: 9px; font-weight: 700; padding: 0 18px; text-transform: uppercase; }
+.footer-bottom { align-items: center; border-top: 1px solid #4a5369; color: #5367e8; display: flex; font-size: 9px; justify-content: space-between; padding: 31px clamp(26px, 7vw, 100px) 43px; }
+.footer-bottom div { display: flex; gap: 25px; }.footer-bottom a { color: #5367e8; text-decoration: none; }
 
 @media (max-width: 850px) {
 	.footer-main { grid-template-columns: repeat(2, 1fr); }
@@ -28,7 +26,6 @@
 }
 
 @media (max-width: 520px) {
-	.concierge-button { font-size: 9px; top: -42px; }
 	.footer-main { gap: 36px 24px; grid-template-columns: 1fr 1fr; padding: 68px 20px 42px; }
 	.footer-brand-column { grid-column: span 2; }
 	.footer-column h3 { font-size: 9px; }
