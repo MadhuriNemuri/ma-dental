@@ -1,0 +1,177 @@
+.page-loader-overlay {
+  align-items: center;
+  background: radial-gradient(circle at center, #ffffff 0%, #f4f6fd 100%);
+  bottom: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  overflow: hidden;
+  pointer-events: all;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+  width: 100vw;
+  z-index: 99999;
+}
+
+.page-loader-overlay.is-flying {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Outer circular loading ring: fixed at exact viewport center (50vw, 50vh) */
+.loader-ring-wrapper {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 140px;
+  justify-content: center;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  user-select: none;
+  width: 140px;
+  z-index: 99999;
+}
+
+.loader-ring-wrapper.fade-out {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.loader-svg {
+  display: block;
+  height: 140px;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  transform: rotate(-90deg);
+  width: 140px;
+}
+
+.loader-track {
+  fill: none;
+  stroke: #e4eaf8;
+  stroke-width: 5;
+}
+
+.loader-progress {
+  fill: none;
+  stroke: url(#loaderGradient);
+  stroke-linecap: round;
+  stroke-width: 5;
+  transition: stroke-dashoffset 0.08s linear;
+}
+
+/* Sticker: fixed at the exact same viewport center (50vw, 50vh) */
+.loader-sticker {
+  align-items: center;
+  background: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 10px 28px rgba(17, 27, 94, 0.16);
+  box-sizing: border-box;
+  display: flex;
+  height: 90px;
+  justify-content: center;
+  left: 50%;
+  margin: 0;
+  padding: 2px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: 
+    top 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+    left 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+    width 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+    height 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.95s ease;
+  width: 90px;
+  z-index: 100000;
+}
+
+.loader-sticker-img {
+  border-radius: 50%;
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+}
+
+/* Flight destination: exact coordinates of the floating chatbot launcher */
+.loader-sticker.fly-to-chatbot {
+  box-shadow: 0 0 0 8px rgba(242, 1, 7, 0.18), 0 18px 40px rgba(17, 27, 94, 0.4);
+  height: 84px;
+  left: calc(100vw - 64px);
+  top: calc(100vh - 64px);
+  transform: translate(-50%, -50%) rotate(720deg);
+  width: 84px;
+}
+
+/* Info text: cleanly placed below the ring */
+.loader-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  margin: 0;
+  pointer-events: none;
+  position: fixed;
+  text-align: center;
+  top: calc(50% + 88px);
+  transform: translateX(-50%);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 99999;
+}
+
+.loader-info.fade-out {
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.loader-percentage {
+  color: #111b5e;
+  font-family: inherit;
+  font-size: 21px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.loader-brand {
+  color: #2f39a9;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.loader-tagline {
+  color: #7b8ba5;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  margin-top: 3px;
+}
+
+@media (max-width: 520px) {
+  .loader-sticker.fly-to-chatbot {
+    height: 70px;
+    left: calc(100vw - 51px);
+    top: calc(100vh - 51px);
+    width: 70px;
+  }
+}

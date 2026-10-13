@@ -1,5 +1,6 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import OurStory from './components/OurStory';
@@ -12,9 +13,10 @@ import AboutPage from './components/AboutPage';
 import TreatmentsPage from './components/TreatmentsPage';
 import DoctorsPage from './components/DoctorsPage';
 import ReviewsPage from './components/ReviewsPage';
-import ContactPage from './components/ContactPage';
+import GalleryPage from './components/GalleryPage';
 import BookAppointmentPage from './components/BookAppointmentPage';
 import DentalChatbot from './components/DentalChatbot';
+import PageLoader from './components/PageLoader';
 
 function HomePage() {
   return (
@@ -61,21 +63,21 @@ function DoctorsPageWrapper() {
   );
 }
 
-function ReviewsPageWrapper() {
+function GalleryPageWrapper() {
   return (
     <>
       <Navbar />
-      <ReviewsPage />
+      <GalleryPage />
       <Footer />
     </>
   );
 }
 
-function ContactPageWrapper() {
+function ReviewsPageWrapper() {
   return (
     <>
       <Navbar />
-      <ContactPage />
+      <ReviewsPage />
       <Footer />
     </>
   );
@@ -92,19 +94,25 @@ function BookingPageWrapper() {
 }
 
 function App() {
+  const [isLoaderFinished, setIsLoaderFinished] = useState(false);
+
   return (
     <div className="App">
+      {!isLoaderFinished && (
+        <PageLoader onFinish={() => setIsLoaderFinished(true)} />
+      )}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPageWrapper />} />
         <Route path="/treatments" element={<TreatmentsPageWrapper />} />
         <Route path="/doctors" element={<DoctorsPageWrapper />} />
+        <Route path="/gallery" element={<GalleryPageWrapper />} />
         <Route path="/reviews" element={<ReviewsPageWrapper />} />
-        <Route path="/contact" element={<ContactPageWrapper />} />
+        <Route path="/contact" element={<Navigate to="/book-appointment" replace />} />
         <Route path="/book-appointment" element={<BookingPageWrapper />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
-      <DentalChatbot />
+      <DentalChatbot isReady={isLoaderFinished} />
     </div>
   );
 }

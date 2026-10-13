@@ -8,17 +8,19 @@
 }
 
 .story-visual {
+	background: #f1f4f9;
 	border-radius: 18px;
 	box-shadow: 0 16px 28px rgba(47, 57, 169, .12);
-	min-height: 285px;
+	min-height: 340px;
 	position: relative;
 }
 
 .story-visual img {
 	border-radius: 18px;
 	display: block;
-	height: 285px;
+	height: clamp(320px, 34vw, 400px);
 	object-fit: cover;
+	object-position: center 35%;
 	width: 100%;
 }
 

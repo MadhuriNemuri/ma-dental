@@ -11,7 +11,7 @@ const quickReplies = [
   { label: 'Find the clinic', reply: 'You can find Ma Dental at Kotapalli Circle, Tirupati Road, Pileru, Andhra Pradesh.', whatsapp: 'I need directions to Ma Dental.' }
 ];
 
-function DentalChatbot() {
+function DentalChatbot({ isReady = true }) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { sender: 'bot', text: 'Hi, I am the Ma Dental concierge. How can I help today?' }
@@ -52,7 +52,7 @@ function DentalChatbot() {
   };
 
   return (
-    <div className={`dental-chatbot${isOpen ? ' is-open' : ''}`}>
+    <div className={`dental-chatbot${isOpen ? ' is-open' : ''}${!isReady ? ' is-hidden' : ''}`}>
       {isOpen && (
         <section className="chat-panel" aria-label="Ma Dental concierge chat">
           <header className="chat-header">

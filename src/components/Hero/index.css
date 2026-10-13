@@ -133,18 +133,56 @@ h1 em::after {
     font-size: 11px; 
 }
 .hero-visual { 
+    background: #0d1547;
     border-radius: 17px; 
-    box-shadow: 0 18px 28px rgba(47, 57, 169, .17); 
-    min-height: 300px; 
+    box-shadow: 0 20px 38px rgba(11, 20, 66, 0.22); 
+    cursor: pointer;
+    height: 480px; 
+    max-height: 500px; 
     overflow: hidden; 
     position: relative; 
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
 }
-.hero-visual > img { 
+.hero-visual > img,
+.hero-visual > video,
+.hero-video { 
     display: block; 
     height: 100%; 
-    min-height: 300px; 
-    object-fit: cover; 
+    max-height: 100%; 
     width: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+}
+.hero-video-controls {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    z-index: 3;
+}
+.hero-video-ctrl-btn {
+    align-items: center;
+    background: rgba(13, 21, 71, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.2s ease;
+    width: 36px;
+}
+.hero-video-ctrl-btn:hover {
+    background: rgba(47, 57, 169, 0.95);
+    transform: scale(1.08);
 }
 .care-card { 
     align-items: center; 
@@ -157,6 +195,7 @@ h1 em::after {
     padding: 10px 12px; 
     position: absolute; 
     right: 16px; 
+    z-index: 2;
 }
 .care-icon { 
     align-items: center; 
@@ -367,7 +406,9 @@ h1 em::after {
 
 @media (max-width: 700px) {
 	.hero-section { gap: 35px; grid-template-columns: 1fr; padding-bottom: 48px; padding-top: 38px; }
-	.hero-copy { max-width: 600px; }.hero-visual { min-height: 280px; }.hero-visual > img { min-height: 280px; }
+	.hero-copy { max-width: 600px; }
+	.hero-visual { height: 420px; max-height: 440px; min-height: 320px; }
+	.hero-visual > img, .hero-visual > video, .hero-video { min-height: 320px; }
 	h1 { font-size: clamp(40px, 12vw, 58px); }
 	.services-ticker-section { padding: 38px 0 44px; }
 	.services-ticker-header { margin-bottom: 24px; }
@@ -378,7 +419,15 @@ h1 em::after {
 }
 
 @media (max-width: 430px) {
-	.site-header { height: 62px; padding: 0 18px; }.hero-section { padding-left: 18px; padding-right: 18px; }.hero-copy > p { font-size: 12px; }.hero-actions { align-items: stretch; flex-direction: column; }.primary-button, .secondary-button { justify-content: center; }.care-card { bottom: 10px; left: 10px; padding: 8px; right: 10px; }.care-card > b { display: none; }
+	.site-header { height: 62px; padding: 0 18px; }
+	.hero-section { padding-left: 18px; padding-right: 18px; }
+	.hero-copy > p { font-size: 12px; }
+	.hero-actions { align-items: stretch; flex-direction: column; }
+	.primary-button, .secondary-button { justify-content: center; }
+	.hero-visual { height: 360px; max-height: 380px; min-height: 280px; }
+	.hero-visual > img, .hero-visual > video, .hero-video { min-height: 280px; }
+	.care-card { bottom: 10px; left: 10px; padding: 8px; right: 10px; }
+	.care-card > b { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

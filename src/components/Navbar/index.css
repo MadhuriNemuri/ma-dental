@@ -16,26 +16,21 @@
 	align-items: center;
 	color: #122036;
 	display: flex;
-	gap: 9px;
 	text-decoration: none;
 }
 
-.brand-mark {
-	align-items: center;
-	background: #2f39a9;
-	border-radius: 10px;
-	color: white;
-	display: flex;
-	font-size: 15px;
-	font-weight: 800;
-	height: 30px;
-	justify-content: center;
-	width: 30px;
+.brand-logo {
+	display: block;
+	height: 46px;
+	width: auto;
+	max-width: 190px;
+	object-fit: contain;
+	transition: transform 0.2s ease;
 }
 
-.brand-copy { display: grid; line-height: 1; }
-.brand-copy strong { font-size: 16px; }
-.brand-copy small { color: #2f39a9; font-size: 6px; font-weight: 700; letter-spacing: 1px; margin-top: 5px; }
+.brand:hover .brand-logo {
+	transform: scale(1.02);
+}
 
 .main-nav { display: flex; gap: clamp(18px, 3vw, 38px); left: 50%; position: absolute; transform: translateX(-50%); }
 .main-nav a { color: #43536d; font-size: 14px; text-decoration: none; }
@@ -60,6 +55,11 @@
 		position: sticky;
 		top: 0;
 		z-index: 1000;
+	}
+
+	.brand-logo {
+		height: 38px;
+		max-width: 155px;
 	}
 
 	.main-nav {

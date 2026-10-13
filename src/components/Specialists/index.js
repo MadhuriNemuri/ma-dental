@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const specialists = [
 	{
-		image: '/Assets/specialists_images/doctor-1-compressed.webp',
+		image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`,
 		experience: '14 Yrs Exp',
 		name: 'Dr. T. BHANU PRAKASH REDDY',
 		qualification: 'M.D.S. • COSMETIC DENTAL SURGEON',
@@ -11,7 +11,7 @@ const specialists = [
 		category: 'Dental Surgery'
 	},
 	{
-		image: '/Assets/specialists_images/doctor-2-compressed.webp',
+		image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-2-enhanced.png`,
 		experience: '8 Yrs Exp',
 		name: 'Dr. G. RISHITHA REDDY',
 		qualification: 'M.D.S. • PERIODONTIST & IMPLANTITIS',
@@ -19,15 +19,15 @@ const specialists = [
 		category: 'Periodontist'
 	},
 	{
-		image: '/Assets/specialists_images/doctor-3-compressed.webp',
-		experience: '9 Yrs Exp',
-		name: 'Dr. V. PRASANTH REDDY',
-		qualification: 'M.D.S. • ENDODONTIST',
-		description: 'Dedicated to microscopic root canal therapy and saving damaged natural dentition.',
-		category: 'Endodontics'
+		image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-3-enhanced.png`,
+		experience: '11 Yrs Exp',
+		name: 'Dr. M. HEMADRI',
+		qualification: 'M.D.S. • ORTHODONTIST',
+		description: 'Expert in clear aligner therapy, smile enhancement, and interceptive orthodontics for teens and adults.',
+		category: 'Orthodontics'
 	},
 	{
-		image: '/Assets/specialists_images/doctor-4-compressed.webp',
+		image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-1-enhanced.png`,
 		experience: '8 Yrs Exp',
 		name: 'Dr. Y. SHANTI PRIYA',
 		qualification: 'B.D.S. • COSMETIC DENTAL SURGEON',
@@ -46,11 +46,10 @@ function Specialists() {
 			</div>
 
 			<div className="specialists-grid">
-				{specialists.slice(0, 3).map((specialist) => (
+				{specialists.map((specialist) => (
 					<article className="specialist-card" key={specialist.name}>
 						<div className="specialist-image-wrap">
 							<img src={specialist.image} alt={specialist.name} />
-							<span className="experience-badge">{specialist.experience}</span>
 						</div>
 						<div className="specialist-content">
 							<h3>{specialist.name}</h3>

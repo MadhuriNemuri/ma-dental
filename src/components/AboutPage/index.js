@@ -105,14 +105,14 @@ function AboutPage() {
 
           <div className="sanctuary-visuals">
             <div className="visual-large">
-              <img src="/Assets/hero_section_image/medical_consultation_web_optimized.webp" alt="Dental clinic consultation" />
+              <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.png`} alt="Ma Dental modern treatment operatory" />
             </div>
             <div className="visual-stack">
               <div className="visual-small">
-                <img src="/Assets/hero_section_image/hero_section_compress_image.webp" alt="Dental treatment room" />
+                <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.png`} alt="FONA 3D panoramic OPG x-ray" />
               </div>
               <div className="visual-small alt">
-                <img src="/Assets/hero_section_image/hero_section_compress_image.webp" alt="Modern dental chair" />
+                <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.png`} alt="Class-B vacuum autoclave sterilization unit" />
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@ function AboutPage() {
 
         <section className="doctor-highlight">
           <div className="doctor-photo">
-            <img src="/Assets/specialists_images/doctor-1-compressed.webp" alt="Dr. Bhanu Prakash Reddy" />
+            <img src={`${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`} alt="Dr. Bhanu Prakash Reddy" />
           </div>
 
           <div className="doctor-quote">

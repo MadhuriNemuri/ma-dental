@@ -4,7 +4,7 @@ function OurStory() {
 	return (
 		<section className="our-story" id="about">
 			<div className="story-visual">
-				<img src="/Assets/hero_section_image/medical_consultation_web_optimized.webp" alt="Doctor consulting with a dental patient" />
+				<img src={`${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.png`} alt="Ma Dental Clinic Treatment Operatory Suite" />
 				<div className="certified-card">
 					<span className="certified-icon" aria-hidden="true">&#10003;</span>
 					<span><strong>Certified Clinic</strong><small>ISO 9001:2020 Compliant</small></span>

@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
 
@@ -113,6 +114,32 @@ const dentalServices = [
 ];
 
 function Hero() {
+	const videoRef = useRef(null);
+	const [isMuted, setIsMuted] = useState(true);
+	const [isPlaying, setIsPlaying] = useState(true);
+
+	const toggleSound = (e) => {
+		if (e) e.stopPropagation();
+		if (videoRef.current) {
+			const nextMuted = !videoRef.current.muted;
+			videoRef.current.muted = nextMuted;
+			setIsMuted(nextMuted);
+		}
+	};
+
+	const togglePlay = (e) => {
+		if (e) e.stopPropagation();
+		if (videoRef.current) {
+			if (videoRef.current.paused) {
+				videoRef.current.play();
+				setIsPlaying(true);
+			} else {
+				videoRef.current.pause();
+				setIsPlaying(false);
+			}
+		}
+	};
+
 	return (
 		<main id="home">
 			<section className="hero-section">
@@ -130,12 +157,64 @@ function Hero() {
 					</div>
 				</div>
 
-				<div className="hero-visual">
-					<img src="/Assets/hero_section_image/hero_section_compress_image.webp" alt="Dentist caring for a patient" />
-					<div className="care-card">
-						<span className="care-icon">&#10003;</span>
-						<span><strong>Personalized Dental Care</strong><small>Safe, painless, &amp; certified procedures</small></span>
-						<b>Open Today</b>
+				<div className="hero-visual" onClick={togglePlay}>
+					<video
+						ref={videoRef}
+						className="hero-video"
+						autoPlay
+						loop
+						muted
+						playsInline
+						onClick={togglePlay}
+						onPlay={() => setIsPlaying(true)}
+						onPause={() => setIsPlaying(false)}
+						poster={`${process.env.PUBLIC_URL || ''}/Assets/hero_section_image/hero_section_compress_image.webp`}
+						aria-label="Ma Dental Clinic Tour Video"
+					>
+						<source src={`${process.env.PUBLIC_URL || ''}/Videos/ma-dental-reel-1.mp4`} type="video/mp4" />
+						<source src={`${process.env.PUBLIC_URL || ''}/Videos/MA%20DENTAL%20REEL%201.mp4`} type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+
+					<div className="hero-video-controls">
+						<button
+							type="button"
+							className="hero-video-ctrl-btn"
+							onClick={togglePlay}
+							aria-label={isPlaying ? "Pause video" : "Play video"}
+							title={isPlaying ? "Pause video" : "Play video"}
+						>
+							{isPlaying ? (
+								<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+									<rect x="5" y="3" width="4" height="18" rx="1" />
+									<rect x="15" y="3" width="4" height="18" rx="1" />
+								</svg>
+							) : (
+								<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M6 4.5v15a1 1 0 0 0 1.52.86l12.5-7.5a1 1 0 0 0 0-1.72l-12.5-7.5A1 1 0 0 0 6 4.5z" />
+								</svg>
+							)}
+						</button>
+						<button
+							type="button"
+							className="hero-video-ctrl-btn"
+							onClick={toggleSound}
+							aria-label={isMuted ? "Unmute video" : "Mute video"}
+							title={isMuted ? "Unmute sound" : "Mute sound"}
+						>
+							{isMuted ? (
+								<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+									<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
+									<line x1="23" y1="9" x2="17" y2="15"></line>
+									<line x1="17" y1="9" x2="23" y2="15"></line>
+								</svg>
+							) : (
+								<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+									<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
+									<path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+								</svg>
+							)}
+						</button>
 					</div>
 				</div>
 			</section>

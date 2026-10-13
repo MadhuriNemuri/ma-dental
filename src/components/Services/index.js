@@ -46,7 +46,7 @@ function Services() {
 					<h2>Precision Specialties</h2>
 					<p>Focused care for healthier teeth and confident smiles.</p>
 				</div>
-				<a className="all-treatments" href="#contact">View All Treatments <span aria-hidden="true">&rarr;</span></a>
+				<Link className="all-treatments" to="/treatments">View All Treatments <span aria-hidden="true">&rarr;</span></Link>
 			</div>
 
 			<div className="services-grid">

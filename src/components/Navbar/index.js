@@ -12,11 +12,11 @@ function Navbar() {
 	return (
 		<header className={`site-header${isMenuOpen ? ' mobile-open' : ''}`}>
 			<Link className="brand" to="/" aria-label="Ma Dental home" onClick={closeMenu}>
-				<span className="brand-mark">M</span>
-				<span className="brand-copy">
-					<strong>Ma Dental</strong>
-					<small>CARE &amp; EXCELLENCE</small>
-				</span>
+				<img
+					src={`${process.env.PUBLIC_URL || ''}/Assets/logo m.png`}
+					alt="Ma Dental"
+					className="brand-logo"
+				/>
 			</Link>
 
 			<nav className={`main-nav${isMenuOpen ? ' mobile-open' : ''}`} aria-label="Primary navigation">
@@ -24,8 +24,9 @@ function Navbar() {
 				<NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/about" onClick={closeMenu}>About</NavLink>
 				<NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/treatments" onClick={closeMenu}>Treatments</NavLink>
 				<NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/doctors" onClick={closeMenu}>Doctors</NavLink>
+				<NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/gallery" onClick={closeMenu}>Gallery</NavLink>
 				<NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/reviews" onClick={closeMenu}>Reviews</NavLink>
-				<NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/contact" onClick={closeMenu}>Contact</NavLink>
+				<NavLink className={({ isActive }) => isActive ? 'active' : ''} to="/book-appointment" onClick={closeMenu}>Contact</NavLink>
 			</nav>
 
 			<div className="header-actions">

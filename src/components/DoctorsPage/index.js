@@ -6,10 +6,9 @@ const categories = [
   'All Specialists',
   'Oral Surgery',
   'Orthodontics',
-  'Endodontics',
+  'Periodontics',
   'Pediatric',
-  'Cosmetic',
-  'Periodontics'
+  'Cosmetic'
 ];
 
 const doctors = [
@@ -17,8 +16,9 @@ const doctors = [
     name: 'Dr. B. Bhanu Prakash Reddy',
     degree: 'M.D.S. • Cosmetic Dental Surgeon',
     description: 'Specializing in complex full-mouth rehabilitation, bone grafting, and advanced implant procedures with gentle surgical techniques.',
-    image: '/Assets/specialists_images/doctor-1-compressed.webp',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`,
     category: 'Cosmetic',
+    categories: ['Cosmetic', 'Oral Surgery'],
     years: '14 Yrs Exp',
     specialty: 'Cosmetic Dental Surgeon',
     rating: '4.97',
@@ -30,8 +30,9 @@ const doctors = [
     name: 'Dr. M. Hemadri',
     degree: 'M.D.S. • Orthodontist',
     description: 'Expert in clear aligner therapy (Invisible Diamond Provider) and interceptive orthodontics tailored for teens and adult smile enhancements.',
-    image: '/Assets/specialists_images/doctor-2-compressed.webp',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-3-enhanced.png`,
     category: 'Orthodontics',
+    categories: ['Orthodontics', 'Pediatric'],
     years: '11 Yrs Exp',
     specialty: 'Orthodontics',
     rating: '5.0',
@@ -40,39 +41,14 @@ const doctors = [
     location: 'Tue, Thu, Sat'
   },
   {
-    name: 'Dr. V. Prasanth Reddy',
-    degree: 'M.D.S. • Endodontist',
-    description: 'Dedicated to saving natural dentition through pain-free, microscopic root canal therapy and ultra-precise apical microsurgery.',
-    image: '/Assets/specialists_images/doctor-3-compressed.webp',
-    category: 'Endodontics',
-    years: '9 Yrs Exp',
-    specialty: 'Endodontics',
-    rating: '4.95',
-    reviewCount: '194',
-    languages: ['English', 'Telugu'],
-    location: 'Mon, Tue, Thu'
-  },
-  {
-    name: 'Dr. K. Dharani Chowdary',
-    degree: 'M.D.S. • Maxillofacial Surgeon',
-    description: 'Making dental visits gentle, fun, and anxiety-free for children while instilling lifelong healthy oral hygiene habits from their first visit.',
-    image: '/Assets/specialists_images/doctor-4-compressed.webp',
-    category: 'Pediatric',
-    years: '8 Yrs Exp',
-    specialty: 'Pediatric Care',
-    rating: '4.99',
-    reviewCount: '510',
-    languages: ['English', 'Telugu'],
-    location: 'Wed, Fri, Sat'
-  },
-  {
     name: 'Dr. G. Rishitha Reddy',
     degree: 'M.D.S. • Periodontist & Implantologist',
     description: 'Internationally recognized for porcelain veneers, smile makeovers, and minimally invasive aesthetic enhancements that look naturally radiant.',
-    image: '/Assets/specialists_images/doctor-2-compressed.webp',
-    category: 'Cosmetic',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-2-enhanced.png`,
+    category: 'Periodontics',
+    categories: ['Periodontics', 'Cosmetic'],
     years: '12 Yrs Exp',
-    specialty: 'Cosmetic Dentistry',
+    specialty: 'Periodontics & Implantology',
     rating: '4.98',
     reviewCount: '388',
     languages: ['English', 'Telugu'],
@@ -81,11 +57,12 @@ const doctors = [
   {
     name: 'Dr. Y. Shanti Priya',
     degree: 'B.D.S. • Cosmetic Dental Surgeon',
-    description: 'Focused on advanced gum health therapies, laser periodontal treatments, and regenerative dental protocols for permanent bone preservation.',
-    image: '/Assets/specialists_images/doctor-1-compressed.webp',
-    category: 'Periodontics',
-    years: '10 Yrs Exp',
-    specialty: 'Periodontics',
+    description: 'Focused on gentle preventive dentistry, painless restorations, and making dental visits fun and anxiety-free for all ages.',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-1-enhanced.png`,
+    category: 'Pediatric',
+    categories: ['Pediatric', 'Endodontics', 'Cosmetic'],
+    years: '8 Yrs Exp',
+    specialty: 'Dental Surgeon & Pediatric Care',
     rating: '4.96',
     reviewCount: '265',
     languages: ['English', 'Telugu'],
@@ -124,7 +101,9 @@ function DoctorsPage() {
   const filteredDoctors = useMemo(() => {
     return doctors.filter((doctor) => {
       const matchesCategory =
-        selectedCategory === 'All Specialists' || doctor.category === selectedCategory;
+        selectedCategory === 'All Specialists' ||
+        doctor.category === selectedCategory ||
+        (doctor.categories && doctor.categories.includes(selectedCategory));
       const haystack = `${doctor.name} ${doctor.degree} ${doctor.specialty} ${doctor.category}`.toLowerCase();
       const matchesSearch = haystack.includes(searchValue.trim().toLowerCase());
       return matchesCategory && matchesSearch;
@@ -198,7 +177,6 @@ function DoctorsPage() {
           {filteredDoctors.map((doctor) => (
             <article className="doctor-card" key={doctor.name}>
               <div className="doctor-card__image">
-                <span className="doctor-card__tag">{doctor.years}</span>
                 <span className="doctor-card__focus">{doctor.specialty}</span>
                 <img src={doctor.image} alt={doctor.name} />
                 <span className="doctor-card__rating">

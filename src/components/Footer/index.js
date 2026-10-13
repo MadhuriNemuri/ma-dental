@@ -19,11 +19,12 @@ function Footer() {
 					</form>
 				</div>
 
-				<div className="footer-column">
+					<div className="footer-column">
 					<h3>Quick Links</h3>
 					<a href="#about">About Us</a>
 					<a href="#treatments">Treatments</a>
 					<a href="#doctors">Our Doctors</a>
+					<Link to="/gallery">Gallery</Link>
 					<Link to="/book-appointment">Book Appointment</Link>
 				</div>
 
