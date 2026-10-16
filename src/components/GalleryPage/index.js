@@ -293,7 +293,7 @@ function GalleryPage() {
               <div className="highlight-text-block">
                 <h4>Expert Care. Personalized Attention.</h4>
                 <p>
-                  Our team works together to ensure you receive the highest standard of dental and hair transplant care.
+                  Our team works together to ensure you receive the highest standard of personalized dental care.
                 </p>
                 <div className="highlight-script-signature">
                   Your Smile, Our Priority

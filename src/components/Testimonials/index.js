@@ -46,7 +46,24 @@ const testimonials = [
 	}
 ];
 
+function getCombinedTestimonials() {
+	if (typeof window === 'undefined') return testimonials;
+	try {
+		const raw = localStorage.getItem('ma_dental_user_reviews');
+		if (!raw) return testimonials;
+		const parsed = JSON.parse(raw);
+		if (Array.isArray(parsed) && parsed.length > 0) {
+			return [...parsed, ...testimonials];
+		}
+	} catch (e) {
+		// ignore
+	}
+	return testimonials;
+}
+
 function Testimonials() {
+	const allTestimonials = getCombinedTestimonials();
+
 	return (
 		<section className="testimonials-section" id="reviews">
 			<div className="testimonials-heading">
@@ -59,12 +76,18 @@ function Testimonials() {
 				<div className="testimonials-track">
 					{[false, true].map((isDuplicate) => (
 						<div className="testimonials-group" aria-hidden={isDuplicate} key={isDuplicate ? 'duplicate' : 'original'}>
-							{testimonials.map((testimonial) => (
-								<article className="testimonial-card" key={testimonial.name}>
-									<div className="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+							{allTestimonials.map((testimonial, idx) => (
+								<article className="testimonial-card" key={testimonial.id || `${testimonial.name}-${idx}`}>
+									<div className="review-stars" aria-label="5 out of 5 stars">
+										{'★'.repeat(testimonial.rating || 5)}{'☆'.repeat(Math.max(0, 5 - (testimonial.rating || 5)))}
+									</div>
 									<p>“{testimonial.quote}”</p>
 									<div className="reviewer">
-										<img src={testimonial.image} alt="" />
+										{testimonial.image ? (
+											<img src={testimonial.image} alt="" />
+										) : (
+											<div className="reviewer-avatar-initial">{(testimonial.name || 'P').charAt(0).toUpperCase()}</div>
+										)}
 										<div><strong>{testimonial.name}</strong><small>{testimonial.service} • {testimonial.time}</small></div>
 									</div>
 								</article>
@@ -81,7 +104,7 @@ function Testimonials() {
 				</div>
 				<div className="cta-band__actions">
 					<Link className="primary-cta" to="/book-appointment">Book Your Consultation</Link>
-					<a className="secondary-cta" href="#treatments">Explore Our Specialties</a>
+					<Link className="secondary-cta" to="/treatments">Explore Our Specialties</Link>
 				</div>
 			</div>
 		</section>

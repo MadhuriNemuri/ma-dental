@@ -144,7 +144,7 @@ function AboutPage() {
           </div>
           <div className="about-cta__actions">
             <Link to="/book-appointment" className="primary-button">Book Your Consultation</Link>
-            <a href="#treatments" className="secondary-button">Explore Our Specialties</a>
+            <Link to="/treatments" className="secondary-button">Explore Our Specialties</Link>
           </div>
         </section>
       </main>

@@ -36,8 +36,20 @@
 .testimonial-card { background: #f8fafc; border: 1px solid #e4ebf0; border-radius: 12px; display: flex; flex: 0 0 clamp(280px, 42vw, 526px); flex-direction: column; min-height: 184px; padding: 19px 20px 17px; }
 .review-stars { font-size: 11px; line-height: 1; }
 .testimonial-card > p { color: #53627b; font-size: 13px; font-style: italic; line-height: 1.6; margin: 14px 0 18px; min-height: 83px; }
-.reviewer { align-items: center; border-top: 1px solid #e6edf1; display: flex; gap: 10px; margin-top: auto; padding-top: 11px; }
 .reviewer img { border-radius: 50%; height: 29px; object-fit: cover; width: 29px; }
+.reviewer-avatar-initial {
+  align-items: center;
+  background: #2f39a9;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  font-size: 11px;
+  font-weight: 700;
+  height: 29px;
+  justify-content: center;
+  width: 29px;
+  flex-shrink: 0;
+}
 .reviewer div { display: grid; gap: 3px; }
 .reviewer strong { color: #1b273d; font-size: 11px; }.reviewer small { color: #93a1b2; font-size: 10px; }
 

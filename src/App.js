@@ -17,6 +17,7 @@ import GalleryPage from './components/GalleryPage';
 import BookAppointmentPage from './components/BookAppointmentPage';
 import DentalChatbot from './components/DentalChatbot';
 import PageLoader from './components/PageLoader';
+import ScrollToTop from './components/ScrollToTop';
 
 function HomePage() {
   return (
@@ -98,6 +99,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollToTop />
       {!isLoaderFinished && (
         <PageLoader onFinish={() => setIsLoaderFinished(true)} />
       )}
@@ -110,6 +112,8 @@ function App() {
         <Route path="/reviews" element={<ReviewsPageWrapper />} />
         <Route path="/contact" element={<Navigate to="/book-appointment" replace />} />
         <Route path="/book-appointment" element={<BookingPageWrapper />} />
+        <Route path="/chatbot" element={<Navigate to="/doctors" replace state={{ openChatbot: true }} />} />
+        <Route path="/concierge" element={<Navigate to="/doctors" replace state={{ openChatbot: true }} />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <DentalChatbot isReady={isLoaderFinished} />

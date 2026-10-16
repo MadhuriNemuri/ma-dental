@@ -18,8 +18,16 @@
 .specialist-content h3 { color: #172239; font-size: 15px; line-height: 1.25; margin: 0 0 8px; min-height: 38px; }
 .specialist-content > strong { color: #2f39a9; display: block; font-size: 11px; letter-spacing: .3px; line-height: 1.3; min-height: 28px; }
 .specialist-content > p { color: #718097; font-size: 12.5px; line-height: 1.55; margin: 11px 0 16px; flex: 1; }
-.specialist-footer { align-items: center; border-top: 1px solid #edf1f3; display: flex; justify-content: space-between; margin-top: auto; padding-top: 12px; }
-.specialist-footer > span { color: #9aa9b8; font-size: 10px; }.specialist-footer a { color: #2f39a9; font-size: 11px; font-weight: 700; text-decoration: none; }
+.specialist-footer > span {
+  color: #2f39a9;
+  font-size: 11px;
+  font-weight: 700;
+  background: #eef2ff;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.specialist-footer a { color: #2f39a9; font-size: 11px; font-weight: 700; text-decoration: none; }
 .specialist-footer a span { font-size: 13px; margin-left: 2px; }
 
 @media (max-width: 980px) {

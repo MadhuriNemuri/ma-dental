@@ -1,10 +1,11 @@
 import './index.css';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const WHATSAPP_NUMBER = '917799234108';
 
 const quickReplies = [
+  { label: 'Find right specialist', reply: 'Our specialist team includes Chief Implantologist Dr. Bhanu Prakash, Orthodontist Dr. M. Hemadri, Periodontist Dr. G. Rishitha, and Pediatric Surgeon Dr. Y. Shanti Priya. What dental concern can we help you with?', whatsapp: 'I would like help choosing the right dental specialist.' },
   { label: 'Book an appointment', reply: 'I can help you get started. Share your preferred day and our care coordinator will confirm the next available slot.', whatsapp: 'I would like to book an appointment.' },
   { label: 'View treatments', reply: 'We offer smile design, implants, aligners, root canal care, gum care, and family dentistry.', whatsapp: 'I would like to know about your treatments.' },
   { label: 'Clinic hours', reply: 'We are open Monday to Saturday, 9:00 AM to 9:00 PM. Sunday visits are available by request.', whatsapp: 'I would like to confirm clinic hours.' },
@@ -18,6 +19,64 @@ function DentalChatbot({ isReady = true }) {
   ]);
   const [input, setInput] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages, isOpen]);
+
+  useEffect(() => {
+    const handleOpen = (e) => {
+      setIsOpen(true);
+      const prompt = e?.detail?.prompt;
+      const reply = e?.detail?.reply;
+      if (prompt) {
+        setMessages((current) => {
+          const alreadyAsked = current.some((m) => m.text === prompt);
+          if (alreadyAsked) return current;
+          return [
+            ...current,
+            { sender: 'user', text: prompt },
+            { 
+              sender: 'bot', 
+              text: reply || 'Hello! I can guide you to the right specialist. Are you looking for Dental Implants, Clear Aligners/Braces, Root Canal, Gum Therapy, or Cosmetic Care?' 
+            }
+          ];
+        });
+      }
+
+      setTimeout(() => {
+        const inputElem = document.querySelector('.chat-input-row input');
+        if (inputElem) {
+          inputElem.focus();
+        }
+        const launcherElem = document.querySelector('.dental-chatbot');
+        if (launcherElem) {
+          launcherElem.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+      }, 100);
+    };
+
+    window.addEventListener('open-dental-chatbot', handleOpen);
+    window.openDentalChatbot = (options) => handleOpen({ detail: options });
+
+    if (location.hash === '#chatbot' || location.hash === '#concierge' || location.state?.openChatbot) {
+      handleOpen({
+        detail: {
+          prompt: 'Not sure which specialist I need',
+          reply: 'Hello! I can guide you to the right specialist. Are you looking for Dental Implants, Clear Aligners/Braces, Root Canal, Gum Therapy, or Cosmetic Care?'
+        }
+      });
+    }
+
+    return () => {
+      window.removeEventListener('open-dental-chatbot', handleOpen);
+      delete window.openDentalChatbot;
+    };
+  }, [location.hash, location.state]);
 
   const openWhatsApp = (message) => {
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -77,6 +136,7 @@ function DentalChatbot({ isReady = true }) {
                 {message.text}
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
 
           <div className="chat-options">

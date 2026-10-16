@@ -19,12 +19,13 @@ function Footer() {
 					</form>
 				</div>
 
-					<div className="footer-column">
+				<div className="footer-column">
 					<h3>Quick Links</h3>
-					<a href="#about">About Us</a>
-					<a href="#treatments">Treatments</a>
-					<a href="#doctors">Our Doctors</a>
+					<Link to="/about">About Us</Link>
+					<Link to="/treatments">Treatments</Link>
+					<Link to="/doctors">Our Doctors</Link>
 					<Link to="/gallery">Gallery</Link>
+					<Link to="/reviews">Reviews</Link>
 					<Link to="/book-appointment">Book Appointment</Link>
 				</div>
 
@@ -34,7 +35,7 @@ function Footer() {
 					<p>Sunday<br /><small>10:00 AM - 06:00 PM</small></p>
 					<p>Saturday<br /><small>Private Concierge Surgery</small></p>
 					<p>Sunday<br /><small>Closed for Reflection</small></p>
-					<p className="direct-access">Direct Access<br /><small>+1 (800) 792-4632</small></p>
+					<p className="direct-access">Direct Access<br /><small>+91 77992 34108</small></p>
 				</div>
 
 				<div className="footer-column contact-column">

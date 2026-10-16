@@ -1,212 +1,416 @@
 import './index.css';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-const treatmentCards = [
+const WHATSAPP_NUMBER = '917799234108';
+
+const treatmentsData = [
   {
-    image: '/Assets/services/cosmetic-dentistry.webp',
-    pill: 'AESTHETIC',
-    tag: 'Veneers & Luminate',
-    title: 'Cosmetic & Aesthetic Dentistry',
-    description: 'Natural-looking veneers and smile design planned around your features.',
-    stats: [
-      { label: 'Visits', value: '1–2 Visits' },
-      { label: 'Longevity', value: '15+ Years' },
-      { label: 'Tech', value: 'DSD 3D' }
-    ],
-    price: 'Starting from',
-    amount: '1999 /unit',
-    cta: 'Book →'
+    id: 'rct',
+    number: '01',
+    category: 'Restorative & Crowns',
+    badge: 'Endodontics',
+    title: 'Root Canal Treatment (RCT)',
+    description: 'Advanced single-sitting microscopic therapy to relieve pain, eliminate deep infection, and preserve your natural tooth.',
+    features: ['Single-Sitting', 'Microscopic 3D', 'Pain-Free'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Microscopic Endodontics.jpg`,
+    objectPosition: 'center 20%'
   },
   {
-    image: '/Assets/services/dental-implants.webp',
-    pill: 'DIAMOND PROVIDER',
-    tag: 'Invisalign Diamond',
-    title: 'Orthodontics & Clear Aligners',
-    description: 'A discreet, digital way to create a straighter, more confident smile.',
-    stats: [
-      { label: 'Timeline', value: '6–12 Mos' },
-      { label: 'Diagnostics', value: 'iTero 5D' },
-      { label: 'Impressions', value: '100% Digital' }
-    ],
-    price: 'Plans from',
-    amount: '4999 /mo',
-    cta: 'Book →'
+    id: 'crowns',
+    number: '02',
+    category: 'Restorative & Crowns',
+    badge: 'Prosthodontics',
+    title: 'Ceramic and Zirconia Crowns',
+    description: 'Metal-free CAD/CAM monolithic zirconia and ceramic caps custom-milled for natural translucency and lifelong chewing strength.',
+    features: ['CAD/CAM Zirconia', '100% Metal-Free', 'Lifelike Shade'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/explore_images/intraoral-scanning-compressed.webp`,
+    objectPosition: 'center'
   },
   {
-    image: '/Assets/services/orthodontics.webp',
-    pill: 'LIFETIME WARRANTY',
-    tag: 'Single Implants',
-    title: 'Implantology & Oral Surgery',
-    description: 'Steady, computer-guided implant care for missing teeth.',
-    stats: [
-      { label: 'Precision', value: 'Sub- mm 3D' },
-      { label: 'Material', value: 'Zirconia/Ti' },
-      { label: 'Warranty', value: 'Lifetime' }
-    ],
-    price: 'Starting from',
-    amount: '5999 /fixture',
-    cta: 'Book →'
+    id: 'implants',
+    number: '03',
+    category: 'Dental Implants & Surgery',
+    badge: 'Oral Surgery',
+    title: 'Dental Implants',
+    description: 'Permanent biocompatible titanium root implants anchored with 3D surgical guidance to restore natural bite and aesthetics.',
+    features: ['Guided 3D Surgery', 'Grade-4 Titanium', 'Lifetime Fit'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/services/dental-implants.webp`,
+    objectPosition: 'center'
   },
   {
-    image: '/Assets/services/pediatric-care.webp',
-    pill: '98% SUCCESS',
-    tag: 'Gentle Root Canal',
-    title: 'Microscopic Endodontics',
-    description: 'Gentle root canal care focused on saving your natural tooth.',
-    stats: [
-      { label: 'Duration', value: '45–60 Min' },
-      { label: 'Preservation', value: '98% Tooth' },
-      { label: 'Comfort', value: 'Pain-Free' }
-    ],
-    price: 'Starting from',
-    amount: '2999 /canal',
-    cta: 'Book →'
+    id: 'replacement',
+    number: '04',
+    category: 'Restorative & Crowns',
+    badge: 'Prosthodontics',
+    title: 'Teeth Replacement',
+    description: 'High-precision fixed dental bridges and modern prosthetics designed to bridge missing gaps and prevent tooth drifting.',
+    features: ['Fixed Bridges', 'Zero Food Traps', 'Bite Restoration'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/implant-physiodispenser.jpg`,
+    objectPosition: 'center 30%'
   },
   {
-    image: '/Assets/services/dental-implants.webp',
-    pill: 'MINIMALLY INVASIVE',
-    tag: 'Deep Scaling',
-    title: 'Periodontics & Laser Gum Care',
-    description: 'Comfort-focused gum care for a healthier foundation.',
-    stats: [
-      { label: 'Method', value: 'LANAP Laser' },
-      { label: 'Downtime', value: 'Zero Days' },
-      { label: 'Anesthesia', value: 'Topical Gel' }
-    ],
-    price: 'Starting from',
-    amount: '3999 /quadrant',
-    cta: 'Book →'
+    id: 'children',
+    number: '05',
+    category: 'Gum & Preventive Care',
+    badge: 'Pediatric Care',
+    title: 'Special Care for Children’s Teeth',
+    description: 'Gentle, anxiety-free pediatric dental care including cavity shields, fluoride coatings, and preventive habit guidance.',
+    features: ['Child-Friendly', 'Cavity Shield', 'Gentle Fluoride'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/services/pediatric-care.webp`,
+    objectPosition: 'center'
   },
   {
-    image: '/Assets/services/pediatric-care.webp',
-    pill: 'FAMILY & KIDS',
-    tag: 'Children & Fluoride',
-    title: 'Preventive & Pediatric Care',
-    description: 'Simple preventive care for growing smiles and busy families.',
-    stats: [
-      { label: 'Care Type', value: 'Biomimetic' },
-      { label: 'Ages', value: 'All Ages' },
-      { label: 'Recall', value: '6 Months' }
-    ],
-    price: 'Preventive check',
-    amount: '999 /complete',
-    cta: 'Book →'
+    id: 'wisdom-teeth',
+    number: '06',
+    category: 'Dental Implants & Surgery',
+    badge: 'Oral Surgery',
+    title: 'Extraction of Wisdom Teeth',
+    description: 'Safe, atraumatic removal of impacted third molars under localized comfort anesthesia with fast-track recovery protocols.',
+    features: ['CBCT 3D Mapping', 'Minimally Invasive', 'Rapid Healing'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.png`,
+    objectPosition: 'center 35%'
+  },
+  {
+    id: 'dentures',
+    number: '07',
+    category: 'Restorative & Crowns',
+    badge: 'Prosthodontics',
+    title: 'Removable and BPS Dentures for Patients Without Teeth',
+    description: 'Premium BPS biofunctional dentures providing superior suction stability, comfortable gum fit, and natural smile contours.',
+    features: ['High Suction Fit', 'BPS Biofunctional', 'Comfortable Wear'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/dental-facilities.png`,
+    objectPosition: 'center'
+  },
+  {
+    id: 'laser-gum',
+    number: '08',
+    category: 'Gum & Preventive Care',
+    badge: 'Periodontics',
+    title: 'Laser Treatment for Gum Problems',
+    description: 'Minimally invasive dental laser care to treat bleeding gums, eliminate deep pocket bacteria, and regenerate tissue without scalpels.',
+    features: ['No Scalpel/Sutures', 'Laser Disinfection', 'Fast Healing'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Periodontics & Laser Gum Care.jpg`,
+    objectPosition: 'center 20%'
+  },
+  {
+    id: 'jaw-joint',
+    number: '09',
+    category: 'Dental Implants & Surgery',
+    badge: 'Specialist Care',
+    title: 'Jaw Joint Treatment',
+    description: 'Non-surgical clinical therapy for TMJ jaw clicking, joint discomfort, teeth grinding (bruxism), and bite muscular strain.',
+    features: ['Custom Night Splints', 'TMJ Relief', 'Bite Alignment'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/explore_images/dental-team-reviewing-scans-compressed.webp`,
+    objectPosition: 'center'
+  },
+  {
+    id: 'whitening',
+    number: '10',
+    category: 'Cosmetic & Alignment',
+    badge: 'Cosmetic Dentistry',
+    title: 'Teeth Whitening',
+    description: 'Clinical enamel-safe laser and LED brightening that safely lifts deep stains by up to 8 shades in a single 45-minute sitting.',
+    features: ['Up to 8 Shades Whiter', 'Enamel-Safe', 'Instant 1-Hour'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/services/cosmetic-dentistry.webp`,
+    objectPosition: 'center'
+  },
+  {
+    id: 'braces',
+    number: '11',
+    category: 'Cosmetic & Alignment',
+    badge: 'Orthodontics',
+    title: 'Alignment of Teeth (Braces)',
+    description: 'Virtually invisible clear aligners and modern ceramic braces to gently guide crowded or misaligned teeth into perfect balance.',
+    features: ['Clear Aligners', 'Ceramic Brackets', 'Digital iTero Scan'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/services/orthodontics.webp`,
+    objectPosition: 'center'
+  },
+  {
+    id: 'scaling',
+    number: '12',
+    category: 'Gum & Preventive Care',
+    badge: 'Preventive Care',
+    title: 'Ultrasonic Scaling (Teeth Cleaning)',
+    description: 'High-frequency ultrasonic vibration and air-polishing to remove plaque, stubborn calculus, and surface stains for fresh breath.',
+    features: ['Gentle Ultrasonic', 'Tartar Defense', 'Air-Flow Polish'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.png`,
+    objectPosition: 'center 30%'
   }
+];
+
+const categories = [
+  'All Treatments',
+  'Restorative & Crowns',
+  'Dental Implants & Surgery',
+  'Gum & Preventive Care',
+  'Cosmetic & Alignment'
 ];
 
 const steps = [
   {
     number: '01',
     title: '3D Digital Assessment',
-    text: 'Comprehensive intraoral diagnostic imaging and 3D CBCT diagnostics for exact restorative planning.',
+    text: 'High-definition intraoral 3D scanning and low-radiation CBCT diagnostics to evaluate your dental structure with sub-millimeter precision.',
     foot: 'Sub-millimeter mapping'
   },
   {
     number: '02',
-    title: 'Treatment Simulation',
-    text: 'Preview your outcome with digital smile design and custom treatment simulation before care begins.',
+    title: 'Tailored Treatment Plan',
+    text: 'Clear, transparent discussion of your diagnosis with full visual previews and step-by-step guidance from our senior specialists.',
     foot: 'Digital smile preview'
   },
   {
     number: '03',
-    title: 'Pain-Free Procedure',
-    text: 'Delivering gentle, precise treatment using advanced anesthetic protocols and minimally invasive techniques.',
+    title: 'Gentle & Painless Care',
+    text: 'Treatment delivered with localized computerized anesthesia, micro-instruments, and relaxing ambient surrounds for complete comfort.',
     foot: 'Anxiety-free protocol'
   },
   {
     number: '04',
-    title: 'Lifetime Maintenance',
-    text: 'Annual reviews, digital monitoring, and long-term care guidance to preserve your smile for years.',
+    title: 'Follow-Up & Maintenance',
+    text: 'Long-term preventive follow-ups, warranty protection, and dedicated post-care support to keep your smile radiant and healthy.',
     foot: 'Structural warranty'
   }
 ];
 
 function TreatmentsPage() {
+  const [selectedCategory, setSelectedCategory] = useState('All Treatments');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredTreatments = useMemo(() => {
+    return treatmentsData.filter((treatment) => {
+      const matchesCategory =
+        selectedCategory === 'All Treatments' || treatment.category === selectedCategory;
+      const q = searchQuery.toLowerCase().trim();
+      const matchesSearch =
+        !q ||
+        treatment.title.toLowerCase().includes(q) ||
+        treatment.description.toLowerCase().includes(q) ||
+        treatment.badge.toLowerCase().includes(q) ||
+        treatment.features.some((f) => f.toLowerCase().includes(q));
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
+
+  const getWhatsAppUrl = (treatmentTitle) => {
+    const text = `Hello Ma Dental Clinic, I would like to enquire about ${treatmentTitle}.`;
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  };
+
   return (
     <div className="treatments-shell">
+      {/* Top Breadcrumb */}
       <div className="page-breadcrumb treatments-breadcrumb">
         <span className="crumb-icon">⌂</span>
-        <span>Home</span>
+        <Link to="/" className="crumb-link">Home</Link>
         <span className="crumb-separator">/</span>
-        <span>Treatments</span>
+        <span className="crumb-current">Treatments</span>
       </div>
 
       <main className="treatments-page">
+        {/* Hero Section with Clinical Assurances */}
         <section className="treatments-hero">
-          <span className="section-kicker">Comprehensive clinical care</span>
+          <div className="hero-kicker-row">
+            <span className="section-kicker">✦ Comprehensive Clinical Care</span>
+            <span className="hero-patient-count">12 Specialized Treatments</span>
+          </div>
+
           <div className="hero-row">
-            <div>
-              <h1>Advanced Dental Treatments &amp; Services</h1>
-              <p>Focused care for healthier teeth, calmer visits, and confident smiles.</p>
+            <div className="hero-main-copy">
+              <h1>Advanced Dental Treatments &amp; Specialized Care</h1>
+              <p>
+                Experience world-class dental expertise tailored to your comfort. From painless root canals and guided dental implants to ceramic crowns and laser gum therapy, our specialized MDS doctors ensure long-lasting oral health and confident smiles.
+              </p>
             </div>
 
-            <div className="hero-badge">
-              <span className="badge-icon">◌</span>
-              <span>Price Transparency</span>
-              <small>Zero hidden fees &amp; OPA available</small>
+            {/* Clinical Trust Strip Badges */}
+            <div className="hero-trust-cards">
+              <div className="trust-card-mini">
+                <span className="trust-mini-icon">🛡️</span>
+                <div>
+                  <strong>Class-B Sterilization</strong>
+                  <small>100% Hospital Protocol</small>
+                </div>
+              </div>
+              <div className="trust-card-mini">
+                <span className="trust-mini-icon">🔬</span>
+                <div>
+                  <strong>3D Digital CBCT</strong>
+                  <small>Sub-mm Precision</small>
+                </div>
+              </div>
+              <div className="trust-card-mini">
+                <span className="trust-mini-icon">👨‍⚕️</span>
+                <div>
+                  <strong>MDS Specialists</strong>
+                  <small>Multi-Discipline Team</small>
+                </div>
+              </div>
+              <div className="trust-card-mini">
+                <span className="trust-mini-icon">🕊️</span>
+                <div>
+                  <strong>Painless Protocol</strong>
+                  <small>Gentle Dental Care</small>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="category-bar">
-            <button type="button" className="filter active">All Treatments (6)</button>
-            <button type="button" className="filter">Cosmetic Dentistry</button>
-            <button type="button" className="filter">Smile Design</button>
-            <button type="button" className="filter">Restorative Care</button>
-            <button type="button" className="filter">Family Care</button>
+          {/* Interactive Search & Category Filter Controls */}
+          <div className="treatments-controls-card">
+            <div className="treatment-search-box">
+              <span className="search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="text"
+                placeholder="Search treatments (e.g., Root Canal, Implants, Crowns, Braces, Laser...)"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search treatments"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  className="clear-search-btn"
+                  onClick={() => setSearchQuery('')}
+                  aria-label="Clear search"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+
+            <div className="category-bar">
+              {categories.map((category) => {
+                const count =
+                  category === 'All Treatments'
+                    ? treatmentsData.length
+                    : treatmentsData.filter((t) => t.category === category).length;
+                const isActive = selectedCategory === category;
+                return (
+                  <button
+                    key={category}
+                    type="button"
+                    className={`filter ${isActive ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category} <span className="filter-count">({count})</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </section>
 
-        <section className="treatment-grid">
-          {treatmentCards.map((card) => (
-            <article className="treatment-card" key={card.title}>
-              <div className="treatment-image-wrap">
-                <img src={card.image} alt={card.title} />
-                <span className="card-pill">{card.pill}</span>
-              </div>
+        {/* Dynamic Status Row */}
+        <div className="treatments-status-row">
+          <span>
+            Showing <strong>{filteredTreatments.length}</strong> of {treatmentsData.length} specialized dental treatments
+          </span>
+          {(selectedCategory !== 'All Treatments' || searchQuery) && (
+            <button
+              type="button"
+              className="reset-filters-btn"
+              onClick={() => {
+                setSelectedCategory('All Treatments');
+                setSearchQuery('');
+              }}
+            >
+              Reset Filters
+            </button>
+          )}
+        </div>
 
-              <div className="card-body">
-                <div className="card-tag-row">
-                  <span className="mini-tag">{card.tag}</span>
+        {/* Treatments Grid: Edge-to-Edge Aligned Cards */}
+        <section className="treatment-grid" aria-label="Dental treatments catalogue">
+          {filteredTreatments.length > 0 ? (
+            filteredTreatments.map((card) => (
+              <article className="treatment-card" key={card.id}>
+                {/* Photo Header: Full-width Edge-to-Edge Aligned */}
+                <div className="treatment-image-wrap">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    loading="lazy"
+                    style={{ objectPosition: card.objectPosition || 'center' }}
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = `${process.env.PUBLIC_URL || ''}/Assets/services/cosmetic-dentistry.webp`;
+                    }}
+                  />
+                  <div className="treatment-image-overlay" />
+                  <span className="card-badge-pill">{card.badge}</span>
+                  <span className="card-index-pill">#{card.number}</span>
                 </div>
 
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
+                {/* Card Body */}
+                <div className="card-body">
+                  <div className="card-category-sub">{card.category}</div>
+                  <h3 className="treatment-card-title">{card.title}</h3>
+                  <p className="treatment-card-desc">{card.description}</p>
 
-                <div className="stats-row">
-                  {card.stats.map((stat) => (
-                    <div key={stat.label} className="stat-box">
-                      <strong>{stat.value}</strong>
-                      <span>{stat.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="card-footer">
-                  <div className="price-box">
-                    <small>{card.price}</small>
-                    <strong>{card.amount}</strong>
+                  {/* Inline Horizontal Chips */}
+                  <div className="treatment-chips-row">
+                    {card.features.map((feature) => (
+                      <span key={feature} className="treatment-mini-chip">
+                        <span className="chip-check" aria-hidden="true">✓</span>
+                        {feature}
+                      </span>
+                    ))}
                   </div>
-                  <Link to="/book-appointment" className="book-btn">{card.cta}</Link>
+
+                  {/* Compact Side-by-Side Action Footer */}
+                  <div className="card-footer">
+                    <Link to="/book-appointment" className="treatment-book-btn">
+                      Book Consultation <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                    <a
+                      href={getWhatsAppUrl(card.title)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="treatment-wa-btn"
+                      title={`WhatsApp enquiry for ${card.title}`}
+                    >
+                      <span className="wa-icon" aria-hidden="true">💬</span> WhatsApp
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))
+          ) : (
+            <div className="no-treatments-found">
+              <div className="no-results-icon" aria-hidden="true">🔍</div>
+              <h3>No treatments matched your search</h3>
+              <p>We could not find any treatment matching "{searchQuery}". Try a different keyword or reset filters.</p>
+              <button
+                type="button"
+                className="reset-search-btn"
+                onClick={() => {
+                  setSelectedCategory('All Treatments');
+                  setSearchQuery('');
+                }}
+              >
+                Show All 12 Treatments
+              </button>
+            </div>
+          )}
         </section>
 
+        {/* Precision Treatment Journey */}
         <section className="journey-section compact-journey">
           <div className="journey-heading">
-            <span className="section-kicker">Predictable clinical workflows</span>
+            <span className="section-kicker">✦ Predictable Clinical Workflows</span>
             <h2>Your Precision Treatment Journey</h2>
-            <p>A clear three-step rhythm from first conversation to confident follow-up.</p>
+            <p>A transparent four-step rhythm from first consultation to confident follow-up.</p>
           </div>
 
           <div className="journey-badge">
             <span className="badge-icon">✦</span>
-            Powered by 3D CBCT &amp; iTero Optical Scanners
+            Powered by 3D CBCT, iTero Optical Scanners &amp; Class-B Autoclaves
           </div>
 
           <div className="journey-grid">
-            {steps.slice(0, 3).map((step) => (
+            {steps.map((step) => (
               <article className="step-card" key={step.number}>
                 <div className="step-number">{step.number}</div>
                 <h3>{step.title}</h3>
@@ -217,16 +421,26 @@ function TreatmentsPage() {
           </div>
         </section>
 
+        {/* Dental Concierge Strip */}
         <section className="consult-strip">
           <div className="consult-copy">
-            <span className="section-kicker">Dental concierge &amp; triage</span>
+            <span className="section-kicker">✦ Dental Concierge &amp; Triage</span>
             <h2>Not sure where to begin?</h2>
-            <p>Start with a calm conversation and we will help you choose the right next step.</p>
+            <p>Start with a calm conversation and our clinical care coordinator will guide you to the right specialist.</p>
           </div>
 
           <div className="consult-actions">
-            <Link to="/book-appointment" className="reserve-btn">Reserve Initial Consultation</Link>
-            <button type="button" className="call-btn">Speak to Doctor: +1 (800) 555-MAAR</button>
+            <Link to="/book-appointment" className="reserve-btn">
+              Book Consultation <span aria-hidden="true">&rarr;</span>
+            </Link>
+            <a
+              href="https://wa.me/917799234108?text=Hello%20Doctor%2C%20I%20would%20like%20to%20consult%20regarding%20dental%20treatment."
+              target="_blank"
+              rel="noreferrer"
+              className="call-btn"
+            >
+              <span className="wa-icon" aria-hidden="true">💬</span> WhatsApp: +91 77992 34108
+            </a>
           </div>
         </section>
       </main>

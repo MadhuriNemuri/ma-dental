@@ -110,6 +110,26 @@ function DoctorsPage() {
     });
   }, [searchValue, selectedCategory]);
 
+  const handleAskConcierge = () => {
+    if (typeof window !== 'undefined') {
+      if (typeof window.openDentalChatbot === 'function') {
+        window.openDentalChatbot({
+          prompt: 'Not sure which specialist I need',
+          reply: 'Hello! I can guide you to the right dental specialist. Are you looking for Dental Implants, Braces / Aligners, Root Canal Treatment, Gum Therapy, or Cosmetic Care?'
+        });
+      } else {
+        window.dispatchEvent(
+          new CustomEvent('open-dental-chatbot', {
+            detail: {
+              prompt: 'Not sure which specialist I need',
+              reply: 'Hello! I can guide you to the right dental specialist. Are you looking for Dental Implants, Braces / Aligners, Root Canal Treatment, Gum Therapy, or Cosmetic Care?'
+            }
+          })
+        );
+      }
+    }
+  };
+
   return (
     <div className="doctors-shell">
       <main className="doctors-page">
@@ -177,7 +197,6 @@ function DoctorsPage() {
           {filteredDoctors.map((doctor) => (
             <article className="doctor-card" key={doctor.name}>
               <div className="doctor-card__image">
-                <span className="doctor-card__focus">{doctor.specialty}</span>
                 <img src={doctor.image} alt={doctor.name} />
                 <span className="doctor-card__rating">
                   <span className="rating-star">★</span> {doctor.rating} ({doctor.reviewCount})
@@ -185,6 +204,10 @@ function DoctorsPage() {
               </div>
 
               <div className="doctor-card__body">
+                <div className="doctor-card__tag-row">
+                  <span className="doctor-card__focus">{doctor.specialty}</span>
+                  <span className="doctor-card__exp">{doctor.years}</span>
+                </div>
                 <h3>{doctor.name}</h3>
                 <p className="doctor-degree">{doctor.degree}</p>
                 <p className="doctor-description">{doctor.description}</p>
@@ -250,7 +273,7 @@ function DoctorsPage() {
 
           <div className="cta-actions">
             <Link to="/book-appointment" className="primary-cta">Book Consultation</Link>
-            <button type="button" className="secondary-cta">Ask Concierge</button>
+            <button type="button" className="secondary-cta" onClick={handleAskConcierge}>Ask Concierge</button>
           </div>
         </section>
       </main>

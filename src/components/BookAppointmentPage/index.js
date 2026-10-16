@@ -23,7 +23,6 @@ const SERVICES = [
   'Kids & Family Care (General Dentistry)',
   'Teeth Cleaning & Polishing (Scaling)',
   'Tooth Extraction & Wisdom Tooth Care',
-  'Hair Transplant Solutions',
   'General Dental Consultation & Checkup'
 ];
 
@@ -96,7 +95,7 @@ function BookAppointmentPage() {
     const dateStr = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 
     const slipContent = `======================================================================
-               MA DENTAL & HAIR TRANSPLANT CENTRE
+                         MA DENTAL CLINIC
                   APPOINTMENT CONFIRMATION SLIP
 ======================================================================
 
@@ -120,7 +119,7 @@ Branches           : Pileru (Main Clinic), Tirupati, Bangalore,
 Support Contact    : Instant WhatsApp & Call Confirmation
 
 ======================================================================
-Thank you for choosing Ma Dental & Hair Transplant Centre!
+Thank you for choosing Ma Dental Clinic!
 Please show this confirmation slip / reference ID at the clinic.
 ======================================================================`;
 
@@ -189,7 +188,7 @@ Please show this confirmation slip / reference ID at the clinic.
 
   const getWhatsAppUrl = () => {
     const refCode = bookingRef || 'MD-' + Math.floor(1000 + Math.random() * 9000);
-    const text = `Hello Ma Dental and Hair Transplant Centre, I have booked an appointment:
+    const text = `Hello Ma Dental Clinic, I have booked an appointment:
 *Reference ID:* #${refCode}
 *Patient Name:* ${formData.fullName}
 *Phone Number:* ${formData.phone}
@@ -283,7 +282,7 @@ Please confirm my appointment. Thank you!`;
               <div className="ref-success-badge">✓ Submission Successful</div>
               <h2 className="ref-success-title">Thank You for Submitting the Details!</h2>
               <p className="ref-success-desc">
-                Dear <strong>{formData.fullName}</strong>, your appointment request has been submitted successfully to <strong>Ma Dental &amp; Hair Transplant Centre</strong>.
+                Dear <strong>{formData.fullName}</strong>, your appointment request has been submitted successfully to <strong>Ma Dental Clinic</strong>.
               </p>
 
               {/* Submitted Appointment Details */}
@@ -416,12 +415,12 @@ Please confirm my appointment. Thank you!`;
           {/* BELOW IMAGE: CLINIC HEADING & SERVICE PILLS (FROM REFERENCE) */}
           <div className="ref-left-content">
             <h2 className="ref-section-heading">
-              Complete Dental &amp; <br />
-              <span>Hair Transplant Care</span>
+              Complete Modern <br />
+              <span>Dental Care &amp; Specialties</span>
             </h2>
 
             <p className="ref-section-desc">
-              We provide advanced dental treatments and hair transplant solutions with a focus on comfort, precision and long-lasting results.
+              We provide advanced dental treatments and personalized oral care solutions with a focus on comfort, precision and long-lasting results.
             </p>
 
             <div className="ref-script-line">
