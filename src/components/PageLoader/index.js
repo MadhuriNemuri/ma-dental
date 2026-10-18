@@ -102,7 +102,7 @@ function PageLoader({ onFinish }) {
       {/* Info text: position: fixed at (50vw, 50vh + 88px) cleanly below the ring */}
       <div className={`loader-info ${stage === 'flying' ? 'fade-out' : ''}`}>
         <div className="loader-percentage">{progress}%</div>
-        <div className="loader-brand">MA DENTAL CLINIC</div>
+        <div className="loader-brand">MA DENTAL</div>
         <div className="loader-tagline">Care That Makes You Smile</div>
       </div>
     </div>
