@@ -6,7 +6,11 @@ function Footer() {
 		<footer className="site-footer" id="contact">
 			<div className="footer-main">
 				<div className="footer-brand-column">
-					<h2>Ma Dental</h2>
+					<h2 className="footer-brand-title">
+						<Link to="/" className="footer-brand-link" aria-label="Ma Dental Home">
+							<span className="footer-brand-ma">Ma</span> <span className="footer-brand-dental">Dental</span>
+						</Link>
+					</h2>
 					<p>Advanced Dentistry. Gentle Care.<br />Healthier Smiles.</p>
 					<div className="social-links" aria-label="Social media links">
 						<a href="#instagram" aria-label="Instagram">IG</a>
