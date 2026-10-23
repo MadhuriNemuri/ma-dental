@@ -8,7 +8,8 @@ const categories = [
   'Orthodontics',
   'Periodontics',
   'Pediatric',
-  'Cosmetic'
+  'Cosmetic',
+  'Hygiene'
 ];
 
 const doctors = [
@@ -27,6 +28,48 @@ const doctors = [
     location: 'Mon, Wed, Fri'
   },
   {
+    name: 'Dr. Y. MD',
+    degree: 'MD • Hygiene Consultant',
+    description: 'Specializing in oral hygiene consulting, gentle preventive care, and making dental visits anxiety-free for younger smiles while building healthy habits.',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
+    category: 'Hygiene',
+    categories: ['Hygiene', 'Pediatric'],
+    years: '10 Yrs Exp',
+    specialty: 'Oral Hygiene Consultant',
+    rating: '4.99',
+    reviewCount: '290',
+    languages: ['English', 'Telugu', 'Hindi'],
+    location: 'Mon, Wed, Fri'
+  },
+  {
+    name: 'Dr. G. Rishitha Reddy',
+    degree: 'M.D.S. • Periodontist & Implantitis',
+    description: 'Expert in clear aligner therapy, smile enhancement, and interceptive orthodontics for teens and adults with gentle techniques.',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.png`,
+    category: 'Periodontics',
+    categories: ['Periodontics', 'Cosmetic'],
+    years: '8 Yrs Exp',
+    specialty: 'Periodontics & Implantitis',
+    rating: '4.98',
+    reviewCount: '388',
+    languages: ['English', 'Telugu'],
+    location: 'Mon, Wed, Thu'
+  },
+  {
+    name: 'Dr. Y. Shanti Priya',
+    degree: 'B.D.S. • Cosmetic Dental Surgeon',
+    description: 'Focused on gentle preventive dentistry, painless restorations, and making dental visits fun and anxiety-free for younger smiles while building healthy habits.',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.png`,
+    category: 'Pediatric',
+    categories: ['Pediatric', 'Endodontics', 'Cosmetic'],
+    years: '8 Yrs Exp',
+    specialty: 'Dental Surgeon & Pediatric Care',
+    rating: '4.96',
+    reviewCount: '265',
+    languages: ['English', 'Telugu'],
+    location: 'Tue, Wed, Fri'
+  },
+  {
     name: 'Dr. M. Hemadri',
     degree: 'M.D.S. • Orthodontist',
     description: 'Expert in clear aligner therapy (Invisible Diamond Provider) and interceptive orthodontics tailored for teens and adult smile enhancements.',
@@ -39,34 +82,6 @@ const doctors = [
     reviewCount: '428',
     languages: ['English', 'Telugu'],
     location: 'Tue, Thu, Sat'
-  },
-  {
-    name: 'Dr. G. Rishitha Reddy',
-    degree: 'M.D.S. • Periodontist & Implantologist',
-    description: 'Internationally recognized for porcelain veneers, smile makeovers, and minimally invasive aesthetic enhancements that look naturally radiant.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-2-enhanced.png`,
-    category: 'Periodontics',
-    categories: ['Periodontics', 'Cosmetic'],
-    years: '12 Yrs Exp',
-    specialty: 'Periodontics & Implantology',
-    rating: '4.98',
-    reviewCount: '388',
-    languages: ['English', 'Telugu'],
-    location: 'Mon, Wed, Thu'
-  },
-  {
-    name: 'Dr. Y. Shanti Priya',
-    degree: 'B.D.S. • Cosmetic Dental Surgeon',
-    description: 'Focused on gentle preventive dentistry, painless restorations, and making dental visits fun and anxiety-free for all ages.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-1-enhanced.png`,
-    category: 'Pediatric',
-    categories: ['Pediatric', 'Endodontics', 'Cosmetic'],
-    years: '8 Yrs Exp',
-    specialty: 'Dental Surgeon & Pediatric Care',
-    rating: '4.96',
-    reviewCount: '265',
-    languages: ['English', 'Telugu'],
-    location: 'Tue, Wed, Fri'
   }
 ];
 

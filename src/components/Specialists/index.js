@@ -3,34 +3,26 @@ import { Link } from 'react-router-dom';
 
 const specialists = [
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`,
-		experience: '14 Yrs Exp',
-		name: 'Dr. T. BHANU PRAKASH REDDY',
-		qualification: 'M.D.S. • COSMETIC DENTAL SURGEON',
-		description: 'Specializing in complex full-mouth rehabilitation and advanced implant procedures.',
-		category: 'Dental Surgery'
+		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
+		experience: '10 Yrs Exp',
+		name: 'Dr. Y. MD',
+		qualification: 'MD • HYGIENE CONSULTANT',
+		description: 'Making dental visits fun and anxiety-free for younger smiles while building healthy habits.',
+		category: 'Hygiene Consultant'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-2-enhanced.png`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.png`,
 		experience: '8 Yrs Exp',
 		name: 'Dr. G. RISHITHA REDDY',
-		qualification: 'M.D.S. • PERIODONTIST & IMPLANTITIS',
+		qualification: 'M.D.S., • PERIODONTIST & IMPLANTITIS',
 		description: 'Expert in clear aligner therapy and interceptive orthodontics for teens and adults.',
 		category: 'Periodontist'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-3-enhanced.png`,
-		experience: '11 Yrs Exp',
-		name: 'Dr. M. HEMADRI',
-		qualification: 'M.D.S. • ORTHODONTIST',
-		description: 'Expert in clear aligner therapy, smile enhancement, and interceptive orthodontics for teens and adults.',
-		category: 'Orthodontics'
-	},
-	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-1-enhanced.png`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.png`,
 		experience: '8 Yrs Exp',
 		name: 'Dr. Y. SHANTI PRIYA',
-		qualification: 'B.D.S. • COSMETIC DENTAL SURGEON',
+		qualification: 'B.D.S., • COSMETIC DENTAL SURGEON',
 		description: 'Making dental visits fun and anxiety-free for younger smiles while building healthy habits.',
 		category: 'Dental Surgeon'
 	}

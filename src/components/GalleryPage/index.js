@@ -23,7 +23,7 @@ const GALLERY_ITEMS = [
     title: 'Dr. Y. Shanti Priya',
     category: 'Doctors & Team',
     role: 'Cosmetic & Pediatric',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-1-enhanced.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.png`,
     badge: 'DOCTOR',
     iconType: 'tooth',
     description: 'Experienced dental surgeon dedicated to gentle family, cosmetic and pediatric dental care.'
@@ -33,10 +33,20 @@ const GALLERY_ITEMS = [
     title: 'Dr. G. Rishitha Reddy',
     category: 'Doctors & Team',
     role: 'Periodontics & Implants',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-2-enhanced.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.png`,
     badge: 'DOCTOR',
     iconType: 'tooth',
     description: 'Specialist in minimally invasive gum therapies, bone grafting, and dental implants.'
+  },
+  {
+    id: 99,
+    title: 'Dr. Y. MD',
+    category: 'Doctors & Team',
+    role: 'Hygiene Consultant',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
+    badge: 'DOCTOR',
+    iconType: 'shield',
+    description: 'Specialist in preventive oral hygiene, patient education, and anxiety-free gentle smile care.'
   },
   {
     id: 3,
