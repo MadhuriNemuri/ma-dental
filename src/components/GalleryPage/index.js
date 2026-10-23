@@ -40,7 +40,7 @@ const GALLERY_ITEMS = [
   },
   {
     id: 99,
-    title: 'Dr. Y. MD',
+    title: 'Dr. Mounika Pothireddy',
     category: 'Doctors & Team',
     role: 'Hygiene Consultant',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
