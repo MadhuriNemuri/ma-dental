@@ -10,7 +10,7 @@ const CATEGORIES = [
 ];
 
 const FEATURED_DOCTOR = {
-  name: 'Dr. B. Bhanu Prakash Reddy',
+  name: 'Dr. T. Bhanu Prakash Reddy',
   role: 'Chief Dental Surgeon & Implantologist',
   badge: 'Lead Dentist',
   image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`,

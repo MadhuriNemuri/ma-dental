@@ -14,7 +14,7 @@ const categories = [
 
 const doctors = [
   {
-    name: 'Dr. B. Bhanu Prakash Reddy',
+    name: 'Dr. T. Bhanu Prakash Reddy',
     degree: 'M.D.S. • Cosmetic Dental Surgeon',
     description: 'Specializing in complex full-mouth rehabilitation, bone grafting, and advanced implant procedures with gentle surgical techniques.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`,

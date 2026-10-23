@@ -120,7 +120,7 @@ function AboutPage() {
 
         <section className="doctor-highlight">
           <div className="doctor-photo">
-            <img src={`${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`} alt="Dr. Bhanu Prakash Reddy" />
+            <img src={`${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`} alt="Dr. T. Bhanu Prakash Reddy" />
           </div>
 
           <div className="doctor-quote">
@@ -130,7 +130,7 @@ function AboutPage() {
             </p>
 
             <div className="doctor-signature">
-              <strong>Dr. Bhanu Prakash Reddy, B.D.S</strong>
+              <strong>Dr. T. Bhanu Prakash Reddy, B.D.S</strong>
               <span>Implant &amp; Cosmetic Dental Surgeon</span>
             </div>
 

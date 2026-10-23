@@ -24,7 +24,7 @@ const treatmentsData = [
     title: 'Ceramic and Zirconia Crowns',
     description: 'Metal-free CAD/CAM monolithic zirconia and ceramic caps custom-milled for natural translucency and lifelong chewing strength.',
     features: ['CAD/CAM Zirconia', '100% Metal-Free', 'Lifelike Shade'],
-    image: `${process.env.PUBLIC_URL || ''}/Assets/explore_images/intraoral-scanning-compressed.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Cosmetic & Aesthetic Dentistry.jpg`,
     objectPosition: 'center'
   },
   {
@@ -32,7 +32,7 @@ const treatmentsData = [
     number: '03',
     category: 'Dental Implants & Surgery',
     badge: 'Oral Surgery',
-    title: 'Dental Implants',
+    title: 'Dental Implants & Placements',
     description: 'Permanent biocompatible titanium root implants anchored with 3D surgical guidance to restore natural bite and aesthetics.',
     features: ['Guided 3D Surgery', 'Grade-4 Titanium', 'Lifetime Fit'],
     image: `${process.env.PUBLIC_URL || ''}/Assets/services/dental-implants.webp`,
@@ -43,7 +43,7 @@ const treatmentsData = [
     number: '04',
     category: 'Restorative & Crowns',
     badge: 'Prosthodontics',
-    title: 'Teeth Replacement',
+    title: 'Teeth Replacement (Fixed Bridges)',
     description: 'High-precision fixed dental bridges and modern prosthetics designed to bridge missing gaps and prevent tooth drifting.',
     features: ['Fixed Bridges', 'Zero Food Traps', 'Bite Restoration'],
     image: `${process.env.PUBLIC_URL || ''}/Assets/images/implant-physiodispenser.jpg`,
@@ -68,7 +68,7 @@ const treatmentsData = [
     title: 'Extraction of Wisdom Teeth',
     description: 'Safe, atraumatic removal of impacted third molars under localized comfort anesthesia with fast-track recovery protocols.',
     features: ['CBCT 3D Mapping', 'Minimally Invasive', 'Rapid Healing'],
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Implantology & Oral Surgery.jpg`,
     objectPosition: 'center 35%'
   },
   {
@@ -98,7 +98,7 @@ const treatmentsData = [
     number: '09',
     category: 'Dental Implants & Surgery',
     badge: 'Specialist Care',
-    title: 'Jaw Joint Treatment',
+    title: 'Jaw Joint Treatment (TMJ)',
     description: 'Non-surgical clinical therapy for TMJ jaw clicking, joint discomfort, teeth grinding (bruxism), and bite muscular strain.',
     features: ['Custom Night Splints', 'TMJ Relief', 'Bite Alignment'],
     image: `${process.env.PUBLIC_URL || ''}/Assets/explore_images/dental-team-reviewing-scans-compressed.webp`,
@@ -120,7 +120,7 @@ const treatmentsData = [
     number: '11',
     category: 'Cosmetic & Alignment',
     badge: 'Orthodontics',
-    title: 'Alignment of Teeth (Braces)',
+    title: 'Alignment of Teeth (Braces & Clear Aligners)',
     description: 'Virtually invisible clear aligners and modern ceramic braces to gently guide crowded or misaligned teeth into perfect balance.',
     features: ['Clear Aligners', 'Ceramic Brackets', 'Digital iTero Scan'],
     image: `${process.env.PUBLIC_URL || ''}/Assets/services/orthodontics.webp`,
@@ -134,8 +134,52 @@ const treatmentsData = [
     title: 'Ultrasonic Scaling (Teeth Cleaning)',
     description: 'High-frequency ultrasonic vibration and air-polishing to remove plaque, stubborn calculus, and surface stains for fresh breath.',
     features: ['Gentle Ultrasonic', 'Tartar Defense', 'Air-Flow Polish'],
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Preventive & Pediatric Care.jpg`,
     objectPosition: 'center 30%'
+  },
+  {
+    id: 'digital-impressions',
+    number: '13',
+    category: 'Restorative & Crowns',
+    badge: 'Digital Dentistry',
+    title: '3D Digital Impressions & Intraoral Scanning',
+    description: 'Say goodbye to uncomfortable putty trays. Our high-resolution 3D intraoral scanner maps your entire bite digitally in seconds with micron precision.',
+    features: ['Zero Mess or Gagging', 'Real-time 3D Preview', 'Fast Custom Prosthetics'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/explore_images/intraoral-scanning-compressed.webp`,
+    objectPosition: 'center'
+  },
+  {
+    id: 'jaw-fractures',
+    number: '14',
+    category: 'Dental Implants & Surgery',
+    badge: 'Maxillofacial Surgery',
+    title: 'Jaw Fractures & Management',
+    description: 'Emergency and planned clinical management of mandible and maxilla fractures, jaw trauma stabilization, and bite realignment by maxillofacial experts.',
+    features: ['Trauma Management', 'Bite Realignment', 'Mini-Plate Fixation'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.png`,
+    objectPosition: 'center 35%'
+  },
+  {
+    id: 'flap-surgery',
+    number: '15',
+    category: 'Gum & Preventive Care',
+    badge: 'Periodontal Surgery',
+    title: 'Periodontal Flap Surgery',
+    description: 'Advanced micro-surgical gum procedure to cleanse deep tartar pockets, arrest persistent bone loss, and stimulate tissue regeneration with biocompatible grafts.',
+    features: ['Pocket Elimination', 'Bone Regeneration', 'Stabilizes Loose Teeth'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Periodontics & Laser Gum Care.jpg`,
+    objectPosition: 'center 20%'
+  },
+  {
+    id: 'dental-fillings',
+    number: '16',
+    category: 'Restorative & Crowns',
+    badge: 'Restorative Care',
+    title: 'Dental Fillings & Restorations (GIC, Composite & Modern Types)',
+    description: 'Long-lasting cavity restorations using 4 modern filling varieties: Fluoride-releasing GIC (Glass Ionomer Cement), Tooth-Colored Composites, Inlays/Onlays, and Alignment sealing.',
+    features: ['GIC (Glass Ionomer) Fillings', 'Aesthetic Composites', 'Inlays & Onlays', 'Cavity Shields'],
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Microscopic Endodontics.jpg`,
+    objectPosition: 'center 25%'
   }
 ];
 
@@ -213,7 +257,7 @@ function TreatmentsPage() {
         <section className="treatments-hero">
           <div className="hero-kicker-row">
             <span className="section-kicker">✦ Comprehensive Clinical Care</span>
-            <span className="hero-patient-count">12 Specialized Treatments</span>
+            <span className="hero-patient-count">{treatmentsData.length} Specialized Treatments</span>
           </div>
 
           <div className="hero-row">
