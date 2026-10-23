@@ -13,7 +13,7 @@ function Navbar() {
 		<header className={`site-header${isMenuOpen ? ' mobile-open' : ''}`}>
 			<Link className="brand" to="/" aria-label="Ma Dental home" onClick={closeMenu}>
 				<img
-					src={`${process.env.PUBLIC_URL || ''}/Assets/logo m.png`}
+					src={`${process.env.PUBLIC_URL || ''}/Assets/navbar_logo.png`}
 					alt="Ma Dental"
 					className="brand-logo"
 				/>
