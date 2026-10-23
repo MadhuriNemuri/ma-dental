@@ -5,7 +5,7 @@ const specialists = [
 	{
 		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
 		experience: '10 Yrs Exp',
-		name: 'Dr. Mounika Pothireddy',
+		name: 'Mounika Pothireddy',
 		qualification: 'MD • HYGIENE CONSULTANT',
 		description: 'Making dental visits fun and anxiety-free for younger smiles while building healthy habits.',
 		category: 'Hygiene Consultant'

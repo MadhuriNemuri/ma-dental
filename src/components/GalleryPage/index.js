@@ -40,11 +40,11 @@ const GALLERY_ITEMS = [
   },
   {
     id: 99,
-    title: 'Dr. Mounika Pothireddy',
+    title: 'Mounika Pothireddy',
     category: 'Doctors & Team',
     role: 'Hygiene Consultant',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
-    badge: 'DOCTOR',
+    badge: 'CONSULTANT',
     iconType: 'shield',
     description: 'Specialist in preventive oral hygiene, patient education, and anxiety-free gentle smile care.'
   },

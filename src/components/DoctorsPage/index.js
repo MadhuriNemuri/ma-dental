@@ -28,7 +28,7 @@ const doctors = [
     location: 'Mon, Wed, Fri'
   },
   {
-    name: 'Dr. Mounika Pothireddy',
+    name: 'Mounika Pothireddy',
     degree: 'MD • Hygiene Consultant',
     description: 'Specializing in oral hygiene consulting, gentle preventive care, and making dental visits anxiety-free for younger smiles while building healthy habits.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
