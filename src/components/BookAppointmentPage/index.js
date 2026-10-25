@@ -76,7 +76,7 @@ function BookAppointmentPage() {
       `"${(item.preferredDate || '').replace(/"/g, '""')}"`,
       `"${(item.service || '').replace(/"/g, '""')}"`,
       `"${(item.message || '').replace(/"/g, '""')}"`,
-      `"${item.status || 'Pending Confirmation'}"`
+      `"${item.status || 'Submitted Successfully'}"`
     ]);
 
     const csvContent = '\uFEFF' + [headers.join(','), ...rows.map((e) => e.join(','))].join('\n');
@@ -101,7 +101,7 @@ function BookAppointmentPage() {
 
 REFERENCE ID       : #${refCode}
 BOOKING TIME       : ${dateStr}
-STATUS             : Pending Clinic Confirmation
+STATUS             : Submitted Successfully
 
 ----------------------- PATIENT INFORMATION --------------------------
 Patient Name       : ${formData.fullName}
@@ -154,7 +154,7 @@ Please show this confirmation slip / reference ID at the clinic.
       preferredDate: formData.preferredDate || 'Earliest Available',
       service: formData.service,
       message: formData.message.trim() || 'None',
-      status: 'Pending Confirmation'
+      status: 'Submitted Successfully'
     };
 
     // 1. Save locally so user can always download Excel sheet (.csv)
@@ -314,7 +314,7 @@ Please confirm my appointment. Thank you!`;
                   </div>
                   <div className="ref-ticket-row">
                     <span>Status:</span>
-                    <strong style={{ color: '#16a34a' }}>Pending Confirmation</strong>
+                    <strong style={{ color: '#16a34a', fontWeight: '700' }}>✓ Submitted Successfully</strong>
                   </div>
                   {formData.message && (
                     <div className="ref-ticket-row ref-ticket-row-full">

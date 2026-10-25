@@ -74,7 +74,7 @@ function doPost(e) {
       data.preferredDate || "Earliest Available",
       data.service || "",
       data.message || "",
-      data.status || "Pending Confirmation"
+      data.status || "Submitted Successfully"
     ];
 
     sheet.appendRow(row);
