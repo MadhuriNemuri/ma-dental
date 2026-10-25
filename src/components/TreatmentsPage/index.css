@@ -53,7 +53,7 @@
 .treatments-page {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 38px clamp(16px, 3.5vw, 44px) 80px;
+  padding: 38px clamp(16px, 3.5vw, 44px) 70px;
   position: relative;
   background: radial-gradient(ellipse 650px 380px at 90% 30px, rgba(16, 185, 129, 0.08), transparent 70%);
 }
@@ -393,214 +393,12 @@
 }
 
 /* ==========================================================================
-   LOWER WORKFLOW & CONCIERGE STRIPS
-   ========================================================================= */
-.compact-journey {
-  margin-top: 70px;
-  padding-top: 40px;
-  border-top: 1px solid #eef2f6;
-}
-
-.journey-heading {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 24px;
-}
-
-.section-kicker {
-  background: #ecfdf5;
-  border: 1px solid #d1fae5;
-  border-radius: 999px;
-  color: #065f46;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 5px 12px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.journey-heading h2 {
-  font-size: clamp(24px, 2.5vw, 32px);
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.02em;
-  margin: 0 0 10px;
-}
-
-.journey-heading p {
-  color: #64748b;
-  font-size: 14.5px;
-  margin: 0;
-}
-
-.journey-badge {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 999px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-  color: #334155;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  margin: 0 auto 36px;
-  max-width: 580px;
-  padding: 8px 18px;
-  text-align: center;
-}
-
-.badge-icon {
-  color: #10b981;
-}
-
-.journey-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.step-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 22px 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-}
-
-.step-number {
-  background: #09261e;
-  border-radius: 8px;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 800;
-  width: 32px;
-  height: 32px;
-  margin-bottom: 14px;
-}
-
-.step-card h3 {
-  font-size: 15px;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 8px;
-}
-
-.step-card p {
-  color: #64748b;
-  font-size: 12.5px;
-  line-height: 1.55;
-  margin: 0 0 14px;
-  flex-grow: 1;
-}
-
-.step-foot {
-  border-top: 1px dashed #e2e8f0;
-  padding-top: 10px;
-  font-size: 11px;
-  color: #059669;
-  font-weight: 700;
-}
-
-/* Consult Strip */
-.consult-strip {
-  background: linear-gradient(135deg, #09261e 0%, #064e3b 100%);
-  border-radius: 18px;
-  margin-top: 60px;
-  padding: 34px clamp(20px, 4vw, 42px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-  color: #ffffff;
-}
-
-.consult-copy .section-kicker {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-}
-
-.consult-copy h2 {
-  font-size: clamp(22px, 2.3vw, 30px);
-  font-weight: 800;
-  margin: 8px 0 8px;
-}
-
-.consult-copy p {
-  color: #d1fae5;
-  font-size: 14px;
-  margin: 0;
-  max-width: 520px;
-}
-
-.consult-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.reserve-btn {
-  background: #ffffff;
-  color: #064e3b;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 12px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.reserve-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.call-btn {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 12px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: background 0.2s ease;
-}
-
-.call-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-}
-
-/* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1060px) {
   .treatments-cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
-  }
-
-  .journey-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -633,21 +431,6 @@
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
   }
-
-  .consult-strip {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .consult-actions {
-    width: 100%;
-  }
-
-  .reserve-btn,
-  .call-btn {
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 680px) {
@@ -658,9 +441,5 @@
 
   .treatment-card-media {
     height: 210px;
-  }
-
-  .journey-grid {
-    grid-template-columns: 1fr;
   }
 }

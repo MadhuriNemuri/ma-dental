@@ -2,8 +2,6 @@ import './index.css';
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-const WHATSAPP_NUMBER = '917799234108';
-
 const treatmentsData = [
   {
     id: 'rct',
@@ -124,6 +122,14 @@ const treatmentsData = [
     title: 'Clear Aligners',
     description: 'Virtually invisible multi-layered polyurethane aligners engineered via digital motion forecasting to guide teeth smoothly into harmonious alignment.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Orthodontics & Clear Aligners.jpg`
+  },
+  {
+    id: 'biomimetic-filling',
+    number: '16',
+    category: 'Cosmetic Dentistry',
+    title: 'Dental Filling (Biomimetic)',
+    description: 'Sub-micron nano-hybrid composites layered under rubber dam isolation to recreate pristine tooth anatomy, natural fluorescence, and long-lasting margins.',
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Cosmetic & Aesthetic Dentistry.jpg`
   }
 ];
 
@@ -135,33 +141,6 @@ const categories = [
   'Endodontics (Root Canal)',
   'Periodontics & Gum Care',
   'Pediatric & Preventive Care'
-];
-
-const steps = [
-  {
-    number: '01',
-    title: '3D Digital Assessment',
-    text: 'High-definition intraoral 3D scanning and low-radiation CBCT diagnostics to evaluate your dental structure with sub-millimeter precision.',
-    foot: 'Sub-millimeter mapping'
-  },
-  {
-    number: '02',
-    title: 'Tailored Treatment Plan',
-    text: 'Clear, transparent discussion of your diagnosis with full visual previews and step-by-step guidance from our senior specialists.',
-    foot: 'Digital smile preview'
-  },
-  {
-    number: '03',
-    title: 'Gentle & Painless Care',
-    text: 'Treatment delivered with localized computerized anesthesia, micro-instruments, and relaxing ambient surrounds for complete comfort.',
-    foot: 'Anxiety-free protocol'
-  },
-  {
-    number: '04',
-    title: 'Follow-Up & Maintenance',
-    text: 'Long-term preventive follow-ups, warranty protection, and dedicated post-care support to keep your smile radiant and healthy.',
-    foot: 'Structural warranty'
-  }
 ];
 
 function TreatmentsPage() {
@@ -280,7 +259,7 @@ function TreatmentsPage() {
           </div>
         </section>
 
-        {/* 15 Treatments Grid */}
+        {/* 16 Treatments Grid */}
         <section className="treatments-cards-grid" aria-label="Dental treatments catalogue">
           {filteredTreatments.length > 0 ? (
             filteredTreatments.map((treatment) => (
@@ -326,54 +305,6 @@ function TreatmentsPage() {
               </button>
             </div>
           )}
-        </section>
-
-        {/* Precision Treatment Journey */}
-        <section className="journey-section compact-journey">
-          <div className="journey-heading">
-            <span className="section-kicker">✦ Predictable Clinical Workflows</span>
-            <h2>Your Precision Treatment Journey</h2>
-            <p>A transparent four-step rhythm from first consultation to confident follow-up.</p>
-          </div>
-
-          <div className="journey-badge">
-            <span className="badge-icon">✦</span>
-            Powered by 3D CBCT, iTero Optical Scanners &amp; Class-B Autoclaves
-          </div>
-
-          <div className="journey-grid">
-            {steps.map((step) => (
-              <article className="step-card" key={step.number}>
-                <div className="step-number">{step.number}</div>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-                <div className="step-foot">{step.foot}</div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Dental Concierge Strip */}
-        <section className="consult-strip">
-          <div className="consult-copy">
-            <span className="section-kicker">✦ Dental Concierge &amp; Triage</span>
-            <h2>Not sure where to begin?</h2>
-            <p>Start with a calm conversation and our clinical care coordinator will guide you to the right specialist.</p>
-          </div>
-
-          <div className="consult-actions">
-            <Link to="/book-appointment" className="reserve-btn">
-              Book Consultation <span aria-hidden="true">&rarr;</span>
-            </Link>
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Doctor, I would like to consult regarding dental treatment.')}`}
-              target="_blank"
-              rel="noreferrer"
-              className="call-btn"
-            >
-              <span className="wa-icon" aria-hidden="true">💬</span> WhatsApp: +91 77992 34108
-            </a>
-          </div>
         </section>
       </main>
     </div>
