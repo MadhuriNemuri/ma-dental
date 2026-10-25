@@ -9,7 +9,7 @@ const treatmentsData = [
     category: 'Endodontics (Root Canal)',
     title: 'Root Canal Treatment (RCT)',
     description: "Precision microscopic root disinfection and warm bioactive obturation to permanently resolve pulpal infection while preserving the tooth's natural root architecture.",
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Microscopic Endodontics.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-01.png`
   },
   {
     id: 'crowns',
@@ -17,7 +17,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Ceramic & Zirconia Crowns',
     description: 'Custom multi-layered monolithic restorations crafted to flawlessly mirror natural enamel translucency, structural flexure, and optimal chewing resistance.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Cosmetic & Aesthetic Dentistry.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-02.png`
   },
   {
     id: 'implants',
@@ -25,7 +25,7 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Dental Implants',
     description: '3D computer-guided osseointegration delivering permanent, natural-feeling tooth replacements that preserve bone density and youthful facial symmetry.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/services/dental-implants.webp`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-03.png`
   },
   {
     id: 'replacement',
@@ -33,7 +33,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Teeth Replacement',
     description: 'Holistic full-arch and bridge reconstructions that seamlessly restore full bite mechanics, confident phonetic articulation, and lifelike aesthetics.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/implant-physiodispenser.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-04.png`
   },
   {
     id: 'children',
@@ -41,7 +41,7 @@ const treatmentsData = [
     category: 'Pediatric & Preventive Care',
     title: "Special Care for Children's Teeth",
     description: 'Gentle, anxiety-free developmental dentistry focusing on remineralization, airway development, and positive oral habits in an unhurried sanctuary.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/services/pediatric-care.webp`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-05.png`
   },
   {
     id: 'wisdom-teeth',
@@ -49,7 +49,7 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Extraction of Wisdom Teeth',
     description: 'Atraumatic, minimally invasive surgical removal utilizing 3D CBCT navigation and PRF autologous healing for rapid, painless tissue recovery.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Implantology & Oral Surgery.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-06.png`
   },
   {
     id: 'dentures',
@@ -57,7 +57,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Removable & BPS Dentures',
     description: 'Biofunctional Prosthetic System (BPS) engineering offering exceptional suction, stable chewing dynamics, and lifelike individualized gum aesthetics.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/dental-facilities.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-07.png`
   },
   {
     id: 'laser-gum',
@@ -65,7 +65,7 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Laser Treatment for Gum Problems',
     description: 'Targeted photonic therapy that sterilizes deep periodontal pockets, eradicates harmful bacteria, and stimulates natural tissue regeneration without sutures.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Periodontics & Laser Gum Care.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-08.png`
   },
   {
     id: 'tmj',
@@ -73,7 +73,7 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Jaw Joint Treatment (TMJ / TMD)',
     description: 'Neuromuscular diagnostic deprogramming and customized physiological splint orthotics to relieve jaw tension, clenching pain, and chronic facial headaches.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/explore_images/dental-team-reviewing-scans-compressed.webp`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-09.png`
   },
   {
     id: 'whitening',
@@ -81,7 +81,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Teeth Whitening',
     description: 'pH-balanced, biological oxygenation therapies that brighten enamel multiple shades without abrasive micro-scratching or post-procedure dentin sensitivity.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/services/cosmetic-dentistry.webp`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-10.png`
   },
   {
     id: 'braces',
@@ -89,7 +89,7 @@ const treatmentsData = [
     category: 'Orthodontics & Clear Aligners',
     title: 'Alignment of Teeth (Braces)',
     description: 'Ultra-low profile sapphire and ceramic self-ligating brackets engineered for controlled tooth biomechanics and immaculate long-term arch harmonization.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/services/orthodontics.webp`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-11.png`
   },
   {
     id: 'scaling',
@@ -97,7 +97,7 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Ultrasonic Scaling',
     description: 'Piezoelectric acoustic micro-vibrations and warm guided biofilm therapy to gently dislodge calculus and bacterial stains while protecting root surfaces.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Preventive & Pediatric Care.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-12.png`
   },
   {
     id: 'gic-filling',
@@ -105,7 +105,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'GIC Filling (Glass Ionomer)',
     description: 'Biocompatible glass-hybrid restorations that continuously release essential minerals to remineralize affected dentin and prevent recurrent margins.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-13.png`
   },
   {
     id: 'flap-surgery',
@@ -113,7 +113,7 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Flap Surgery (Periodontal)',
     description: 'Micro-surgical access for deep subgingival debridement, bone contouring, and regenerative biologics to rescue compromised periodontal foundations.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Periodontics & Laser Gum Care.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-14.png`
   },
   {
     id: 'clear-aligners',
@@ -121,7 +121,7 @@ const treatmentsData = [
     category: 'Orthodontics & Clear Aligners',
     title: 'Clear Aligners',
     description: 'Virtually invisible multi-layered polyurethane aligners engineered via digital motion forecasting to guide teeth smoothly into harmonious alignment.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Orthodontics & Clear Aligners.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-15.png`
   },
   {
     id: 'biomimetic-filling',
@@ -129,7 +129,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Dental Filling (Biomimetic)',
     description: 'Sub-micron nano-hybrid composites layered under rubber dam isolation to recreate pristine tooth anatomy, natural fluorescence, and long-lasting margins.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/Cosmetic & Aesthetic Dentistry.jpg`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-16.png`
   }
 ];
 
