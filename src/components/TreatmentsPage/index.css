@@ -25,12 +25,12 @@
 }
 
 .crumb-icon {
-  color: #1e3a8a;
+  color: #2f39a9;
   font-size: 14px;
 }
 
 .crumb-link {
-  color: #1e3a8a;
+  color: #2f39a9;
   text-decoration: none !important;
   font-weight: 600;
 }
@@ -55,7 +55,7 @@
   margin: 0 auto;
   padding: 38px clamp(16px, 3.5vw, 44px) 70px;
   position: relative;
-  background: radial-gradient(ellipse 650px 380px at 90% 30px, rgba(16, 185, 129, 0.08), transparent 70%);
+  background: radial-gradient(ellipse 650px 380px at 90% 30px, rgba(47, 57, 169, 0.06), transparent 70%);
 }
 
 /* ==========================================================================
@@ -69,8 +69,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #064e3b;
-  color: #ecfdf5;
+  background-color: #2f39a9;
+  color: #ffffff;
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -78,15 +78,16 @@
   padding: 6px 14px;
   border-radius: 999px;
   margin-bottom: 18px;
+  box-shadow: 0 2px 10px rgba(47, 57, 169, 0.22);
 }
 
 .treatment-pill-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #10b981;
+  background-color: #ffffff;
   display: inline-block;
-  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.85);
 }
 
 .treatments-hero-row {
@@ -135,9 +136,9 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: #ecfdf5;
-  border: 1px solid #d1fae5;
-  color: #059669;
+  background: #eef3ff;
+  border: 1px solid #dce5fa;
+  color: #2f39a9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -324,7 +325,7 @@
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   font-size: 23px;
   font-weight: 600;
-  color: #0d1e17;
+  color: #111b5e;
   line-height: 1.25;
   margin: 0 0 12px 0;
 }
