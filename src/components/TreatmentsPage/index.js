@@ -1,5 +1,5 @@
 import './index.css';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const treatmentsData = [
@@ -9,7 +9,20 @@ const treatmentsData = [
     category: 'Endodontics (Root Canal)',
     title: 'Root Canal Treatment (RCT)',
     description: "Precision microscopic root disinfection and warm bioactive obturation to permanently resolve pulpal infection while preserving the tooth's natural root architecture.",
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-01.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-01.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 355.png`,
+    overview: 'Root Canal Treatment (Endodontic therapy) is a specialized procedure designed to eliminate infection from the tooth innermost pulp chamber while saving your natural tooth from extraction. At Ma Dental, our specialists use computer-guided digital apex locators, microscopic rotary instruments, and bioactive bioceramic sealers to thoroughly disinfect the root canals with near-zero discomfort.',
+    duration: '45 – 60 Mins',
+    recovery: 'Immediate (Normal eating in 24 hrs)',
+    longevity: 'Lifetime with Crown',
+    anesthesia: 'Gentle Computerized Local Anesthesia (Painless)',
+    highlights: [
+      'Single-visit and two-visit microscopic rotary cleaning',
+      '3D warm gutta-percha bioceramic hermetic sealing',
+      'Permanent tooth preservation eliminating extraction need',
+      '100% painless treatment under gentle profound anesthesia'
+    ],
+    idealFor: 'Severe lingering toothache, deep decay reaching the nerve, biting sensitivity, dental abscess, or cracked teeth with pulpal inflammation.'
   },
   {
     id: 'crowns',
@@ -17,7 +30,20 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Ceramic & Zirconia Crowns',
     description: 'Custom multi-layered monolithic restorations crafted to flawlessly mirror natural enamel translucency, structural flexure, and optimal chewing resistance.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-02.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-02.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 357.png`,
+    overview: 'Our precision-milled Zirconia and E-Max lithium disilicate crowns offer extraordinary mechanical strength paired with lifelike optical translucency. Engineered using 3D digital intraoral scanning, each restoration replicates the natural anatomy, color gradients, and chewing functionality of healthy human enamel.',
+    duration: '2 Sessions (Digital Scan + Bonding)',
+    recovery: 'Zero Downtime',
+    longevity: '15 – 25+ Years',
+    anesthesia: 'High-Translucency 3D Zirconia / E-Max Ceramic',
+    highlights: [
+      'Metal-free biocompatible materials with zero gray gum lines',
+      'Multi-layered natural color matching and incisal translucency',
+      'High flexural strength (>1200 MPa) resilient to heavy chewing',
+      'Digital 3D CAD/CAM scan eliminates messy impression trays'
+    ],
+    idealFor: 'Root canal treated teeth, broken or severely worn enamel, fractured cusps, large failing fillings, and cosmetic smile enhancement.'
   },
   {
     id: 'implants',
@@ -25,7 +51,20 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Dental Implants',
     description: '3D computer-guided osseointegration delivering permanent, natural-feeling tooth replacements that preserve bone density and youthful facial symmetry.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-03.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-03.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 359.png`,
+    overview: 'Dental implants are the gold standard for permanent tooth replacement. Using 3D CBCT bone diagnostics and surgical navigation templates, medical-grade titanium or zirconia posts are placed seamlessly into the jawbone, fusing securely through osseointegration to function exactly like natural tooth roots.',
+    duration: '30 – 45 Mins per implant',
+    recovery: '2 – 3 Days (Minimal discomfort)',
+    longevity: 'Permanent / Lifetime Investment',
+    anesthesia: '98.5% Clinical Osseointegration Success',
+    highlights: [
+      'Preserves jawbone density and stops facial muscle sagging',
+      'Zero grinding or damage to neighboring healthy teeth',
+      'Natural bite force and chewing dynamics restored 100%',
+      'Options for single tooth, multiple missing teeth, or full arch'
+    ],
+    idealFor: 'Single or multiple missing teeth, loose uncomfortable dentures, or teeth with non-restorable roots.'
   },
   {
     id: 'replacement',
@@ -33,7 +72,20 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Teeth Replacement',
     description: 'Holistic full-arch and bridge reconstructions that seamlessly restore full bite mechanics, confident phonetic articulation, and lifelike aesthetics.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-04.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-04.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 388.png`,
+    overview: 'Whether replacing a single lost tooth or an entire dental arch, our modern prosthodontic solutions—including fixed bridges, implant-supported crowns, and hybrid arches—restore pristine phonetic articulation, confident smiles, and full occlusal harmony.',
+    duration: '1 – 3 Weeks (Tailored Plan)',
+    recovery: 'Immediate Functional Comfort',
+    longevity: '10 – 20+ Years',
+    anesthesia: 'Bio-Ceramic / Titanium Hybrid Frameworks',
+    highlights: [
+      'Restores clear pronunciation and confident chewing power',
+      'Prevents adjacent teeth from drifting and collapsing bite',
+      'Custom shade-matched to match your skin tone and natural teeth',
+      'Tailored solutions for every clinical and budgetary need'
+    ],
+    idealFor: 'Gaps caused by extracted or lost teeth, bite collapse, difficulty chewing, or aesthetic smile rejuvenation.'
   },
   {
     id: 'children',
@@ -41,7 +93,20 @@ const treatmentsData = [
     category: 'Pediatric & Preventive Care',
     title: "Special Care for Children's Teeth",
     description: 'Gentle, anxiety-free developmental dentistry focusing on remineralization, airway development, and positive oral habits in an unhurried sanctuary.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-05.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-05.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 390.png`,
+    overview: 'Pediatric dental care at Ma Dental is tailored for gentle, positive, and anxiety-free visits. From infant oral health checks and gentle fluoride remineralization to pit-and-fissure sealants and interceptive myofunctional coaching, we safeguard developing milk teeth to foster a lifetime of confident smiles.',
+    duration: '30 Mins (Gentle & Unhurried)',
+    recovery: 'Immediate',
+    longevity: 'Cavity Prevention up to 80%',
+    anesthesia: '100% Pain-Free & Anxiety-Free Care',
+    highlights: [
+      'Child-friendly environment with gentle behavioral management',
+      'BPA-free pit and fissure sealants for molars',
+      'Fluoride varnish remineralization for early enamel lesions',
+      'Early habit correction (thumb sucking, tongue thrusting, mouth breathing)'
+    ],
+    idealFor: 'Children aged 1 to 14, early childhood caries, preventive sealants, space maintenance, and establishing positive dental hygiene habits.'
   },
   {
     id: 'wisdom-teeth',
@@ -49,7 +114,20 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Extraction of Wisdom Teeth',
     description: 'Atraumatic, minimally invasive surgical removal utilizing 3D CBCT navigation and PRF autologous healing for rapid, painless tissue recovery.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-06.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-06.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 390 (1).png`,
+    overview: 'Impacted or misaligned third molars (wisdom teeth) can cause severe pain, pericoronitis infection, cyst formation, and crowding of front teeth. Our oral surgeons perform atraumatic, minimally invasive removals guided by 3D CBCT nerve mapping for ultra-fast, smooth recovery.',
+    duration: '20 – 40 Mins per tooth',
+    recovery: '2 – 4 Days (Fast recovery)',
+    longevity: 'Permanent Relief',
+    anesthesia: 'Profound Local Numbing + PRF Healing',
+    highlights: [
+      'Micro-surgical extraction minimizes swelling and post-op pain',
+      'Advanced 3D CBCT nerve safety mapping prevents complications',
+      'Dissolvable sutures and PRF clot acceleration for fast healing',
+      'Comprehensive post-operative healing care and medication support'
+    ],
+    idealFor: 'Impacted wisdom teeth, recurring pericoronitis gum swelling, jaw stiffness, orthodontic crowding prevention, and un-erupted molars.'
   },
   {
     id: 'dentures',
@@ -57,7 +135,20 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Removable & BPS Dentures',
     description: 'Biofunctional Prosthetic System (BPS) engineering offering exceptional suction, stable chewing dynamics, and lifelike individualized gum aesthetics.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-07.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-07.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 390 (2).png`,
+    overview: 'Biofunctional Prosthetic System (BPS) dentures represent the pinnacle of removable prosthodontics. Fabricated under controlled high-pressure injection molding with biocompatible composite teeth, BPS dentures offer unmatched suction retention, natural gum aesthetics, and supreme chewing stability.',
+    duration: '4 – 5 Clinical Precision Visits',
+    recovery: '1 – 2 Weeks Adaptation',
+    longevity: '7 – 10+ Years',
+    anesthesia: 'Dynamic Gnathometer Muscle-Molded Seal',
+    highlights: [
+      'Superior suction grip prevents slippage while eating or speaking',
+      'Anatomical multi-layer gum contouring matches natural tissue',
+      'Wear-resistant micro-hybrid teeth ensure sharp chewing efficiency',
+      'Available as partial, complete, or flexible Valplast frameworks'
+    ],
+    idealFor: 'Patients with multiple or complete tooth loss, individuals seeking non-surgical tooth restoration, or replacing old loose dentures.'
   },
   {
     id: 'laser-gum',
@@ -65,7 +156,20 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Laser Treatment for Gum Problems',
     description: 'Targeted photonic therapy that sterilizes deep periodontal pockets, eradicates harmful bacteria, and stimulates natural tissue regeneration without sutures.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-08.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-08.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 390 (3).png`,
+    overview: 'Modern soft-tissue dental lasers allow us to treat gingivitis, deep periodontal pockets, and gum disease without scalpels, incisions, or sutures. The concentrated wavelength selectively targets pathogenic bacteria and diseased sulcular lining while biostimulating healthy collagen and bone regeneration.',
+    duration: '30 – 45 Mins',
+    recovery: 'Rapid (Same Day to 24 hrs)',
+    longevity: 'Long-Term with Good Hygiene',
+    anesthesia: '99.9% Bacterial Pocket Sterilization',
+    highlights: [
+      'No scalpels, surgical cutting, or uncomfortable stitches required',
+      'Coagulates blood vessels instantly for virtually bloodless care',
+      'Promotes rapid biological re-attachment of gums to tooth roots',
+      'Also used for cosmetic gum depigmentation and gummy smile reduction'
+    ],
+    idealFor: 'Bleeding or swollen gums, persistent bad breath (halitosis), deep gum pockets, mobile teeth, and dark melanin gum hyperpigmentation.'
   },
   {
     id: 'tmj',
@@ -73,7 +177,20 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Jaw Joint Treatment (TMJ / TMD)',
     description: 'Neuromuscular diagnostic deprogramming and customized physiological splint orthotics to relieve jaw tension, clenching pain, and chronic facial headaches.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-09.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-09.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 391.png`,
+    overview: 'Temporomandibular Joint Disorder (TMD) causes clicking noises, jaw locking, chronic facial headaches, earache, and bruxism (nighttime teeth grinding). Our neuromuscular therapy combines digital occlusal bite mapping, physiological deprogramming splints, and muscle relaxation to achieve long-term orthopedic balance.',
+    duration: '45 Min Assessment + Splint Fitting',
+    recovery: 'Immediate relief with custom orthotic',
+    longevity: 'Long-Term Orthopedic Balance',
+    anesthesia: 'Non-Surgical Conservative Protocol',
+    highlights: [
+      'Relieves severe morning jaw soreness and chronic temple headaches',
+      'Custom precision nightguards protect teeth from heavy attrition wear',
+      'Corrects bite interferences and joint disc compression',
+      'Physical therapy, trigger point therapy, and ergonomic posture coaching'
+    ],
+    idealFor: 'Jaw clicking or popping, jaw locking, chronic tension headaches, clenching/grinding teeth at night, and chewing fatigue.'
   },
   {
     id: 'whitening',
@@ -81,7 +198,20 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Teeth Whitening',
     description: 'pH-balanced, biological oxygenation therapies that brighten enamel multiple shades without abrasive micro-scratching or post-procedure dentin sensitivity.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-10.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-10.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/Container.png`,
+    overview: 'Experience a dramatically brighter, luminous smile in a single 45-minute clinic session. Our advanced, pH-buffered in-office whitening system activates active oxygen molecules to break down stubborn tea, coffee, smoking, and aging stains safely within the enamel pores without harming tooth structure.',
+    duration: '45 – 60 Mins (Single Session)',
+    recovery: 'Immediate Sparkle',
+    longevity: '1 – 3 Years with Maintenance',
+    anesthesia: 'pH-Neutral with Desensitizing Protection',
+    highlights: [
+      'Professional in-office whitening delivers instant dramatic results',
+      'Up to 6 – 8 shades whiter in a single comfortable visit',
+      'Integrated desensitizers protect nerve endings and enamel',
+      'Safe, non-abrasive formula preserves protective enamel luster'
+    ],
+    idealFor: 'Yellowed or discolored teeth, coffee/tea/tobacco stains, wedding or special event smile prep, and general smile enhancement.'
   },
   {
     id: 'braces',
@@ -89,7 +219,20 @@ const treatmentsData = [
     category: 'Orthodontics & Clear Aligners',
     title: 'Alignment of Teeth (Braces)',
     description: 'Ultra-low profile sapphire and ceramic self-ligating brackets engineered for controlled tooth biomechanics and immaculate long-term arch harmonization.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-11.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-11.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-11.png`,
+    overview: 'Orthodontic braces gently guide crowded, rotated, or spaced teeth into immaculate alignment and functional bite harmony. We offer modern ultra-low-profile metal brackets, tooth-colored ceramic brackets, and self-ligating systems that shorten appointment times and reduce friction.',
+    duration: '8 – 18 Months (Case dependent)',
+    recovery: '3 – 5 Days adjustment period',
+    longevity: 'Lifetime with Retainers',
+    anesthesia: 'Ceramic Clear / Low-Profile Self-Ligating',
+    highlights: [
+      'Corrects severe crowding, gaps, overbites, and crossbites',
+      'Aesthetic tooth-colored ceramic brackets for discreet treatment',
+      'Improves airway volume, chewing efficiency, and facial balance',
+      'Custom retainers provided post-treatment to lock in your smile'
+    ],
+    idealFor: 'Teens and adults with crooked teeth, overjet/overbite, severe spacing, midline deviation, or jaw misalignment.'
   },
   {
     id: 'scaling',
@@ -97,7 +240,20 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Ultrasonic Scaling',
     description: 'Piezoelectric acoustic micro-vibrations and warm guided biofilm therapy to gently dislodge calculus and bacterial stains while protecting root surfaces.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-12.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-12.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-12.png`,
+    overview: 'Professional ultrasonic scaling utilizes piezoelectric acoustic micro-vibrations paired with warm fluid irrigation to thoroughly break down stubborn calculus (tartar) and subgingival bacterial biofilm. Unlike manual scraping, ultrasonic instruments protect the delicate root cementum while leaving teeth silky-smooth.',
+    duration: '30 – 40 Mins',
+    recovery: 'Immediate (Eat & drink right after)',
+    longevity: 'Recommended Every 6 Months',
+    anesthesia: 'Painless, gentle acoustic cleaning',
+    highlights: [
+      'Eliminates tartar and plaque deposits inaccessible to toothbrushes',
+      'Stops gum inflammation, bleeding gums, and bad breath at the root',
+      'Air-polishing finish removes superficial coffee and food stains',
+      'Crucial baseline preventive step before cosmetic restorations'
+    ],
+    idealFor: 'Routine 6-month dental cleaning, yellow tartar buildup behind teeth, bleeding during brushing, and halitosis prevention.'
   },
   {
     id: 'gic-filling',
@@ -105,7 +261,20 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'GIC Filling (Glass Ionomer)',
     description: 'Biocompatible glass-hybrid restorations that continuously release essential minerals to remineralize affected dentin and prevent recurrent margins.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-13.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-13.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-13.png`,
+    overview: 'Glass Ionomer Cement (GIC) is a bioactive, tooth-colored restorative material that forms a direct chemical bond with tooth enamel and dentin. A major clinical benefit of GIC is its continuous fluoride release, which acts as a permanent shield remineralizing surrounding tooth structure and halting secondary decay.',
+    duration: '20 – 30 Mins',
+    recovery: 'Zero Downtime',
+    longevity: '5 – 8+ Years',
+    anesthesia: 'Bioactive Continuous Fluoride Shield',
+    highlights: [
+      'Chemically bonds to tooth substance without harsh acid etchants',
+      'Releases continuous fluoride to stop future cavity formation',
+      'Biocompatible and gentle on sensitive tooth nerves',
+      'Ideal restorative material for pediatric teeth and root surface decay'
+    ],
+    idealFor: 'Cervical abrasion near gum lines, root surface caries, primary (milk) tooth cavities, and base liners under composite restorations.'
   },
   {
     id: 'flap-surgery',
@@ -113,7 +282,20 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Flap Surgery (Periodontal)',
     description: 'Micro-surgical access for deep subgingival debridement, bone contouring, and regenerative biologics to rescue compromised periodontal foundations.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-14.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-14.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-14.png`,
+    overview: 'When periodontal disease progresses and creates pockets deeper than 5mm, standard scaling cannot reach the infected bone foundation. Periodontal flap surgery gently separates the gingiva to give the periodontist direct visual access to debride deep bacteria, reshape irregular bone contours, and place regenerative bone grafts.',
+    duration: '45 – 60 Mins per quadrant',
+    recovery: '3 – 5 Days',
+    longevity: 'Permanent with Periodontal Maintenance',
+    anesthesia: 'Profound Local Numbing (Completely Pain-Free)',
+    highlights: [
+      'Rescues loose teeth and rebuilds destroyed bone support',
+      'Direct visualization ensures 100% removal of subgingival calculus',
+      'Can be paired with bone grafting and collagen barrier membranes',
+      'Reduces deep pockets to healthy 2-3mm depths maintainable at home'
+    ],
+    idealFor: 'Advanced periodontitis, deep infected gum pockets, bone loss around teeth, tooth mobility, and persistent recurrent gum abscesses.'
   },
   {
     id: 'clear-aligners',
@@ -121,7 +303,20 @@ const treatmentsData = [
     category: 'Orthodontics & Clear Aligners',
     title: 'Clear Aligners',
     description: 'Virtually invisible multi-layered polyurethane aligners engineered via digital motion forecasting to guide teeth smoothly into harmonious alignment.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-15.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-15.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-15.png`,
+    overview: 'Clear Aligners are virtually invisible, removable orthodontic trays engineered through 3D intraoral optical scans and computer simulation. Each custom tray applies calibrated, gentle forces to guide your teeth into pristine alignment without metal wires, bracket abrasions, or dietary restrictions.',
+    duration: '6 – 14 Months on average',
+    recovery: 'Zero Downtime',
+    longevity: 'Lifetime with Retainers',
+    anesthesia: '100% Virtually Invisible Polyurethane Trays',
+    highlights: [
+      'Removable anytime for easy eating, brushing, and flossing',
+      'Digital 3D simulation shows your final smile result before starting',
+      'Fewer dental visits needed compared to traditional braces',
+      'Hypoallergenic medical-grade thermoplastic materials'
+    ],
+    idealFor: 'Adults and teens wanting discreet smile correction, spacing, crowding, relapse after past braces, and busy professionals.'
   },
   {
     id: 'biomimetic-filling',
@@ -129,7 +324,20 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Dental Filling (Biomimetic)',
     description: 'Sub-micron nano-hybrid composites layered under rubber dam isolation to recreate pristine tooth anatomy, natural fluorescence, and long-lasting margins.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-16.png`
+    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-16.png`,
+    popupImage: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-16.png`,
+    overview: 'Biomimetic dental restorations go beyond traditional fillings. Using dental rubber dam isolation and sub-micron nano-hybrid composites, we mimic the physical properties, flexibility, and layered shade structure of natural tooth enamel and dentin, conserving healthy tooth structure and sealing against micro-leakage.',
+    duration: '30 – 45 Mins per tooth',
+    recovery: 'Immediate',
+    longevity: '10 – 15+ Years',
+    anesthesia: 'Chameleon Multi-Layer Shade Matching',
+    highlights: [
+      'Conserves maximum healthy tooth structure (minimally invasive)',
+      'Nano-hybrid composite bonded with 7th-gen multi-mode adhesive',
+      'Cured with high-intensity LED light under rubber dam isolation',
+      'Hand-sculpted cusps and fissures restore original chewing anatomy'
+    ],
+    idealFor: 'Fresh cavities, broken or chipped enamel edges, replacing old dark amalgam silver fillings, and closing small gaps.'
   }
 ];
 
@@ -146,6 +354,28 @@ const categories = [
 function TreatmentsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All Treatments');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTreatment, setSelectedTreatment] = useState(null);
+
+  // Close modal on Escape key and freeze background scrolling
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedTreatment(null);
+      }
+    };
+
+    if (selectedTreatment) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedTreatment]);
 
   const filteredTreatments = useMemo(() => {
     return treatmentsData.filter((treatment) => {
@@ -263,7 +493,20 @@ function TreatmentsPage() {
         <section className="treatments-cards-grid" aria-label="Dental treatments catalogue">
           {filteredTreatments.length > 0 ? (
             filteredTreatments.map((treatment) => (
-              <article className="treatment-item-card" key={treatment.id}>
+              <article
+                className="treatment-item-card"
+                key={treatment.id}
+                onClick={() => setSelectedTreatment(treatment)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedTreatment(treatment);
+                  }
+                }}
+                aria-label={`View details for ${treatment.title}`}
+              >
                 <div className="treatment-card-media">
                   <img
                     src={treatment.image}
@@ -274,19 +517,53 @@ function TreatmentsPage() {
                       e.currentTarget.src = `${process.env.PUBLIC_URL || ''}/Assets/services/cosmetic-dentistry.webp`;
                     }}
                   />
+                  <div className="treatment-card-zoom-overlay">
+                    <span className="treatment-zoom-tag">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        <line x1="11" y1="8" x2="11" y2="14" />
+                        <line x1="8" y1="11" x2="14" y2="11" />
+                      </svg>
+                      View Details
+                    </span>
+                  </div>
                 </div>
 
                 <div className="treatment-card-content">
-                  <span className="treatment-num-label">TREATMENT {treatment.number}</span>
+                  <div className="treatment-card-top-row">
+                    <span className="treatment-num-label">TREATMENT {treatment.number}</span>
+                    <span className="treatment-card-badge-pill">{treatment.category.split(' ')[0]}</span>
+                  </div>
                   <h2 className="treatment-card-name">{treatment.title}</h2>
                   <p className="treatment-card-desc">{treatment.description}</p>
-                  <Link to="/book-appointment" className="treatment-card-cta">
-                    <span>BOOK APPOINTMENT</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </Link>
+                  
+                  <div className="treatment-card-action-bar">
+                    <button
+                      type="button"
+                      className="treatment-view-details-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedTreatment(treatment);
+                      }}
+                    >
+                      <span>Procedure Info</span>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </button>
+                    <Link
+                      to="/book-appointment"
+                      className="treatment-card-cta"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <span>BOOK NOW</span>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))
@@ -307,6 +584,155 @@ function TreatmentsPage() {
           )}
         </section>
       </main>
+
+      {/* POPUP MODAL FOR SELECTED TREATMENT */}
+      {selectedTreatment && (
+        <div
+          className="treatment-modal-backdrop"
+          onClick={() => setSelectedTreatment(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="treatment-modal-title"
+        >
+          <div
+            className="treatment-modal-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Close Button */}
+            <button
+              type="button"
+              className="treatment-modal-close"
+              onClick={() => setSelectedTreatment(null)}
+              aria-label="Close treatment details"
+            >
+              ✕
+            </button>
+
+            <div className="treatment-modal-inner">
+              {/* Left Column: Visual Media & Fast Stats */}
+              <div className="treatment-modal-left">
+                <div className="treatment-modal-media-frame">
+                  <img
+                    src={selectedTreatment.popupImage}
+                    alt={selectedTreatment.title}
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = selectedTreatment.image;
+                    }}
+                  />
+                  <div className="treatment-modal-tag-overlay">
+                    <span className="treatment-modal-num-pill">
+                      TREATMENT {selectedTreatment.number}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Quick Clinical Facts Grid */}
+                <div className="treatment-specs-grid">
+                  <div className="spec-card">
+                    <span className="spec-icon">⏱️</span>
+                    <div className="spec-meta">
+                      <span className="spec-label">Duration</span>
+                      <strong className="spec-val">{selectedTreatment.duration}</strong>
+                    </div>
+                  </div>
+                  <div className="spec-card">
+                    <span className="spec-icon">🩹</span>
+                    <div className="spec-meta">
+                      <span className="spec-label">Recovery</span>
+                      <strong className="spec-val">{selectedTreatment.recovery}</strong>
+                    </div>
+                  </div>
+                  <div className="spec-card">
+                    <span className="spec-icon">🛡️</span>
+                    <div className="spec-meta">
+                      <span className="spec-label">Longevity</span>
+                      <strong className="spec-val">{selectedTreatment.longevity}</strong>
+                    </div>
+                  </div>
+                  <div className="spec-card">
+                    <span className="spec-icon">✨</span>
+                    <div className="spec-meta">
+                      <span className="spec-label">Comfort</span>
+                      <strong className="spec-val">{selectedTreatment.anesthesia}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: In-depth Clinical Content & CTAs */}
+              <div className="treatment-modal-right">
+                <div className="treatment-modal-header">
+                  <span className="treatment-modal-category">
+                    {selectedTreatment.category}
+                  </span>
+                  <h2 id="treatment-modal-title" className="treatment-modal-title">
+                    {selectedTreatment.title}
+                  </h2>
+                </div>
+
+                <div className="treatment-modal-body-scroll">
+                  {/* Overview */}
+                  <div className="modal-section-block">
+                    <h3 className="modal-section-heading">Clinical Overview</h3>
+                    <p className="treatment-modal-overview">
+                      {selectedTreatment.overview}
+                    </p>
+                  </div>
+
+                  {/* Highlights Bullet List */}
+                  <div className="modal-section-block">
+                    <h3 className="modal-section-heading">Key Clinical Highlights</h3>
+                    <ul className="treatment-highlights-list">
+                      {selectedTreatment.highlights.map((point, idx) => (
+                        <li key={idx} className="highlight-item">
+                          <span className="check-bullet">✓</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Recommended For Box */}
+                  <div className="treatment-recommended-box">
+                    <div className="rec-box-header">
+                      <span className="rec-badge-icon">ℹ️</span>
+                      <strong>Recommended When Experiencing:</strong>
+                    </div>
+                    <p className="rec-box-text">
+                      {selectedTreatment.idealFor}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Modal Action CTA Buttons */}
+                <div className="treatment-modal-actions">
+                  <Link
+                    to="/book-appointment"
+                    className="modal-book-cta"
+                    onClick={() => setSelectedTreatment(null)}
+                  >
+                    <span>Book Consultation</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+
+                  <a
+                    href={`https://wa.me/917799234108?text=${encodeURIComponent(`Hello Ma Dental Clinic, I would like to inquire about ${selectedTreatment.title} (Treatment ${selectedTreatment.number}).`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-whatsapp-cta"
+                  >
+                    <span>WhatsApp Inquiry 💬</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

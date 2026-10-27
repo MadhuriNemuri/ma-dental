@@ -119,17 +119,23 @@
   margin: 0;
 }
 
-/* Price Transparency Card */
+/* Price Transparency Trust Card */
 .price-transparency-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 14px 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
   flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.price-transparency-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
 .price-transparency-icon {
@@ -142,6 +148,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .price-transparency-text {
@@ -150,18 +157,17 @@
 }
 
 .price-transparency-title {
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #0f172a;
   display: flex;
   align-items: center;
   gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
   margin-bottom: 3px;
 }
 
 .check-badge-svg {
-  display: inline-block;
-  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .price-transparency-sub {
@@ -171,42 +177,48 @@
 }
 
 /* ==========================================================================
-   SEARCH & CATEGORY CONTROLS BAR
+   SEARCH & CATEGORY CONTROLS
    ========================================================================== */
 .treatments-controls-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   flex-wrap: wrap;
-  margin-top: 10px;
 }
 
 .treatment-search-box {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: #f1f5f9;
-  border-radius: 10px;
-  padding: 10px 16px;
-  min-width: 280px;
-  max-width: 330px;
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 10px 18px;
+  min-width: 290px;
+  max-width: 380px;
+  flex-grow: 1;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .treatment-search-box:focus-within {
-  background: #ffffff;
-  border-color: #cbd5e1;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  border-color: #2f39a9;
+  box-shadow: 0 0 0 3px rgba(47, 57, 169, 0.15);
+}
+
+.search-icon-svg {
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .treatment-search-box input {
   border: none;
   outline: none;
-  background: transparent;
   font-size: 13.5px;
   color: #0f172a;
+  background: transparent;
   width: 100%;
+  font-family: inherit;
 }
 
 .treatment-search-box input::placeholder {
@@ -214,18 +226,22 @@
 }
 
 .search-clear-btn {
-  background: none;
+  background: transparent;
   border: none;
-  cursor: pointer;
   color: #94a3b8;
-  font-size: 12px;
-  padding: 2px 4px;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 50%;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 .search-clear-btn:hover {
-  color: #475569;
+  color: #0f172a;
+  background-color: #f1f5f9;
 }
 
+/* Category Filter Pills */
 .treatment-categories-bar {
   display: flex;
   align-items: center;
@@ -234,14 +250,13 @@
 }
 
 .treatment-cat-pill {
-  border: none;
-  outline: none;
   background: #f1f5f9;
-  color: #334155;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 9px 18px;
+  color: #475569;
+  border: 1px solid transparent;
   border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -276,12 +291,21 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
 }
 
 .treatment-item-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+  border-color: #cbd5e1;
+}
+
+.treatment-item-card:focus-visible {
+  outline: 3px solid #2f39a9;
+  outline-offset: 2px;
 }
 
 .treatment-card-media {
@@ -301,7 +325,42 @@
 }
 
 .treatment-item-card:hover .treatment-card-media img {
-  transform: scale(1.03);
+  transform: scale(1.04);
+}
+
+/* Hover overlay prompt on card image */
+.treatment-card-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.5) 100%);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+}
+
+.treatment-item-card:hover .treatment-card-zoom-overlay {
+  opacity: 1;
+}
+
+.treatment-zoom-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #111b5e;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transform: translateY(6px);
+  transition: transform 0.25s ease;
+}
+
+.treatment-item-card:hover .treatment-zoom-tag {
+  transform: translateY(0);
 }
 
 .treatment-card-content {
@@ -311,23 +370,39 @@
   flex-grow: 1;
 }
 
+.treatment-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
 .treatment-num-label {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: #64748b;
-  margin-bottom: 8px;
   display: block;
+}
+
+.treatment-card-badge-pill {
+  font-size: 10.5px;
+  font-weight: 700;
+  background: #eef3ff;
+  color: #2f39a9;
+  border: 1px solid #dce5fa;
+  padding: 3px 9px;
+  border-radius: 999px;
 }
 
 .treatment-card-name {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 600;
   color: #111b5e;
   line-height: 1.25;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
 }
 
 .treatment-card-desc {
@@ -335,28 +410,57 @@
   font-size: 13.5px;
   line-height: 1.62;
   color: #475569;
-  margin: 0 0 24px 0;
+  margin: 0 0 20px 0;
   flex-grow: 1;
+}
+
+/* Card Action Bar with Details + Book Now */
+.treatment-card-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.treatment-view-details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #2f39a9;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #dce5fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.treatment-view-details-btn:hover {
+  background: #eef3ff;
+  border-color: #2f39a9;
 }
 
 .treatment-card-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
   background: linear-gradient(135deg, #2f39a9 0%, #1e2685 100%);
   color: #ffffff !important;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 10px 22px;
+  padding: 9px 18px;
   border-radius: 999px;
   text-decoration: none !important;
-  margin-top: auto;
-  box-shadow: 0 4px 14px rgba(47, 57, 169, 0.25);
+  box-shadow: 0 3px 12px rgba(47, 57, 169, 0.25);
   transition: all 0.22s ease;
-  width: fit-content;
   box-sizing: border-box;
 }
 
@@ -367,17 +471,12 @@
 
 .treatment-card-cta:hover {
   background: linear-gradient(135deg, #242c86 0%, #111b5e 100%);
-  color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(47, 57, 169, 0.38);
 }
 
 .treatment-card-cta:hover svg {
-  transform: translateX(4px);
-}
-
-.treatment-card-cta:active {
-  transform: translateY(0);
+  transform: translateX(3px);
 }
 
 /* Empty State */
@@ -413,6 +512,387 @@
 }
 
 /* ==========================================================================
+   POPUP MODAL COMPONENT (Brand Royal Blue & Clinical Detail)
+   ========================================================================== */
+.treatment-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(10, 15, 55, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 36px);
+  animation: treatmentBackdropFade 0.25s ease-out forwards;
+}
+
+@keyframes treatmentBackdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.treatment-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  max-width: 980px;
+  width: 100%;
+  max-height: 90vh;
+  box-shadow: 0 25px 60px -10px rgba(10, 15, 55, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: treatmentModalPop 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes treatmentModalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.treatment-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.treatment-modal-close:hover {
+  background: #2f39a9;
+  color: #ffffff;
+  border-color: #2f39a9;
+  transform: rotate(90deg);
+}
+
+.treatment-modal-inner {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  height: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+/* Left Media & Fast Specs Column */
+.treatment-modal-left {
+  background: #f8fafc;
+  border-right: 1px solid #eef2f6;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+}
+
+.treatment-modal-media-frame {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #e2e8f0;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
+
+.treatment-modal-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.treatment-modal-tag-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.treatment-modal-num-pill {
+  background: rgba(17, 27, 94, 0.92);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Clinical Specs 2x2 Grid */
+.treatment-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.spec-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+}
+
+.spec-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.spec-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.spec-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.spec-val {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111b5e;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Right Detail Column */
+.treatment-modal-right {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 32px 26px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.treatment-modal-header {
+  margin-bottom: 16px;
+  padding-right: 36px;
+}
+
+.treatment-modal-category {
+  display: inline-block;
+  background: #eef3ff;
+  color: #2f39a9;
+  border: 1px solid #dce5fa;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.treatment-modal-title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(23px, 2.3vw, 30px);
+  font-weight: 700;
+  color: #111b5e;
+  line-height: 1.22;
+  margin: 0;
+}
+
+.treatment-modal-body-scroll {
+  overflow-y: auto;
+  padding-right: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.treatment-modal-body-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.treatment-modal-body-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.modal-section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-section-heading {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #2f39a9;
+  margin: 0 0 4px 0;
+}
+
+.treatment-modal-overview {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
+}
+
+/* Key Highlights Bullet List */
+.treatment-highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+.check-bullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #eef3ff;
+  color: #2f39a9;
+  font-weight: 900;
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Recommended For Box */
+.treatment-recommended-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2f39a9;
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.rec-box-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #111b5e;
+  margin-bottom: 4px;
+}
+
+.rec-badge-icon {
+  font-size: 14px;
+}
+
+.rec-box-text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+/* Modal Action CTA Buttons */
+.treatment-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 18px;
+  margin-top: 10px;
+  border-top: 1px solid #eef2f6;
+  flex-shrink: 0;
+}
+
+.modal-book-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2f39a9 0%, #1e2685 100%);
+  color: #ffffff !important;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(47, 57, 169, 0.3);
+  transition: all 0.22s ease;
+  flex: 1;
+}
+
+.modal-book-cta:hover {
+  background: linear-gradient(135deg, #242c86 0%, #111b5e 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(47, 57, 169, 0.4);
+}
+
+.modal-book-cta svg {
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.modal-book-cta:hover svg {
+  transform: translateX(3px);
+}
+
+.modal-whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #f8fafc;
+  color: #111b5e !important;
+  border: 1px solid #cbd5e1;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.modal-whatsapp-cta:hover {
+  background: #eef3ff;
+  border-color: #2f39a9;
+  color: #2f39a9 !important;
+}
+
+/* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1060px) {
@@ -431,6 +911,10 @@
 
   .price-transparency-card {
     align-self: flex-start;
+  }
+
+  .treatment-modal-inner {
+    grid-template-columns: 310px 1fr;
   }
 }
 
@@ -451,6 +935,42 @@
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+
+  /* Modal turns into stacked single column on mobile */
+  .treatment-modal-card {
+    max-height: 94vh;
+  }
+
+  .treatment-modal-inner {
+    grid-template-columns: 1fr;
+    max-height: 94vh;
+    overflow-y: auto;
+  }
+
+  .treatment-modal-left {
+    border-right: none;
+    border-bottom: 1px solid #eef2f6;
+    padding: 20px;
+  }
+
+  .treatment-modal-media-frame {
+    height: 200px;
+  }
+
+  .treatment-modal-right {
+    padding: 20px 20px 24px;
+    overflow: visible;
+  }
+
+  .treatment-modal-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-book-cta,
+  .modal-whatsapp-cta {
+    width: 100%;
+  }
 }
 
 @media (max-width: 680px) {
@@ -463,7 +983,15 @@
     height: 210px;
   }
 
+  .treatment-card-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .treatment-view-details-btn,
   .treatment-card-cta {
     width: 100%;
+    justify-content: center;
   }
 }
