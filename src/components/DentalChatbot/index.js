@@ -117,7 +117,7 @@ function DentalChatbot({ isReady = true }) {
           <header className="chat-header">
             <div className="chat-avatar" aria-hidden="true">
               <img
-                src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.png`}
+                src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.webp`}
                 alt="Ma Dental Concierge"
                 className="chat-avatar-icon"
               />
@@ -162,7 +162,7 @@ function DentalChatbot({ isReady = true }) {
         aria-label={isOpen ? 'Close dental concierge' : 'Open dental concierge'}
       >
         <img
-          src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.png`}
+          src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.webp`}
           alt="Ma Dental Chatbot"
           className="chat-rotating-icon"
         />

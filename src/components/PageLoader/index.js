@@ -91,7 +91,7 @@ function PageLoader({ onFinish }) {
 
       <div className={`loader-sticker ${stage === 'flying' ? 'fly-to-chatbot' : ''}`}>
         <img
-          src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.png`}
+          src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.webp`}
           alt="Ma Dental Sticker"
           className="loader-sticker-img"
           width="70"

@@ -3,7 +3,7 @@ import './index.css';
 
 const exploreItems = [
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.jpg`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.webp`,
 		badge: '3D Radiography',
 		title: 'FONA 3D Panoramic OPG',
 		description: 'Full-mouth digital panoramic radiography for accurate implant planning, wisdom tooth assessment, and bone diagnostics.',
@@ -11,7 +11,7 @@ const exploreItems = [
 		alt: 'FONA panoramic dental x-ray unit at Ma Dental'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.jpg`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.webp`,
 		badge: 'Digital Sensor',
 		title: 'Digital RVG Diagnostic Suite',
 		description: 'Chairside digital sensor imaging providing instant, ultra-low radiation tooth visualization directly on screen.',
@@ -19,7 +19,7 @@ const exploreItems = [
 		alt: 'Chairside digital dental radiovisiography workstation'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.jpg`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.webp`,
 		badge: 'Hospital Grade',
 		title: 'Class-B Vacuum Sterilization',
 		description: 'Hospital-grade autoclaving and vacuum sealing protocols ensuring 100% infection-free instrument safety for every patient.',
@@ -27,7 +27,7 @@ const exploreItems = [
 		alt: 'Class-B dental autoclave sterilization unit'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.jpg`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.webp`,
 		badge: 'Treatment Suite',
 		title: 'Modern Clinical Operatory',
 		description: 'Ergonomic dual-chair treatment suites designed with calming ambient lighting, sterile surrounds, and advanced patient comfort.',
@@ -35,7 +35,7 @@ const exploreItems = [
 		alt: 'Ma Dental modern treatment operatory'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/images/dental-facilities.jpg`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/images/dental-facilities.webp`,
 		badge: 'Advanced Facilities',
 		title: 'Advanced Dental Infrastructure',
 		description: 'Modern operatory suites furnished with multi-functional dental chairs, shadowless surgical lighting, and serene patient surrounds.',
@@ -43,7 +43,7 @@ const exploreItems = [
 		alt: 'Advanced dental infrastructure and treatment rooms at Ma Dental'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/images/implant-physiodispenser.jpg`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/images/implant-physiodispenser.webp`,
 		badge: 'Surgical Implantology',
 		title: 'Surgical Physiodispenser & Implant Kit',
 		description: 'Computer-controlled surgical motor with sterile saline irrigation and precision drill kit for pain-free, predictable dental implants.',

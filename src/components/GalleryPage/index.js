@@ -13,7 +13,7 @@ const FEATURED_DOCTOR = {
   name: 'Dr. T. Bhanu Prakash Reddy',
   role: 'Chief Dental Surgeon & Implantologist',
   badge: 'Lead Dentist',
-  image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`,
+  image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.webp`,
   description: 'Specializing in complex full-mouth dental implants, aesthetic smile makeovers, and gentle oral surgery.'
 };
 
@@ -23,7 +23,7 @@ const GALLERY_ITEMS = [
     title: 'Dr. Y. Shanti Priya',
     category: 'Doctors & Team',
     role: 'Cosmetic & Pediatric',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.webp`,
     badge: 'DOCTOR',
     iconType: 'tooth',
     description: 'Experienced dental surgeon dedicated to gentle family, cosmetic and pediatric dental care.'
@@ -33,7 +33,7 @@ const GALLERY_ITEMS = [
     title: 'Dr. G. Rishitha Reddy',
     category: 'Doctors & Team',
     role: 'Periodontics & Implants',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.webp`,
     badge: 'DOCTOR',
     iconType: 'tooth',
     description: 'Specialist in minimally invasive gum therapies, bone grafting, and dental implants.'
@@ -43,7 +43,7 @@ const GALLERY_ITEMS = [
     title: 'Mounika Pothireddy',
     category: 'Doctors & Team',
     role: 'Hygiene Consultant',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).webp`,
     badge: 'CONSULTANT',
     iconType: 'shield',
     description: 'Specialist in preventive oral hygiene, patient education, and anxiety-free gentle smile care.'
@@ -53,7 +53,7 @@ const GALLERY_ITEMS = [
     title: 'Dr. M. Hemadri',
     category: 'Doctors & Team',
     role: 'Orthodontics & Aligners',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-3-enhanced.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-3-enhanced.webp`,
     badge: 'DOCTOR',
     iconType: 'braces',
     description: 'Expert in invisible clear aligner treatments and precision orthodontic bracket therapy.'
@@ -63,7 +63,7 @@ const GALLERY_ITEMS = [
     title: 'Ma Dental Team',
     category: 'Doctors & Team',
     role: 'Specialists & Staff',
-    image: `${process.env.PUBLIC_URL || ''}/grp_image/IMG_6855.PNG`,
+    image: `${process.env.PUBLIC_URL || ''}/grp_image/IMG_6855.webp`,
     badge: 'TEAM',
     iconType: 'shield',
     description: 'Our dedicated clinical team of dental surgeons, specialists, and compassionate support staff.'
@@ -73,7 +73,7 @@ const GALLERY_ITEMS = [
     title: 'Operatory Suite',
     category: 'Clinic & Facilities',
     role: 'Ergonomic Treatment',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.jpg`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.webp`,
     badge: 'FACILITY',
     iconType: 'clinic',
     description: 'Spacious, sterile clinical operatory equipped with state-of-the-art dental chairs.'
@@ -83,7 +83,7 @@ const GALLERY_ITEMS = [
     title: 'FONA 3D X-Ray',
     category: 'Advanced Equipment',
     role: 'Panoramic OPG Suite',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.jpg`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.webp`,
     badge: 'EQUIPMENT',
     iconType: 'scanner',
     description: 'Ultra-low radiation 3D panoramic imaging for precise dental diagnosis.'
@@ -93,7 +93,7 @@ const GALLERY_ITEMS = [
     title: 'Digital RVG',
     category: 'Advanced Equipment',
     role: 'Chairside Sensor',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.jpg`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.webp`,
     badge: 'EQUIPMENT',
     iconType: 'tech',
     description: 'Instant high-definition chairside digital X-rays with maximum patient safety.'
@@ -103,7 +103,7 @@ const GALLERY_ITEMS = [
     title: 'Class-B Autoclave',
     category: 'Clinic & Facilities',
     role: 'Sterilization Unit',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.jpg`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.webp`,
     badge: 'FACILITY',
     iconType: 'shield',
     description: 'Hospital-grade sterilization units ensuring 100% instrument safety and hygiene.'
@@ -113,7 +113,7 @@ const GALLERY_ITEMS = [
     title: 'Clinic Lounge',
     category: 'Clinic & Facilities',
     role: 'Consultation Suite',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/dental-facilities.jpg`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/dental-facilities.webp`,
     badge: 'FACILITY',
     iconType: 'clinic',
     description: 'Welcoming consultation lounge designed for patient comfort and calm care.'
@@ -123,7 +123,7 @@ const GALLERY_ITEMS = [
     title: 'Physiodispenser',
     category: 'Advanced Equipment',
     role: 'Implant Motor',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/implant-physiodispenser.jpg`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/implant-physiodispenser.webp`,
     badge: 'EQUIPMENT',
     iconType: 'tech',
     description: 'Micro-precision motor systems for controlled, painless dental implant placement.'

@@ -4,7 +4,7 @@ function OurStory() {
 	return (
 		<section className="our-story" id="about">
 			<div className="story-visual">
-				<img src={`${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.jpg`} width="480" height="360" loading="lazy" decoding="async" alt="Ma Dental Clinic Treatment Operatory Suite" />
+				<img src={`${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.webp`} width="480" height="360" loading="lazy" decoding="async" alt="Ma Dental Clinic Treatment Operatory Suite" />
 				<div className="certified-card">
 					<span className="certified-icon" aria-hidden="true">&#10003;</span>
 					<span><strong>Certified Clinic</strong><small>ISO 9001:2020 Compliant</small></span>

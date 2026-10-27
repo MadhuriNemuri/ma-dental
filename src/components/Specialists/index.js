@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const specialists = [
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).png`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).webp`,
 		experience: '10 Yrs Exp',
 		name: 'Mounika Pothireddy',
 		qualification: 'MD • HYGIENE CONSULTANT',
@@ -11,7 +11,7 @@ const specialists = [
 		category: 'Hygiene Consultant'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.png`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.webp`,
 		experience: '8 Yrs Exp',
 		name: 'Dr. G. RISHITHA REDDY',
 		qualification: 'M.D.S., • PERIODONTIST & IMPLANTITIS',
@@ -19,7 +19,7 @@ const specialists = [
 		category: 'Periodontist'
 	},
 	{
-		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.png`,
+		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.webp`,
 		experience: '8 Yrs Exp',
 		name: 'Dr. Y. SHANTI PRIYA',
 		qualification: 'B.D.S., • COSMETIC DENTAL SURGEON',
