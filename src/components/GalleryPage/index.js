@@ -73,7 +73,7 @@ const GALLERY_ITEMS = [
     title: 'Operatory Suite',
     category: 'Clinic & Facilities',
     role: 'Ergonomic Treatment',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.jpg`,
     badge: 'FACILITY',
     iconType: 'clinic',
     description: 'Spacious, sterile clinical operatory equipped with state-of-the-art dental chairs.'
@@ -83,7 +83,7 @@ const GALLERY_ITEMS = [
     title: 'FONA 3D X-Ray',
     category: 'Advanced Equipment',
     role: 'Panoramic OPG Suite',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.jpg`,
     badge: 'EQUIPMENT',
     iconType: 'scanner',
     description: 'Ultra-low radiation 3D panoramic imaging for precise dental diagnosis.'
@@ -93,7 +93,7 @@ const GALLERY_ITEMS = [
     title: 'Digital RVG',
     category: 'Advanced Equipment',
     role: 'Chairside Sensor',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/digital-rvg-sensor.jpg`,
     badge: 'EQUIPMENT',
     iconType: 'tech',
     description: 'Instant high-definition chairside digital X-rays with maximum patient safety.'
@@ -103,7 +103,7 @@ const GALLERY_ITEMS = [
     title: 'Class-B Autoclave',
     category: 'Clinic & Facilities',
     role: 'Sterilization Unit',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.jpg`,
     badge: 'FACILITY',
     iconType: 'shield',
     description: 'Hospital-grade sterilization units ensuring 100% instrument safety and hygiene.'
@@ -113,7 +113,7 @@ const GALLERY_ITEMS = [
     title: 'Clinic Lounge',
     category: 'Clinic & Facilities',
     role: 'Consultation Suite',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/images/dental-facilities.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/images/dental-facilities.jpg`,
     badge: 'FACILITY',
     iconType: 'clinic',
     description: 'Welcoming consultation lounge designed for patient comfort and calm care.'

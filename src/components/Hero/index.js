@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
 
@@ -118,6 +118,16 @@ function Hero() {
 	const [isMuted, setIsMuted] = useState(true);
 	const [isPlaying, setIsPlaying] = useState(true);
 
+	useEffect(() => {
+		// Defer 98MB video buffering to leave 100% network and CPU free for LCP paint
+		const timer = setTimeout(() => {
+			if (videoRef.current) {
+				videoRef.current.play().catch(() => {});
+			}
+		}, 1000);
+		return () => clearTimeout(timer);
+	}, []);
+
 	const toggleSound = (e) => {
 		if (e) e.stopPropagation();
 		if (videoRef.current) {
@@ -161,7 +171,7 @@ function Hero() {
 					<video
 						ref={videoRef}
 						className="hero-video"
-						autoPlay
+						preload="metadata"
 						loop
 						muted
 						playsInline

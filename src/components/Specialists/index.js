@@ -41,7 +41,7 @@ function Specialists() {
 				{specialists.map((specialist) => (
 					<article className="specialist-card" key={specialist.name}>
 						<div className="specialist-image-wrap">
-							<img src={specialist.image} alt={specialist.name} />
+							<img src={specialist.image} alt={specialist.name} width="340" height="380" loading="lazy" decoding="async" />
 						</div>
 						<div className="specialist-content">
 							<h3>{specialist.name}</h3>

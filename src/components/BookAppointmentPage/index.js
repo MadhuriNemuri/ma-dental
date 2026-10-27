@@ -387,9 +387,13 @@ Please confirm my appointment. Thank you!`;
             {/* TEAM IMAGE WITH CURVED WAVE & TEAL ACCENT */}
             <div className="ref-team-image-frame">
             <img
-              src={`${process.env.PUBLIC_URL || ''}/grp_image/IMG_6855.PNG`}
+              src={`${process.env.PUBLIC_URL || ''}/grp_image/IMG_6855.jpg`}
               alt="Ma Dental Doctors and Specialists Team"
               className="ref-team-photo"
+              width="540"
+              height="380"
+              loading="lazy"
+              decoding="async"
             />
             <div className="ref-photo-wave-divider">
               <svg

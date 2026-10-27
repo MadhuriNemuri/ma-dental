@@ -17,7 +17,7 @@ const doctors = [
     name: 'Dr. T. Bhanu Prakash Reddy',
     degree: 'M.D.S. • Cosmetic Dental Surgeon',
     description: 'Specializing in complex full-mouth rehabilitation, bone grafting, and advanced implant procedures with gentle surgical techniques.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.jpg`,
     category: 'Cosmetic',
     categories: ['Cosmetic', 'Oral Surgery'],
     years: '14 Yrs Exp',
@@ -73,7 +73,7 @@ const doctors = [
     name: 'Dr. M. Hemadri',
     degree: 'M.D.S. • Orthodontist',
     description: 'Expert in clear aligner therapy (Invisible Diamond Provider) and interceptive orthodontics tailored for teens and adult smile enhancements.',
-    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-3-enhanced.png`,
+    image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/doctor-3-enhanced.jpg`,
     category: 'Orthodontics',
     categories: ['Orthodontics', 'Pediatric'],
     years: '11 Yrs Exp',
@@ -212,7 +212,7 @@ function DoctorsPage() {
           {filteredDoctors.map((doctor) => (
             <article className="doctor-card" key={doctor.name}>
               <div className="doctor-card__image">
-                <img src={doctor.image} alt={doctor.name} />
+                <img src={doctor.image} alt={doctor.name} width="320" height="320" loading="lazy" decoding="async" />
                 <span className="doctor-card__rating">
                   <span className="rating-star">★</span> {doctor.rating} ({doctor.reviewCount})
                 </span>

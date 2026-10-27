@@ -105,14 +105,14 @@ function AboutPage() {
 
           <div className="sanctuary-visuals">
             <div className="visual-large">
-              <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.png`} alt="Ma Dental modern treatment operatory" />
+              <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/clinic-operatory.jpg`} width="520" height="380" loading="lazy" decoding="async" alt="Ma Dental modern treatment operatory" />
             </div>
             <div className="visual-stack">
               <div className="visual-small">
-                <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.png`} alt="FONA 3D panoramic OPG x-ray" />
+                <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/fona-opg-xray.jpg`} width="250" height="180" loading="lazy" decoding="async" alt="FONA 3D panoramic OPG x-ray" />
               </div>
               <div className="visual-small alt">
-                <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.png`} alt="Class-B vacuum autoclave sterilization unit" />
+                <img src={`${process.env.PUBLIC_URL || ''}/Assets/images/sterilization-autoclave.jpg`} width="250" height="180" loading="lazy" decoding="async" alt="Class-B vacuum autoclave sterilization unit" />
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@ function AboutPage() {
 
         <section className="doctor-highlight">
           <div className="doctor-photo">
-            <img src={`${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.png`} alt="Dr. T. Bhanu Prakash Reddy" />
+            <img src={`${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.jpg`} width="360" height="420" loading="lazy" decoding="async" alt="Dr. T. Bhanu Prakash Reddy" />
           </div>
 
           <div className="doctor-quote">

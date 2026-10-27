@@ -29,8 +29,8 @@ function PageLoader({ onFinish }) {
     }
 
     // Snappy, non-blocking initial intro for first-time homepage visitors
-    const totalDuration = 700;
-    const intervalTime = 40;
+    const totalDuration = 360;
+    const intervalTime = 30;
     const totalSteps = totalDuration / intervalTime;
     let currentStep = 0;
 
@@ -46,8 +46,8 @@ function PageLoader({ onFinish }) {
           setTimeout(() => {
             setStage('done');
             if (onFinish) onFinish();
-          }, 250);
-        }, 120);
+          }, 180);
+        }, 80);
       }
     }, intervalTime);
 
