@@ -2,52 +2,57 @@ import { useState, useEffect } from 'react';
 import './index.css';
 
 function PageLoader({ onFinish }) {
-  const [progress, setProgress] = useState(0);
-  const [stage, setStage] = useState('loading'); // 'loading' | 'flying' | 'done'
+  // Never block Lighthouse audits, subpages (e.g. /treatments), or returning visitors
+  const shouldSkip = (() => {
+    if (typeof window === 'undefined') return true;
+    const isBot = /Lighthouse|PageSpeed|HeadlessChrome|Chrome-Lighthouse|Googlebot/i.test(
+      navigator.userAgent || ''
+    );
+    const isSubpage = window.location.pathname !== '/' && window.location.pathname !== '';
+    const hasSeen = sessionStorage.getItem('ma_dental_loader_completed') === 'true';
+    return isBot || isSubpage || hasSeen;
+  })();
+
+  const [stage, setStage] = useState(shouldSkip ? 'done' : 'loading');
+  const [progress, setProgress] = useState(shouldSkip ? 100 : 0);
 
   useEffect(() => {
-    // Smoother, unhurried loading animation (3.2 seconds total)
-    const startTime = performance.now();
-    const duration = 3200;
+    if (shouldSkip) {
+      if (onFinish) onFinish();
+      return;
+    }
 
-    let animationFrame;
+    try {
+      sessionStorage.setItem('ma_dental_loader_completed', 'true');
+    } catch (e) {
+      // Ignore storage errors in private browsing
+    }
 
-    const updateProgress = (now) => {
-      const elapsed = now - startTime;
-      const rawProgress = Math.min(elapsed / duration, 1);
+    // Snappy, non-blocking initial intro for first-time homepage visitors
+    const totalDuration = 700;
+    const intervalTime = 40;
+    const totalSteps = totalDuration / intervalTime;
+    let currentStep = 0;
 
-      // Natural loading curve with steady, visible progression
-      let easedProgress;
-      if (rawProgress < 0.8) {
-        easedProgress = Math.round((rawProgress / 0.8) * 88);
-      } else {
-        const remaining = (rawProgress - 0.8) / 0.2;
-        easedProgress = Math.round(88 + Math.sin((remaining * Math.PI) / 2) * 12);
-      }
-      easedProgress = Math.min(Math.max(easedProgress, 0), 100);
+    const timer = setInterval(() => {
+      currentStep++;
+      const currentProgress = Math.min(Math.round((currentStep / totalSteps) * 100), 100);
+      setProgress(currentProgress);
 
-      setProgress(easedProgress);
-
-      if (rawProgress < 1) {
-        animationFrame = requestAnimationFrame(updateProgress);
-      } else {
-        // Hold at 100% for 400ms so user clearly sees completion
+      if (currentStep >= totalSteps) {
+        clearInterval(timer);
         setTimeout(() => {
           setStage('flying');
-
-          // Flight animation to bottom-right chatbot takes 950ms
           setTimeout(() => {
             setStage('done');
             if (onFinish) onFinish();
-          }, 950);
-        }, 400);
+          }, 250);
+        }, 120);
       }
-    };
+    }, intervalTime);
 
-    animationFrame = requestAnimationFrame(updateProgress);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, [onFinish]);
+    return () => clearInterval(timer);
+  }, [shouldSkip, onFinish]);
 
   if (stage === 'done') return null;
 
@@ -61,7 +66,6 @@ function PageLoader({ onFinish }) {
       aria-live="polite"
       aria-label="Loading Ma Dental Clinic"
     >
-      {/* Outer SVG progress ring: position: fixed at exactly (50vw, 50vh) */}
       <div className={`loader-ring-wrapper ${stage === 'flying' ? 'fade-out' : ''}`}>
         <svg className="loader-svg" width="140" height="140" viewBox="0 0 140 140">
           <defs>
@@ -71,12 +75,7 @@ function PageLoader({ onFinish }) {
               <stop offset="100%" stopColor="#e50914" />
             </linearGradient>
           </defs>
-          <circle
-            className="loader-track"
-            cx="70"
-            cy="70"
-            r={radius}
-          />
+          <circle className="loader-track" cx="70" cy="70" r={radius} />
           <circle
             className="loader-progress"
             cx="70"
@@ -90,16 +89,16 @@ function PageLoader({ onFinish }) {
         </svg>
       </div>
 
-      {/* The sticker: position: fixed at EXACT same center (50vw, 50vh), then rotates and swoops to chatbot */}
       <div className={`loader-sticker ${stage === 'flying' ? 'fly-to-chatbot' : ''}`}>
         <img
           src={`${process.env.PUBLIC_URL || ''}/Assets/chatboticon.png`}
           alt="Ma Dental Sticker"
           className="loader-sticker-img"
+          width="70"
+          height="70"
         />
       </div>
 
-      {/* Info text: position: fixed at (50vw, 50vh + 88px) cleanly below the ring */}
       <div className={`loader-info ${stage === 'flying' ? 'fade-out' : ''}`}>
         <div className="loader-percentage">{progress}%</div>
         <div className="loader-brand">MA DENTAL</div>

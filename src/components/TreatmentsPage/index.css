@@ -3,8 +3,6 @@
    Pixel-accurate matching of user's 3-column editorial serif layout
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
 .treatments-shell {
   background: #f8fafb;
   min-height: 100vh;

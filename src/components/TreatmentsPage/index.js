@@ -492,7 +492,7 @@ function TreatmentsPage() {
         {/* 16 Treatments Grid */}
         <section className="treatments-cards-grid" aria-label="Dental treatments catalogue">
           {filteredTreatments.length > 0 ? (
-            filteredTreatments.map((treatment) => (
+            filteredTreatments.map((treatment, idx) => (
               <article
                 className="treatment-item-card"
                 key={treatment.id}
@@ -511,7 +511,11 @@ function TreatmentsPage() {
                   <img
                     src={treatment.image}
                     alt={treatment.title}
-                    loading="lazy"
+                    width="380"
+                    height="230"
+                    loading={idx < 3 ? 'eager' : 'lazy'}
+                    fetchPriority={idx === 0 ? 'high' : 'auto'}
+                    decoding="async"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
                       e.currentTarget.src = `${process.env.PUBLIC_URL || ''}/Assets/services/cosmetic-dentistry.webp`;
