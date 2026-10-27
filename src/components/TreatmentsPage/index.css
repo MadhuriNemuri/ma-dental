@@ -512,7 +512,7 @@
 }
 
 /* ==========================================================================
-   POPUP MODAL COMPONENT (Brand Royal Blue & Clinical Detail)
+   POPUP MODAL COMPONENT (Architecturally Balanced & Perfectly Aligned)
    ========================================================================== */
 .treatment-modal-backdrop {
   position: fixed;
@@ -538,10 +538,9 @@
   border-radius: 20px;
   max-width: 980px;
   width: 100%;
-  max-height: 90vh;
-  box-shadow: 0 25px 60px -10px rgba(10, 15, 55, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  max-height: 88vh;
+  box-shadow: 0 25px 60px -10px rgba(10, 15, 55, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.15);
   overflow: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
   animation: treatmentModalPop 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -550,7 +549,7 @@
 @keyframes treatmentModalPop {
   from {
     opacity: 0;
-    transform: scale(0.95) translateY(12px);
+    transform: scale(0.96) translateY(12px);
   }
   to {
     opacity: 1;
@@ -558,24 +557,79 @@
   }
 }
 
+/* Full-Width Modal Header */
+.treatment-modal-header {
+  padding: 22px 28px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.treatment-modal-header-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.treatment-modal-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.treatment-modal-num-badge {
+  background: #111b5e;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.treatment-modal-cat-badge {
+  background: #eef3ff;
+  color: #2f39a9;
+  border: 1px solid #dce5fa;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.treatment-modal-title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(22px, 2.3vw, 28px);
+  font-weight: 700;
+  color: #111b5e;
+  line-height: 1.22;
+  margin: 0;
+}
+
 .treatment-modal-close {
-  position: absolute;
-  top: 16px;
-  right: 18px;
   width: 36px;
   height: 36px;
   border-radius: 50%;
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
   color: #475569;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10;
+  flex-shrink: 0;
   transition: all 0.2s ease;
+  margin-top: 2px;
 }
 
 .treatment-modal-close:hover {
@@ -585,61 +639,68 @@
   transform: rotate(90deg);
 }
 
-.treatment-modal-inner {
+/* Modal Body: Symmetrical 2-Column Content */
+.treatment-modal-body {
   display: grid;
   grid-template-columns: 360px 1fr;
-  height: 100%;
-  max-height: 90vh;
-  overflow: hidden;
+  gap: 28px;
+  padding: 24px 28px;
+  overflow-y: auto;
+  flex-grow: 1;
+  background: #ffffff;
 }
 
-/* Left Media & Fast Specs Column */
+.treatment-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.treatment-modal-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+/* Left Column: Visual Media + Balanced 2x2 Specs + Protocol Box */
 .treatment-modal-left {
-  background: #f8fafc;
-  border-right: 1px solid #eef2f6;
-  padding: 26px 24px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  overflow-y: auto;
+  gap: 16px;
 }
 
 .treatment-modal-media-frame {
-  position: relative;
   width: 100%;
-  height: 240px;
-  border-radius: 14px;
+  height: 220px;
+  border-radius: 12px;
   overflow: hidden;
-  background: #e2e8f0;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .treatment-modal-media-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-.treatment-modal-tag-overlay {
-  position: absolute;
-  top: 12px;
-  left: 12px;
+.treatment-specs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.treatment-modal-num-pill {
-  background: rgba(17, 27, 94, 0.92);
-  color: #ffffff;
-  font-size: 10px;
+.specs-section-label {
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  padding: 5px 12px;
-  border-radius: 999px;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  color: #64748b;
 }
 
-/* Clinical Specs 2x2 Grid */
 .treatment-specs-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -647,19 +708,21 @@
 }
 
 .spec-card {
-  background: #ffffff;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   padding: 10px 12px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+  min-height: 56px;
+  box-sizing: border-box;
 }
 
 .spec-icon {
   font-size: 18px;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .spec-meta {
@@ -669,7 +732,7 @@
 }
 
 .spec-label {
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   color: #64748b;
@@ -678,66 +741,51 @@
 }
 
 .spec-val {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #111b5e;
   line-height: 1.3;
-  word-break: break-word;
-}
-
-/* Right Detail Column */
-.treatment-modal-right {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 32px 26px;
+  white-space: nowrap;
   overflow: hidden;
-  height: 100%;
+  text-overflow: ellipsis;
 }
 
-.treatment-modal-header {
-  margin-bottom: 16px;
-  padding-right: 36px;
+.treatment-protocol-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #eef2f6;
+  border-radius: 10px;
+  padding: 10px 12px;
 }
 
-.treatment-modal-category {
-  display: inline-block;
-  background: #eef3ff;
-  color: #2f39a9;
-  border: 1px solid #dce5fa;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin-bottom: 8px;
+.protocol-icon {
+  font-size: 16px;
+  margin-top: 1px;
+  flex-shrink: 0;
 }
 
-.treatment-modal-title {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: clamp(23px, 2.3vw, 30px);
+.protocol-copy strong {
+  display: block;
+  font-size: 11.5px;
   font-weight: 700;
   color: #111b5e;
-  line-height: 1.22;
+  margin-bottom: 2px;
+}
+
+.protocol-copy p {
+  font-size: 11px;
+  line-height: 1.45;
+  color: #64748b;
   margin: 0;
 }
 
-.treatment-modal-body-scroll {
-  overflow-y: auto;
-  padding-right: 10px;
-  flex-grow: 1;
+/* Right Column: In-depth Clinical Content */
+.treatment-modal-right {
   display: flex;
   flex-direction: column;
   gap: 18px;
-}
-
-.treatment-modal-body-scroll::-webkit-scrollbar {
-  width: 5px;
-}
-
-.treatment-modal-body-scroll::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 999px;
 }
 
 .modal-section-block {
@@ -747,7 +795,7 @@
 }
 
 .modal-section-heading {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -756,7 +804,7 @@
 }
 
 .treatment-modal-overview {
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.65;
   color: #334155;
   margin: 0;
@@ -776,7 +824,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.5;
   color: #1e293b;
 }
@@ -785,22 +833,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: #eef3ff;
   color: #2f39a9;
   font-weight: 900;
-  font-size: 11px;
+  font-size: 10.5px;
   flex-shrink: 0;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 /* Recommended For Box */
 .treatment-recommended-box {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-left: 4px solid #2f39a9;
+  border-left: 3.5px solid #2f39a9;
   border-radius: 10px;
   padding: 12px 16px;
 }
@@ -809,7 +857,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: #111b5e;
   margin-bottom: 4px;
 }
@@ -819,21 +867,73 @@
 }
 
 .rec-box-text {
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.55;
   color: #475569;
   margin: 0;
 }
 
-/* Modal Action CTA Buttons */
-.treatment-modal-actions {
+/* Full-Width Modal Footer Action Bar */
+.treatment-modal-footer {
+  padding: 16px 28px;
+  border-top: 1px solid #f1f5f9;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.modal-footer-trust {
+  display: flex;
+  align-items: center;
+}
+
+.trust-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2f39a9;
+  display: inline-block;
+}
+
+.modal-footer-actions {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-top: 18px;
-  margin-top: 10px;
-  border-top: 1px solid #eef2f6;
-  flex-shrink: 0;
+}
+
+.modal-whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #111b5e !important;
+  border: 1px solid #cbd5e1;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.modal-whatsapp-cta:hover {
+  background: #eef3ff;
+  border-color: #2f39a9;
+  color: #2f39a9 !important;
 }
 
 .modal-book-cta {
@@ -843,22 +943,22 @@
   gap: 8px;
   background: linear-gradient(135deg, #2f39a9 0%, #1e2685 100%);
   color: #ffffff !important;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 12px 24px;
+  padding: 10px 22px;
   border-radius: 999px;
   text-decoration: none !important;
-  box-shadow: 0 4px 14px rgba(47, 57, 169, 0.3);
+  box-shadow: 0 4px 14px rgba(47, 57, 169, 0.25);
   transition: all 0.22s ease;
-  flex: 1;
+  white-space: nowrap;
 }
 
 .modal-book-cta:hover {
   background: linear-gradient(135deg, #242c86 0%, #111b5e 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(47, 57, 169, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(47, 57, 169, 0.35);
 }
 
 .modal-book-cta svg {
@@ -868,28 +968,6 @@
 
 .modal-book-cta:hover svg {
   transform: translateX(3px);
-}
-
-.modal-whatsapp-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: #f8fafc;
-  color: #111b5e !important;
-  border: 1px solid #cbd5e1;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 12px 20px;
-  border-radius: 999px;
-  text-decoration: none !important;
-  transition: all 0.2s ease;
-}
-
-.modal-whatsapp-cta:hover {
-  background: #eef3ff;
-  border-color: #2f39a9;
-  color: #2f39a9 !important;
 }
 
 /* ==========================================================================
@@ -913,8 +991,10 @@
     align-self: flex-start;
   }
 
-  .treatment-modal-inner {
+  .treatment-modal-body {
     grid-template-columns: 310px 1fr;
+    gap: 20px;
+    padding: 20px 24px;
   }
 }
 
@@ -941,30 +1021,35 @@
     max-height: 94vh;
   }
 
-  .treatment-modal-inner {
-    grid-template-columns: 1fr;
-    max-height: 94vh;
-    overflow-y: auto;
+  .treatment-modal-header {
+    padding: 16px 20px 14px;
   }
 
-  .treatment-modal-left {
-    border-right: none;
-    border-bottom: 1px solid #eef2f6;
-    padding: 20px;
+  .treatment-modal-body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 18px 20px;
   }
 
   .treatment-modal-media-frame {
-    height: 200px;
+    height: 190px;
   }
 
-  .treatment-modal-right {
-    padding: 20px 20px 24px;
-    overflow: visible;
-  }
-
-  .treatment-modal-actions {
+  .treatment-modal-footer {
     flex-direction: column;
-    gap: 10px;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 20px 18px;
+  }
+
+  .modal-footer-trust {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .modal-footer-actions {
+    flex-direction: column;
+    width: 100%;
   }
 
   .modal-book-cta,
