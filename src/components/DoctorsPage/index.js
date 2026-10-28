@@ -9,37 +9,35 @@ const categories = [
   'Periodontics',
   'Pediatric',
   'Cosmetic',
-  'Hygiene'
+  'Oral Implantology'
 ];
 
 const doctors = [
   {
     name: 'Dr. T. Bhanu Prakash Reddy',
-    degree: 'M.D.S. • Cosmetic Dental Surgeon',
+    degree: 'B.D.S. • Cosmetic Dental Surgeon',
     description: 'Specializing in complex full-mouth rehabilitation, bone grafting, and advanced implant procedures with gentle surgical techniques.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/enhanced_images/dr-bhanu-enhanced.webp`,
     category: 'Cosmetic',
-    categories: ['Cosmetic', 'Oral Surgery'],
+    categories: ['Cosmetic', 'Oral Surgery', 'Oral Implantology'],
     years: '14 Yrs Exp',
     specialty: 'Cosmetic Dental Surgeon',
     rating: '4.97',
     reviewCount: '312',
-    languages: ['English', 'Telugu'],
-    location: 'Mon, Wed, Fri'
+    languages: ['English', 'Telugu']
   },
   {
     name: 'Mounika Pothireddy',
-    degree: 'MD • Hygiene Consultant',
-    description: 'Specializing in oral hygiene consulting, gentle preventive care, and making dental visits anxiety-free for younger smiles while building healthy habits.',
+    degree: 'Managing Director • Oral Implantologist',
+    description: 'Managing Director leading clinical operations, advanced dental implantology, and comprehensive smile rehabilitation with state-of-the-art surgical excellence.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).webp`,
-    category: 'Hygiene',
-    categories: ['Hygiene', 'Pediatric'],
+    category: 'Oral Implantology',
+    categories: ['Oral Implantology', 'Oral Surgery', 'Cosmetic'],
     years: '10 Yrs Exp',
-    specialty: 'Oral Hygiene Consultant',
+    specialty: 'Managing Director & Oral Implantologist',
     rating: '4.99',
     reviewCount: '290',
-    languages: ['English', 'Telugu', 'Hindi'],
-    location: 'Mon, Wed, Fri'
+    languages: ['English', 'Telugu', 'Hindi']
   },
   {
     name: 'Dr. G. Rishitha Reddy',
@@ -52,8 +50,7 @@ const doctors = [
     specialty: 'Periodontics & Implantitis',
     rating: '4.98',
     reviewCount: '388',
-    languages: ['English', 'Telugu'],
-    location: 'Mon, Wed, Thu'
+    languages: ['English', 'Telugu']
   },
   {
     name: 'Dr. Y. Shanti Priya',
@@ -66,8 +63,7 @@ const doctors = [
     specialty: 'Dental Surgeon & Pediatric Care',
     rating: '4.96',
     reviewCount: '265',
-    languages: ['English', 'Telugu'],
-    location: 'Tue, Wed, Fri'
+    languages: ['English', 'Telugu']
   },
   {
     name: 'Dr. M. Hemadri',
@@ -81,7 +77,7 @@ const doctors = [
     rating: '5.0',
     reviewCount: '428',
     languages: ['English', 'Telugu'],
-    location: 'Tue, Thu, Sat'
+    location: '1st Sunday of Every Month'
   }
 ];
 
@@ -228,8 +224,8 @@ function DoctorsPage() {
                 <p className="doctor-description">{doctor.description}</p>
 
                 <div className="doctor-meta">
-                  <span>🌐 {doctor.languages[0]}</span>
-                  <span>📍 {doctor.location}</span>
+                  <span>🌐 {doctor.languages.join(', ')}</span>
+                  {doctor.location ? <span>🗓️ {doctor.location}</span> : null}
                 </div>
 
                 <Link to="/book-appointment" className="book-btn">

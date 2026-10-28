@@ -4,14 +4,12 @@ import { Link } from 'react-router-dom';
 import { GOOGLE_SHEET_WEBHOOK_URL } from '../../config/sheetConfig';
 
 const LOCATIONS = [
-  'Pileru (Main Clinic)',
-  'Tirupati',
   'Bangalore',
   'Hyderabad',
-  'Chennai',
-  'Kadapa',
-  'Kurnool',
-  'Vijayawada'
+  'Pileru',
+  'Tirupati',
+  'Chittoor',
+  'Rayachoti'
 ];
 
 const SERVICES = [
@@ -114,8 +112,8 @@ Preferred Date     : ${formData.preferredDate || 'Earliest Available'}
 Message / Concerns : ${formData.message || 'None'}
 
 ----------------------- CLINIC BRANCHES ------------------------------
-Branches           : Pileru (Main Clinic), Tirupati, Bangalore,
-                     Hyderabad, Chennai, Kadapa, Kurnool, Vijayawada
+Branches           : Bangalore, Hyderabad, Pileru,
+                     Tirupati, Chittoor, Rayachoti
 Support Contact    : Instant WhatsApp & Call Confirmation
 
 ======================================================================

@@ -42,11 +42,11 @@ const GALLERY_ITEMS = [
     id: 99,
     title: 'Mounika Pothireddy',
     category: 'Doctors & Team',
-    role: 'Hygiene Consultant',
+    role: 'Managing Director & Oral Implantologist',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).webp`,
-    badge: 'CONSULTANT',
+    badge: 'DIRECTOR',
     iconType: 'shield',
-    description: 'Specialist in preventive oral hygiene, patient education, and anxiety-free gentle smile care.'
+    description: 'Managing Director leading clinical operations, advanced dental implantology, and comprehensive smile rehabilitation.'
   },
   {
     id: 3,
@@ -347,7 +347,7 @@ function GalleryPage() {
         <footer className="gallery-bottom-cta">
           <div className="bottom-cta-text">
             <h3>Experience World-Class Dental Excellence in Person</h3>
-            <p>Visit our modern facilities across Pileru, Tirupati, Bangalore, Hyderabad &amp; Chennai.</p>
+            <p>Visit our modern facilities across Bangalore, Hyderabad, Pileru, Tirupati, Chittoor &amp; Rayachoti.</p>
           </div>
           <Link to="/book-appointment" className="bottom-book-btn">
             Book Your Appointment Today &rarr;
