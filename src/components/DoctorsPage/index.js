@@ -53,7 +53,7 @@ const doctors = [
     languages: ['English', 'Telugu']
   },
   {
-    name: 'Dr. Y. Shanti Priya',
+    name: 'Dr. Y. Shanthi Priya',
     degree: 'B.D.S. • Cosmetic Dental Surgeon',
     description: 'Focused on gentle preventive dentistry, painless restorations, and making dental visits fun and anxiety-free for younger smiles while building healthy habits.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.webp`,

@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const WHATSAPP_NUMBER = '917799234108';
 
 const quickReplies = [
-  { label: 'Find right specialist', reply: 'Our specialist team includes Managing Director & Oral Implantologist Mounika Pothireddy, Cosmetic Dental Surgeon Dr. Bhanu Prakash, Orthodontist Dr. M. Hemadri, Periodontist Dr. G. Rishitha, and Pediatric Surgeon Dr. Y. Shanti Priya. What dental concern can we help you with?', whatsapp: 'I would like help choosing the right dental specialist.' },
+  { label: 'Find right specialist', reply: 'Our specialist team includes Managing Director & Oral Implantologist Mounika Pothireddy, Cosmetic Dental Surgeon Dr. Bhanu Prakash, Orthodontist Dr. M. Hemadri, Periodontist Dr. G. Rishitha, and Pediatric Surgeon Dr. Y. Shanthi Priya. What dental concern can we help you with?', whatsapp: 'I would like help choosing the right dental specialist.' },
   { label: 'Book an appointment', reply: 'I can help you get started. Share your preferred day and our care coordinator will confirm the next available slot.', whatsapp: 'I would like to book an appointment.' },
   { label: 'View treatments', reply: 'We offer smile design, implants, aligners, root canal care, gum care, and family dentistry.', whatsapp: 'I would like to know about your treatments.' },
   { label: 'Clinic hours', reply: 'We are open Monday to Saturday, 9:00 AM to 9:00 PM. Sunday visits are available by request.', whatsapp: 'I would like to confirm clinic hours.' },

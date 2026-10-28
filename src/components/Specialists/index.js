@@ -21,7 +21,7 @@ const specialists = [
 	{
 		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.webp`,
 		experience: '8 Yrs Exp',
-		name: 'Dr. Y. SHANTI PRIYA',
+		name: 'Dr. Y. SHANTHI PRIYA',
 		qualification: 'B.D.S., • COSMETIC DENTAL SURGEON',
 		description: 'Making dental visits fun and anxiety-free for younger smiles while building healthy habits.',
 		category: 'Dental Surgeon'

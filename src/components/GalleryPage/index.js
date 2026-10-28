@@ -20,7 +20,7 @@ const FEATURED_DOCTOR = {
 const GALLERY_ITEMS = [
   {
     id: 1,
-    title: 'Dr. Y. Shanti Priya',
+    title: 'Dr. Y. Shanthi Priya',
     category: 'Doctors & Team',
     role: 'Cosmetic & Pediatric',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.webp`,
