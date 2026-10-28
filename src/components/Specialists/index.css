@@ -5,7 +5,7 @@
 }
 
 .specialists-heading { margin: 0 auto 44px; max-width: 760px; text-align: center; }
-.specialists-eyebrow { color: #047857; display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; margin-bottom: 9px; text-transform: uppercase; }
+.specialists-eyebrow { color: #2f39a9; display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; margin-bottom: 9px; text-transform: uppercase; }
 .specialists-heading h2 { color: #111b31; font-size: clamp(30px, 3.2vw, 42px); letter-spacing: -1.5px; line-height: 1.1; margin: 0 0 11px; font-weight: 800; }
 .specialists-heading p { color: #53627b; font-size: 15px; line-height: 1.5; margin: 0; }
 
@@ -65,7 +65,7 @@
 }
 
 .specialist-content > strong {
-	color: #047857;
+	color: #2f39a9;
 	display: block;
 	font-size: 11.5px;
 	font-weight: 700;
@@ -99,7 +99,7 @@
 }
 
 .specialist-footer a {
-	color: #047857;
+	color: #2f39a9;
 	font-size: 13px;
 	font-weight: 700;
 	text-decoration: none;
@@ -110,7 +110,7 @@
 }
 
 .specialist-footer a:hover {
-	color: #065f46;
+	color: #111b5e;
 }
 
 .specialist-footer a span {
