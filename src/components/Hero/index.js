@@ -2,114 +2,110 @@ import { useState, useRef, useEffect } from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
 
-const dentalServices = [
+const scrollingTreatments = [
 	{
-		category: 'Crowns & Prosthetics',
-		title: 'Veneers',
-		description: 'Ultra-thin, custom porcelain laminates crafted with lifelike translucency and lasting strength.',
-		badge: 'Cosmetic'
-	},
-	{
-		category: 'Crowns & Prosthetics',
-		title: 'Onlays',
-		description: 'Custom-milled partial restorations preserving natural tooth structure and restoring chewing function.',
-		badge: 'Restorative'
-	},
-	{
-		category: 'Crowns & Prosthetics',
-		title: 'Inlays',
-		description: 'Precision-crafted laboratory fillings offering superior fit, durability, and cavity protection.',
-		badge: 'Restorative'
-	},
-	{
-		category: 'Crowns & Prosthetics',
-		title: 'Metal Ceramic Crown',
-		description: 'Durable, hybrid aesthetic crowns offering high bite strength with natural tooth shading.',
-		badge: 'Prosthetics'
-	},
-	{
-		category: 'Crowns & Prosthetics',
-		title: 'Zirconia Crown',
-		description: 'Premium metal-free monolithic zirconia crowns with diamond-grade strength and aesthetics.',
-		badge: 'Premium'
-	},
-	{
-		category: 'Crowns & Prosthetics',
-		title: 'Complete Denture',
-		description: 'Custom-engineered full arches restoring facial contour, natural smile, and chewing confidence.',
-		badge: 'Prosthetics'
-	},
-	{
-		category: 'Implants & Surgery',
-		title: 'Dental Implant',
-		description: 'Permanent titanium root replacements that preserve jawbone integrity and look completely natural.',
-		badge: 'Permanent'
-	},
-	{
-		category: 'Fillings & Restorations',
-		title: 'GIC Filling',
-		description: 'Fluoride-releasing glass ionomer restorations that bond chemically to protect against decay.',
-		badge: 'Restorative'
-	},
-	{
-		category: 'Fillings & Restorations',
-		title: 'Composite Filling',
-		description: 'Color-matched nano-hybrid resin fillings that seamlessly blend with your natural tooth enamel.',
-		badge: 'Restorative'
-	},
-	{
-		category: 'Crowns & Prosthetics',
-		title: 'Crown Re-Cementation',
-		description: 'Precision clinical re-bonding of dislodged or loosened crowns with high-strength cement.',
-		badge: 'Urgent Care'
-	},
-	{
+		title: 'Root Canal Treatment (RCT)',
+		imageName: 'RTC',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/RTC.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/RTC.jpg`,
 		category: 'Endodontics',
-		title: 'Root Canal Treatment',
-		description: 'Single-visit rotary endodontic therapy relieving pain and saving deeply infected natural teeth.',
-		badge: 'Painless RCT'
+		badge: 'Root Canal (RCT)'
 	},
 	{
-		category: 'Cosmetic Dentistry',
-		title: 'Teeth Whitening',
-		description: 'In-clinic advanced LED laser whitening brightening teeth up to 8 shades in just 45 minutes.',
-		badge: 'Instant Glow'
+		title: 'Ceramic & Zirconia Crowns',
+		imageName: 'Ceramic & Zirconia Crowns',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Ceramic%20%26%20Zirconia%20Crowns.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Ceramic%20%26%20Zirconia%20Crowns.jpg`,
+		category: 'Crowns & Bridges',
+		badge: 'Aesthetic Crowns'
 	},
 	{
-		category: 'Orthodontics',
+		title: 'Teeth Replacement',
+		imageName: 'teethreplacement',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/teethreplacement.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/teethreplacement.jpg`,
+		category: 'Dental Implants',
+		badge: 'Permanent Solution'
+	},
+	{
 		title: 'Clear Aligners',
-		description: 'Virtually invisible, removable orthodontic aligners gently straightening teeth without metal wires.',
-		badge: 'Discreet'
+		imageName: 'Clear Aligners',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Clear%20Aligners.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Clear%20Aligners.jpg`,
+		category: 'Orthodontics',
+		badge: 'Invisible Braces'
 	},
 	{
-		category: 'Preventive Care',
-		title: 'Scaling & Polishing',
-		description: 'Ultrasonic deep cleaning removing hardened calculus, plaque, and stubborn tobacco or tea stains.',
-		badge: 'Preventive'
+		title: 'Alignment of Teeth (Braces)',
+		imageName: 'Alignment of Teeth (Braces)',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Alignment%20of%20Teeth%20(Braces).webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Alignment%20of%20Teeth%20(Braces).jpg`,
+		category: 'Orthodontics',
+		badge: 'Precision Braces'
 	},
 	{
+		title: 'Extraction of Wisdom Teeth',
+		imageName: 'Extraction of Wisdom Teeth',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Extraction%20of%20Wisdom%20Teeth.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Extraction%20of%20Wisdom%20Teeth.jpg`,
 		category: 'Oral Surgery',
-		title: 'Wisdom Tooth Care',
-		description: 'Gentle, painless removal of impacted third molars with modern atraumatic surgical techniques.',
-		badge: 'Surgical'
+		badge: 'Painless Extraction'
 	},
 	{
-		category: 'Pediatric Dentistry',
-		title: 'Kids Dental Care',
-		description: 'Child-friendly preventive fluoride, cavity sealants, and gentle dental checkups for youngsters.',
-		badge: 'Gentle Care'
+		title: 'Removable & BPS Dentures',
+		imageName: 'Removable & BPS Dentures',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Removable%20%26%20BPS%20Dentures.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Removable%20%26%20BPS%20Dentures.jpg`,
+		category: 'Prosthetics',
+		badge: 'Custom Fit'
 	},
 	{
+		title: 'Laser Treatment for Gum Problems',
+		imageName: 'Laser Treatment for Gum Problems',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Laser%20Treatment%20for%20Gum%20Problems.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Laser%20Treatment%20for%20Gum%20Problems.jpg`,
 		category: 'Periodontics',
-		title: 'Gum Therapy',
-		description: 'Deep ultrasonic root planing and laser gum treatment stopping bleeding and gum recession.',
-		badge: 'Gum Health'
+		badge: 'Laser Therapy'
 	},
 	{
+		title: 'Jaw Joint Treatment',
+		imageName: 'Jaw Joint Treatment',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Jaw%20Joint%20Treatment.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Jaw%20Joint%20Treatment.jpg`,
+		category: 'Oral Surgery & TMJ',
+		badge: 'TMJ / TMD Care'
+	},
+	{
+		title: 'Teeth Whitening',
+		imageName: 'Teeth Whitening',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Teeth%20Whitening.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Teeth%20Whitening.jpg`,
 		category: 'Cosmetic Dentistry',
-		title: 'Smile Makeover',
-		description: 'Comprehensive digital smile design harmonizing teeth alignment, shape, proportions, and brightness.',
-		badge: 'Full Aesthetic'
+		badge: 'Instant Brightness'
+	},
+	{
+		title: 'Ultrasonic Scaling',
+		imageName: 'Ultrasonic Scaling',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Ultrasonic%20Scaling.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Ultrasonic%20Scaling.jpg`,
+		category: 'Preventive Care',
+		badge: 'Deep Cleaning'
+	},
+	{
+		title: 'GIC Filling (Glass Ionomer)',
+		imageName: 'GIC Filling (Glass Ionomer)',
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/GIC%20Filling%20(Glass%20Ionomer).webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/GIC%20Filling%20(Glass%20Ionomer).jpg`,
+		category: 'Restorative Care',
+		badge: 'Fluoride Bonding'
+	},
+	{
+		title: "Special Care for Children's Teeth",
+		imageName: "Special Care for Children's Teeth",
+		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Special%20Care%20for%20Children's%20Teeth.webp`,
+		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Special%20Care%20for%20Children's%20Teeth.jpg`,
+		category: 'Pediatric Dentistry',
+		badge: 'Kids Dental Care'
 	}
 ];
 
@@ -249,17 +245,31 @@ function Hero() {
 
 				<div className="services-marquee" tabIndex="0" aria-label="Continuously scrolling dental services list">
 					<div className="services-marquee-track">
-						{[...dentalServices, ...dentalServices].map((service, index) => (
-							<article className="services-ticker-card" key={`${service.title}-${index}`}>
-								<div className="ticker-card-top">
-									<span className="ticker-category">{service.category}</span>
-									<span className="ticker-badge">{service.badge}</span>
+						{[...scrollingTreatments, ...scrollingTreatments].map((treatment, index) => (
+							<article className="services-ticker-card" key={`${treatment.title}-${index}`}>
+								<div className="ticker-card-image-wrap">
+									<img
+										src={treatment.image}
+										alt={treatment.title}
+										width="290"
+										height="185"
+										loading="lazy"
+										decoding="async"
+										onError={(e) => {
+											if (treatment.fallback && e.currentTarget.src !== treatment.fallback) {
+												e.currentTarget.src = treatment.fallback;
+											}
+										}}
+									/>
+									<span className="ticker-image-badge">{treatment.badge}</span>
 								</div>
-								<h3>{service.title}</h3>
-								<p>{service.description}</p>
-								<Link to="/book-appointment" className="ticker-book-btn">
-									Book Now <span aria-hidden="true">&rarr;</span>
-								</Link>
+								<div className="ticker-card-body">
+									<span className="ticker-category">{treatment.category}</span>
+									<h3 className="ticker-card-title">{treatment.title}</h3>
+									<Link to="/book-appointment" className="ticker-book-btn">
+										Book Consult <span aria-hidden="true">&rarr;</span>
+									</Link>
+								</div>
 							</article>
 						))}
 					</div>
