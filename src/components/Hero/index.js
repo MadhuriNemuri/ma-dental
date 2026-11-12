@@ -7,7 +7,6 @@ const scrollingTreatments = [
 		title: 'Root Canal Treatment (RCT)',
 		imageName: 'RTC',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/RTC.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/RTC.jpg`,
 		category: 'Endodontics',
 		badge: 'Root Canal (RCT)'
 	},
@@ -15,7 +14,6 @@ const scrollingTreatments = [
 		title: 'Ceramic & Zirconia Crowns',
 		imageName: 'Ceramic & Zirconia Crowns',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Ceramic%20%26%20Zirconia%20Crowns.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Ceramic%20%26%20Zirconia%20Crowns.jpg`,
 		category: 'Crowns & Bridges',
 		badge: 'Aesthetic Crowns'
 	},
@@ -23,7 +21,6 @@ const scrollingTreatments = [
 		title: 'Teeth Replacement',
 		imageName: 'teethreplacement',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/teethreplacement.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/teethreplacement.jpg`,
 		category: 'Dental Implants',
 		badge: 'Permanent Solution'
 	},
@@ -31,7 +28,6 @@ const scrollingTreatments = [
 		title: 'Clear Aligners',
 		imageName: 'Clear Aligners',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Clear%20Aligners.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Clear%20Aligners.jpg`,
 		category: 'Orthodontics',
 		badge: 'Invisible Braces'
 	},
@@ -39,7 +35,6 @@ const scrollingTreatments = [
 		title: 'Alignment of Teeth (Braces)',
 		imageName: 'Alignment of Teeth (Braces)',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Alignment%20of%20Teeth%20(Braces).webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Alignment%20of%20Teeth%20(Braces).jpg`,
 		category: 'Orthodontics',
 		badge: 'Precision Braces'
 	},
@@ -47,7 +42,6 @@ const scrollingTreatments = [
 		title: 'Extraction of Wisdom Teeth',
 		imageName: 'Extraction of Wisdom Teeth',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Extraction%20of%20Wisdom%20Teeth.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Extraction%20of%20Wisdom%20Teeth.jpg`,
 		category: 'Oral Surgery',
 		badge: 'Painless Extraction'
 	},
@@ -55,7 +49,6 @@ const scrollingTreatments = [
 		title: 'Removable & BPS Dentures',
 		imageName: 'Removable & BPS Dentures',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Removable%20%26%20BPS%20Dentures.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Removable%20%26%20BPS%20Dentures.jpg`,
 		category: 'Prosthetics',
 		badge: 'Custom Fit'
 	},
@@ -63,7 +56,6 @@ const scrollingTreatments = [
 		title: 'Laser Treatment for Gum Problems',
 		imageName: 'Laser Treatment for Gum Problems',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Laser%20Treatment%20for%20Gum%20Problems.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Laser%20Treatment%20for%20Gum%20Problems.jpg`,
 		category: 'Periodontics',
 		badge: 'Laser Therapy'
 	},
@@ -71,7 +63,6 @@ const scrollingTreatments = [
 		title: 'Jaw Joint Treatment',
 		imageName: 'Jaw Joint Treatment',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Jaw%20Joint%20Treatment.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Jaw%20Joint%20Treatment.jpg`,
 		category: 'Oral Surgery & TMJ',
 		badge: 'TMJ / TMD Care'
 	},
@@ -79,7 +70,6 @@ const scrollingTreatments = [
 		title: 'Teeth Whitening',
 		imageName: 'Teeth Whitening',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Teeth%20Whitening.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Teeth%20Whitening.jpg`,
 		category: 'Cosmetic Dentistry',
 		badge: 'Instant Brightness'
 	},
@@ -87,7 +77,6 @@ const scrollingTreatments = [
 		title: 'Ultrasonic Scaling',
 		imageName: 'Ultrasonic Scaling',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Ultrasonic%20Scaling.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Ultrasonic%20Scaling.jpg`,
 		category: 'Preventive Care',
 		badge: 'Deep Cleaning'
 	},
@@ -95,7 +84,6 @@ const scrollingTreatments = [
 		title: 'GIC Filling (Glass Ionomer)',
 		imageName: 'GIC Filling (Glass Ionomer)',
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/GIC%20Filling%20(Glass%20Ionomer).webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/GIC%20Filling%20(Glass%20Ionomer).jpg`,
 		category: 'Restorative Care',
 		badge: 'Fluoride Bonding'
 	},
@@ -103,7 +91,6 @@ const scrollingTreatments = [
 		title: "Special Care for Children's Teeth",
 		imageName: "Special Care for Children's Teeth",
 		image: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Special%20Care%20for%20Children's%20Teeth.webp`,
-		fallback: `${process.env.PUBLIC_URL || ''}/scrolling_imgs/Special%20Care%20for%20Children's%20Teeth.jpg`,
 		category: 'Pediatric Dentistry',
 		badge: 'Kids Dental Care'
 	}
@@ -255,11 +242,6 @@ function Hero() {
 										height="185"
 										loading="lazy"
 										decoding="async"
-										onError={(e) => {
-											if (treatment.fallback && e.currentTarget.src !== treatment.fallback) {
-												e.currentTarget.src = treatment.fallback;
-											}
-										}}
 									/>
 									<span className="ticker-image-badge">{treatment.badge}</span>
 								</div>
