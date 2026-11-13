@@ -1,5 +1,6 @@
 import './index.css';
 import { Link } from 'react-router-dom';
+import { GOOGLE_REVIEW_URL } from '../../config/googleReviewConfig';
 
 function GoogleIcon() {
 	return (
@@ -146,6 +147,18 @@ function Testimonials() {
 					<strong aria-label="5 out of 5 stars">★★★★★</strong>
 					<b>Based on 680+ Verified Google Reviews</b>
 				</div>
+				<div className="google-heading-actions">
+					<a
+						href={GOOGLE_REVIEW_URL}
+						target="_blank"
+						rel="noreferrer"
+						className="google-heading-review-btn"
+					>
+						<GoogleIcon />
+						<span>Write a Review on Google</span>
+						<span aria-hidden="true">&rarr;</span>
+					</a>
+				</div>
 			</div>
 
 			<div className="testimonials-grid" role="region" aria-label="Patient reviews" tabIndex={0}>
@@ -193,7 +206,15 @@ function Testimonials() {
 				</div>
 				<div className="cta-band__actions">
 					<Link className="primary-cta" to="/book-appointment">Book Your Consultation</Link>
-					<Link className="secondary-cta" to="/reviews">View All Google Reviews</Link>
+					<a
+						className="secondary-cta google-cta-link"
+						href={GOOGLE_REVIEW_URL}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<GoogleIcon />
+						<span>Review Us on Google</span>
+					</a>
 				</div>
 			</div>
 		</section>

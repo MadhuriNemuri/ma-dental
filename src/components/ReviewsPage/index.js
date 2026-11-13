@@ -1,5 +1,6 @@
 import './index.css';
 import { useState, useMemo } from 'react';
+import { GOOGLE_REVIEW_URL } from '../../config/googleReviewConfig';
 
 function GoogleIcon() {
   return (
@@ -11,8 +12,6 @@ function GoogleIcon() {
     </svg>
   );
 }
-
-const GOOGLE_MAPS_REVIEW_URL = 'https://www.google.com/maps/search/?api=1&query=Ma+Dental+Pileru+Kotapalli+Circle';
 
 const GOOGLE_REVIEWS = [
   {
@@ -107,7 +106,7 @@ const GOOGLE_REVIEWS = [
     id: 'gr-9',
     name: 'Kavitha Naidu',
     service: 'Wisdom Tooth Surgery',
-    category: 'General Dentistry',
+    category: 'Oral Surgery',
     time: '1 month ago',
     rating: 5,
     quote: 'I had severe anxiety about wisdom tooth extraction, but the doctor made it 100% painless with gentle surgical technique. Very fast healing without complications.',
@@ -218,14 +217,15 @@ function ReviewsPage() {
       console.error('Failed to save review in localStorage:', err);
     }
 
-    setSuccessMessage(`Thank you, ${cleanName}! Your review has been added.`);
+    // Auto-copy written review text so patient can paste directly into Google
+    if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(cleanQuote).catch(() => {});
+    }
+
+    setSuccessMessage(`Thank you, ${cleanName}! Your review has been saved to our site and copied to your clipboard.`);
     setName('');
     setQuote('');
     setRating(5);
-
-    setTimeout(() => {
-      setSuccessMessage('');
-    }, 6000);
   };
 
   return (
@@ -246,13 +246,14 @@ function ReviewsPage() {
           </div>
           <div className="reviews-hero-actions">
             <a
-              href={GOOGLE_MAPS_REVIEW_URL}
+              href={GOOGLE_REVIEW_URL}
               target="_blank"
               rel="noreferrer"
               className="google-direct-review-btn"
             >
               <GoogleIcon />
-              <span>Review Us on Google</span>
+              <span>Write a Review on Google</span>
+              <span aria-hidden="true">&rarr;</span>
             </a>
             <button
               type="button"
@@ -296,12 +297,12 @@ function ReviewsPage() {
 
           <div className="google-overview-actions">
             <a
-              href={GOOGLE_MAPS_REVIEW_URL}
+              href={GOOGLE_REVIEW_URL}
               target="_blank"
               rel="noreferrer"
               className="google-view-all-link"
             >
-              <span>View on Google Maps</span>
+              <span>Review on Google Maps</span>
               <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -329,14 +330,34 @@ function ReviewsPage() {
                 <h3>Share Your Treatment Experience</h3>
                 <p>Your honest feedback helps others find the best dental care in Pileru &amp; Tirupati.</p>
               </div>
+              <a
+                href={GOOGLE_REVIEW_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="google-form-direct-link"
+              >
+                <GoogleIcon />
+                <span>Write Directly on Google &rarr;</span>
+              </a>
             </div>
 
             {successMessage && (
               <div className="review-success-alert" role="status">
                 <span className="success-icon" aria-hidden="true">✓</span>
-                <div>
+                <div className="success-alert-body">
                   <strong>{successMessage}</strong>
-                  <p>Your review is now displayed at the top of the reviews below.</p>
+                  <p>Your review is now displayed below. We copied your words so you can easily post them to Google too!</p>
+                  <div className="alert-actions-row">
+                    <a
+                      href={GOOGLE_REVIEW_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="google-instant-post-btn"
+                    >
+                      <GoogleIcon />
+                      <span>Post to Google in 1 Click (Just Paste &amp; Submit) &rarr;</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
@@ -417,8 +438,17 @@ function ReviewsPage() {
 
               <div className="form-actions-row">
                 <button type="submit" className="submit-review-btn">
-                  Send Review <span aria-hidden="true">&rarr;</span>
+                  Submit to Website <span aria-hidden="true">&rarr;</span>
                 </button>
+                <a
+                  href={GOOGLE_REVIEW_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="google-form-secondary-btn"
+                >
+                  <GoogleIcon />
+                  <span>Write on Google Instead</span>
+                </a>
               </div>
             </form>
           </section>
