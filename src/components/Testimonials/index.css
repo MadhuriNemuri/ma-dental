@@ -5,18 +5,34 @@
 }
 
 .testimonials-heading { margin: 0 auto 43px; text-align: center; }
+.google-badge-pill {
+	align-items: center;
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 999px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	color: #1e293b;
+	display: inline-flex;
+	font-size: 11px;
+	font-weight: 700;
+	gap: 7px;
+	margin-bottom: 12px;
+	padding: 6px 16px;
+	letter-spacing: 0.3px;
+}
 .testimonials-eyebrow { color: #2f39a9; display: block; font-size: 9px; font-weight: 700; letter-spacing: .9px; margin-bottom: 9px; }
 .testimonials-heading h2 { color: #111b31; font-size: clamp(31px, 3.2vw, 42px); letter-spacing: -1.5px; line-height: 1; margin: 0 0 11px; }
-.overall-rating { align-items: center; display: flex; gap: 10px; justify-content: center; }
+.overall-rating { align-items: center; display: flex; gap: 8px; justify-content: center; }
+.google-rating-score { color: #111b5e; font-size: 15px; font-weight: 800; }
 .overall-rating strong, .review-stars { color: #f7ad1c; letter-spacing: 2px; }
 .overall-rating strong { font-size: 14px; }
-.overall-rating b { color: #334158; font-size: 10px; }
+.overall-rating b { color: #334158; font-size: 11px; }
 
 .testimonials-grid {
 	overflow: hidden;
 }
 .testimonials-track {
-	animation: testimonials-scroll 40s linear infinite;
+	animation: testimonials-scroll 45s linear infinite;
 	display: flex;
 	width: max-content;
 }
@@ -33,25 +49,97 @@
 @keyframes testimonials-scroll {
 	to { transform: translateX(-50%); }
 }
-.testimonial-card { background: #f8fafc; border: 1px solid #e4ebf0; border-radius: 12px; display: flex; flex: 0 0 clamp(280px, 42vw, 526px); flex-direction: column; min-height: 184px; padding: 19px 20px 17px; }
-.review-stars { font-size: 11px; line-height: 1; }
-.testimonial-card > p { color: #53627b; font-size: 13px; font-style: italic; line-height: 1.6; margin: 14px 0 18px; min-height: 83px; }
-.reviewer img { border-radius: 50%; height: 29px; object-fit: cover; width: 29px; }
+
+.testimonial-card {
+	background: #ffffff;
+	border: 1.5px solid #e2e8f0;
+	border-radius: 16px;
+	box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+	display: flex;
+	flex: 0 0 clamp(290px, 42vw, 520px);
+	flex-direction: column;
+	min-height: 190px;
+	padding: 20px 22px 18px;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.testimonial-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 24px rgba(47, 57, 169, 0.08);
+	border-color: #cbd5e1;
+}
+
+.testimonial-card-header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+.review-stars { font-size: 12px; line-height: 1; }
+.google-source-tag {
+	align-items: center;
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 999px;
+	color: #475569;
+	display: inline-flex;
+	font-size: 10.5px;
+	font-weight: 700;
+	gap: 5px;
+	padding: 3px 9px;
+}
+
+.testimonial-card > p {
+	color: #334155;
+	font-size: 13.5px;
+	line-height: 1.6;
+	margin: 8px 0 18px;
+	min-height: 72px;
+	font-style: normal;
+}
+
+.reviewer {
+	align-items: center;
+	border-top: 1px solid #f1f5f9;
+	display: flex;
+	gap: 10px;
+	padding-top: 14px;
+}
 .reviewer-avatar-initial {
   align-items: center;
-  background: #2f39a9;
   border-radius: 50%;
   color: #fff;
   display: flex;
-  font-size: 11px;
-  font-weight: 700;
-  height: 29px;
+  font-size: 12px;
+  font-weight: 800;
+  height: 32px;
   justify-content: center;
-  width: 29px;
+  width: 32px;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
-.reviewer div { display: grid; gap: 3px; }
-.reviewer strong { color: #1b273d; font-size: 11px; }.reviewer small { color: #93a1b2; font-size: 10px; }
+.reviewer div { display: grid; gap: 2px; }
+.reviewer strong {
+	align-items: center;
+	color: #0f172a;
+	display: inline-flex;
+	font-size: 12px;
+	font-weight: 700;
+	gap: 4px;
+}
+.verified-badge {
+	align-items: center;
+	background: #059669;
+	border-radius: 50%;
+	color: #ffffff;
+	display: inline-flex;
+	font-size: 8px;
+	font-weight: 900;
+	height: 13px;
+	justify-content: center;
+	width: 13px;
+}
+.reviewer small { color: #64748b; font-size: 11px; font-weight: 500; }
 
 .doctor-spotlight {
 	background: #111b5e;
@@ -157,7 +245,7 @@
 .primary-cta { background: #111b5e; color: #fff; }
 .secondary-cta {
 	background: #fff;
-	border: 1px solid #d8e2ea;
+	border: 1.5px solid #d8e2ea;
 	color: #0d1c2d;
 }
 
@@ -177,7 +265,7 @@
 @media (max-width: 480px) {
 	.testimonials-section { padding-bottom: 60px; padding-top: 58px; }
 	.testimonials-heading { margin-bottom: 30px; }
-	.overall-rating b { font-size: 9px; }
+	.overall-rating b { font-size: 10px; }
 	.doctor-spotlight { margin-top: 46px; }
 	.doctor-spotlight__photo img { height: 120px; width: 120px; }
 	.doctor-spotlight__content p, .doctor-signature { margin-left: 28px; }
