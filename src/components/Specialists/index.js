@@ -23,8 +23,8 @@ const specialists = [
 		experience: '8 Yrs Exp',
 		name: 'Dr. Y. SHANTHI PRIYA',
 		qualification: 'B.D.S., • COSMETIC DENTAL SURGEON',
-		description: 'Making dental visits fun and anxiety-free for younger smiles while building healthy habits.',
-		category: 'Dental Surgeon'
+		description: 'Specializing in smile makeovers, aesthetic tooth restorations, composite bonding, and advanced cosmetic dental surgery.',
+		category: 'Cosmetic Dental Surgeon'
 	}
 ];
 

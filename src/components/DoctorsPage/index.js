@@ -56,12 +56,12 @@ const doctors = [
   {
     name: 'Dr. Y. Shanthi Priya',
     degree: 'B.D.S. • Cosmetic Dental Surgeon',
-    description: 'Focused on gentle preventive dentistry, painless restorations, and making dental visits fun and anxiety-free for younger smiles while building healthy habits.',
+    description: 'Specializing in smile makeovers, aesthetic tooth restorations, composite bonding, and advanced cosmetic dental surgery.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.webp`,
-    category: 'Pediatric',
-    categories: ['Pediatric', 'Endodontics', 'Cosmetic'],
+    category: 'Cosmetic',
+    categories: ['Cosmetic', 'Endodontics', 'Pediatric'],
     years: '8 Yrs Exp',
-    specialty: 'Dental Surgeon & Pediatric Care',
+    specialty: 'Cosmetic Dental Surgeon',
     rating: '4.96',
     reviewCount: '265',
     languages: ['English', 'Telugu']

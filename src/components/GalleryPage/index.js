@@ -22,11 +22,11 @@ const GALLERY_ITEMS = [
     id: 1,
     title: 'Dr. Y. Shanthi Priya',
     category: 'Doctors & Team',
-    role: 'Cosmetic & Pediatric',
+    role: 'Cosmetic Dental Surgeon',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.webp`,
     badge: 'DOCTOR',
     iconType: 'tooth',
-    description: 'Experienced dental surgeon dedicated to gentle family, cosmetic and pediatric dental care.'
+    description: 'Specializing in smile makeovers, aesthetic tooth restorations, composite bonding, and cosmetic dental surgery.'
   },
   {
     id: 2,
