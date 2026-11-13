@@ -6,9 +6,9 @@ const specialists = [
 		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).webp`,
 		experience: '10 Yrs Exp',
 		name: 'Mounika Pothireddy',
-		qualification: 'MANAGING DIRECTOR • ORAL IMPLANTOLOGIST',
-		description: 'Managing Director leading clinical operations, advanced oral implantology, and smile rehabilitation with surgical excellence.',
-		category: 'Oral Implantologist'
+		qualification: 'MANAGING DIRECTOR',
+		description: 'Managing Director leading strategic operations, healthcare excellence, and patient-centric clinic management across all Ma Dental centers.',
+		category: 'Managing Director'
 	},
 	{
 		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.webp`,

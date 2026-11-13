@@ -42,11 +42,11 @@ const GALLERY_ITEMS = [
     id: 99,
     title: 'Mounika Pothireddy',
     category: 'Doctors & Team',
-    role: 'Managing Director & Oral Implantologist',
+    role: 'Managing Director',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).webp`,
     badge: 'DIRECTOR',
     iconType: 'shield',
-    description: 'Managing Director leading clinical operations, advanced dental implantology, and comprehensive smile rehabilitation.'
+    description: 'Managing Director leading strategic operations, healthcare excellence, and patient-centric clinic management.'
   },
   {
     id: 3,

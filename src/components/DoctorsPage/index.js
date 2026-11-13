@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const categories = [
   'All Specialists',
+  'Managing Director',
   'Oral Surgery',
   'Orthodontics',
   'Periodontics',
@@ -28,13 +29,13 @@ const doctors = [
   },
   {
     name: 'Mounika Pothireddy',
-    degree: 'Managing Director • Oral Implantologist',
-    description: 'Managing Director leading clinical operations, advanced dental implantology, and comprehensive smile rehabilitation with state-of-the-art surgical excellence.',
+    degree: 'Managing Director',
+    description: 'Managing Director leading strategic operations, healthcare excellence, and patient-centric clinic management across all Ma Dental centers.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background (1).webp`,
-    category: 'Oral Implantology',
-    categories: ['Oral Implantology', 'Oral Surgery', 'Cosmetic'],
+    category: 'Managing Director',
+    categories: ['Managing Director'],
     years: '10 Yrs Exp',
-    specialty: 'Managing Director & Oral Implantologist',
+    specialty: 'Managing Director',
     rating: '4.99',
     reviewCount: '290',
     languages: ['English', 'Telugu', 'Hindi']
