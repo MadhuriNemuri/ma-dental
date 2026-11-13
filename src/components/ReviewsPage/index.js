@@ -13,149 +13,129 @@ function GoogleIcon() {
   );
 }
 
+// Authentic patient reviews from Ma Dental Google Business profile
 const GOOGLE_REVIEWS = [
   {
-    id: 'gr-1',
+    id: 'gr-kamlesh',
+    name: 'Kamlesh Kumar',
+    service: 'Dental Treatment & Scaling',
+    category: 'Dental Treatment',
+    time: '3 weeks ago',
+    rating: 5,
+    quote: 'Nice treatment and excellent staff. The doctors are very attentive and the clinic is maintained with highest level of hygiene.',
+    source: 'Google Review',
+    avatarColor: '#4285F4'
+  },
+  {
+    id: 'gr-madhan',
+    name: 'Madhan Mohan Reddy',
+    service: 'Checkup & Restoration',
+    category: 'Checkup & Restoration',
+    time: '1 month ago',
+    rating: 5,
+    quote: 'I had a great experience with the staff and friendly doctors. Everything was explained clearly and the treatment was totally pain-free.',
+    source: 'Google Review',
+    avatarColor: '#34A853'
+  },
+  {
+    id: 'gr-guru',
     name: 'Guru Prakash',
     service: 'Dental Implants & Checkup',
     category: 'Dental Implants',
     time: '1 month ago',
     rating: 5,
-    quote: 'Highest standard of dental care in Pileru. The clinic is spotless and equipped with modern technology. Doctors explain every procedure clearly, and pricing is very reasonable and transparent.',
+    quote: 'Highest standard of dental care in Pileru. Clean clinic, modern technology, quick appointment booking, and reasonable pricing.',
     source: 'Google Review',
-    avatarColor: '#4285F4'
+    avatarColor: '#FBBC05'
   },
   {
-    id: 'gr-2',
+    id: 'gr-anand',
     name: 'Anand Reddy',
     service: 'Pediatric Dental Care',
     category: 'Pediatric Care',
     time: '2 weeks ago',
     rating: 5,
-    quote: 'Brought my child here for teeth cleaning and cavity care. The doctor was gentle, patient, and made the visit completely pain-free and fun. Best pediatric dental care in Pileru!',
+    quote: 'Brought my kid for teeth cleaning and cavity care. The doctor was gentle, patient, and made the visit completely pain-free and fun. Best clinic in Pileru!',
     source: 'Google Review',
     avatarColor: '#EA4335'
   },
   {
-    id: 'gr-3',
+    id: 'gr-surendra',
     name: 'M. Surendra',
     service: 'Root Canal & Crown',
     category: 'Root Canal Care',
     time: '3 weeks ago',
     rating: 5,
-    quote: 'Very convenient location near Kotapalli Circle with warm reception staff. Got my single-visit root canal done with zero pain, and the ceramic crown matches my natural teeth perfectly.',
+    quote: 'Very convenient location near Kotapalli Circle with warm reception staff. Got my root canal done with zero pain, and the ceramic crown matches my natural teeth.',
     source: 'Google Review',
-    avatarColor: '#34A853'
+    avatarColor: '#9C27B0'
   },
   {
-    id: 'gr-4',
+    id: 'gr-chandu',
     name: 'V. Chandu',
     service: 'Smile Rehabilitation',
-    category: 'Smile & Veneers',
+    category: 'Smile Rehabilitation',
     time: '1 month ago',
     rating: 5,
-    quote: 'Exceptional dental treatment and surgical precision. Dr. Rishitha and the specialists are polite, attentive, and highly skilled. Hospital-grade sterilization and spotless clinic.',
+    quote: 'Exceptional dental treatment. Medical staff and specialists are polite, attentive, and highly skilled. Hospital-grade sterilization and spotless clinic.',
     source: 'Google Review',
-    avatarColor: '#FBBC05'
+    avatarColor: '#00897B'
   },
   {
-    id: 'gr-5',
+    id: 'gr-viswa',
     name: 'Viswa',
     service: 'Laser Periodontics',
     category: 'Laser & Gum Care',
     time: '2 months ago',
     rating: 5,
-    quote: 'Dr. Rishitha and the team are exceptionally knowledgeable. The advanced laser treatment resolved my bleeding gums with zero post-procedure discomfort. Very happy with the results!',
-    source: 'Google Review',
-    avatarColor: '#9C27B0'
-  },
-  {
-    id: 'gr-6',
-    name: 'Gandar',
-    service: 'Preventive Care & Scaling',
-    category: 'General Dentistry',
-    time: '3 weeks ago',
-    rating: 5,
-    quote: 'Exceptionally clean and hygienic clinic that immediately puts you at ease. The doctors are compassionate, skilled, and took time to address all my dental concerns.',
-    source: 'Google Review',
-    avatarColor: '#00897B'
-  },
-  {
-    id: 'gr-7',
-    name: 'Suzi',
-    service: 'Cosmetic Dentistry',
-    category: 'Smile & Veneers',
-    time: '1 month ago',
-    rating: 5,
-    quote: 'Caring specialists, humble staff, and top-tier clinical quality. They give honest guidance without pushing unnecessary procedures, and the pricing is very reasonable.',
+    quote: 'Dr. Rishitha and the team are exceptionally knowledgeable. The advanced laser treatment resolved my bleeding gums with zero discomfort. Very happy with the results!',
     source: 'Google Review',
     avatarColor: '#E91E63'
   },
   {
-    id: 'gr-8',
-    name: 'Purushotham Reddy',
-    service: 'Clear Aligners',
-    category: 'Clear Aligners',
-    time: '2 months ago',
+    id: 'gr-gandar',
+    name: 'Gandar',
+    service: 'Preventive Care & Cleaning',
+    category: 'Preventive Care',
+    time: '3 weeks ago',
     rating: 5,
-    quote: 'Clear explanation of my aligner treatment plan from day one. Visible improvement in my smile within weeks. The team is always responsive and supportive.',
+    quote: 'Exceptionally clean and hygienic clinic that immediately puts you at ease. The doctors are compassionate, skilled, and took time to address all my concerns.',
     source: 'Google Review',
     avatarColor: '#3949AB'
   },
   {
-    id: 'gr-9',
-    name: 'Kavitha Naidu',
-    service: 'Wisdom Tooth Surgery',
-    category: 'Oral Surgery',
+    id: 'gr-suzi',
+    name: 'Suzi',
+    service: 'Cosmetic Dentistry',
+    category: 'Cosmetic Dentistry',
     time: '1 month ago',
     rating: 5,
-    quote: 'I had severe anxiety about wisdom tooth extraction, but the doctor made it 100% painless with gentle surgical technique. Very fast healing without complications.',
+    quote: 'Caring specialists, humble staff, and top-tier clinical quality. They give honest guidance without pushing unnecessary procedures, and pricing is fair and reasonable.',
     source: 'Google Review',
     avatarColor: '#FB8C00'
   },
   {
-    id: 'gr-10',
-    name: 'Ramesh Babu',
-    service: 'Zirconia Crown',
-    category: 'Crowns & Bridges',
-    time: '3 weeks ago',
-    rating: 5,
-    quote: 'Had monolithic zirconia crowns placed here. Flawless color match with my natural enamel and chewing comfort restored. Highly recommended dental clinic in Pileru.',
-    source: 'Google Review',
-    avatarColor: '#43A047'
-  },
-  {
-    id: 'gr-11',
-    name: 'Sailaja P.',
-    service: 'Aesthetic Veneers',
-    category: 'Smile & Veneers',
+    id: 'gr-purushotham',
+    name: 'Purushotham',
+    service: 'Clear Aligners',
+    category: 'Clear Aligners',
     time: '2 months ago',
     rating: 5,
-    quote: 'The digital smile preview gave me so much confidence. My porcelain veneers look completely natural and radiant. Thank you Ma Dental team!',
+    quote: 'Clear explanation of my dental treatment plan from day one. Smooth procedure and good communication from the staff throughout. Highly recommended!',
     source: 'Google Review',
-    avatarColor: '#0288D1'
-  },
-  {
-    id: 'gr-12',
-    name: 'Sekhar Reddy',
-    service: 'Dental Implants',
-    category: 'Dental Implants',
-    time: '3 months ago',
-    rating: 5,
-    quote: 'Permanent teeth replacement with titanium implants done with high surgical precision. Recovery was smooth within 24 hours. Truly world-class care!',
-    source: 'Google Review',
-    avatarColor: '#5C6BC0'
+    avatarColor: '#43A047'
   }
 ];
 
 const CATEGORIES = [
   'All Google Reviews',
   'Dental Implants',
-  'Smile & Veneers',
   'Root Canal Care',
   'Pediatric Care',
   'Clear Aligners',
-  'Laser & Gum Care'
+  'Laser & Gum Care',
+  'Cosmetic Dentistry',
+  'Dental Treatment'
 ];
 
 function getStoredUserReviews() {
@@ -164,7 +144,20 @@ function getStoredUserReviews() {
     const raw = localStorage.getItem('ma_dental_user_reviews');
     if (!raw) return [];
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    if (!Array.isArray(parsed)) return [];
+    const googleNames = new Set(GOOGLE_REVIEWS.map((g) => (g.name || '').toLowerCase().trim()));
+    const seenUserNames = new Set();
+    const uniqueUserReviews = [];
+    for (const r of parsed) {
+      if (r && r.id && String(r.id).startsWith('user-')) {
+        const key = (r.name || '').toLowerCase().trim();
+        if (key && !googleNames.has(key) && !seenUserNames.has(key)) {
+          seenUserNames.add(key);
+          uniqueUserReviews.push(r);
+        }
+      }
+    }
+    return uniqueUserReviews;
   } catch (err) {
     return [];
   }
@@ -208,10 +201,13 @@ function ReviewsPage() {
       avatarColor: '#2f39a9'
     };
 
-    setReviewsList((current) => [newReview, ...current]);
+    setReviewsList((current) => {
+      const filtered = current.filter((r) => (r.name || '').trim().toLowerCase() !== cleanName.toLowerCase());
+      return [newReview, ...filtered];
+    });
 
     try {
-      const stored = getStoredUserReviews();
+      const stored = getStoredUserReviews().filter((r) => (r.name || '').trim().toLowerCase() !== cleanName.toLowerCase());
       localStorage.setItem('ma_dental_user_reviews', JSON.stringify([newReview, ...stored]));
     } catch (err) {
       console.error('Failed to save review in localStorage:', err);
@@ -412,13 +408,15 @@ function ReviewsPage() {
                     className="form-select"
                   >
                     <option value="Dental Implants">Dental Implants</option>
-                    <option value="Smile & Veneers">Smile Makeover / Veneers</option>
+                    <option value="Cosmetic Dentistry">Cosmetic Dentistry / Smile Care</option>
+                    <option value="Smile Rehabilitation">Smile Rehabilitation</option>
                     <option value="Clear Aligners">Clear Aligners / Braces</option>
-                    <option value="Root Canal Care">Root Canal Care</option>
-                    <option value="Crowns & Bridges">Ceramic &amp; Zirconia Crown</option>
+                    <option value="Root Canal Care">Root Canal &amp; Crown</option>
                     <option value="Pediatric Care">Pediatric Dental Care</option>
                     <option value="Laser & Gum Care">Laser Gum Treatment</option>
-                    <option value="General Dentistry">General Checkup &amp; Cleaning</option>
+                    <option value="Dental Treatment">Dental Treatment &amp; Scaling</option>
+                    <option value="Checkup & Restoration">Checkup &amp; Restoration</option>
+                    <option value="Preventive Care">Preventive Care</option>
                   </select>
                 </div>
               </div>

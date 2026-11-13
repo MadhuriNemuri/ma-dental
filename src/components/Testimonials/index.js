@@ -13,104 +13,105 @@ function GoogleIcon() {
 	);
 }
 
+// Authentic patient reviews from Ma Dental Google Business page
 const googleTestimonials = [
 	{
-		id: 'gr-1',
-		quote: 'Highest standard of dental care in Pileru. The clinic is spotless and equipped with modern technology. Doctors explain every procedure clearly, and pricing is very reasonable.',
-		name: 'Guru Prakash',
-		service: 'Dental Implants & Checkup',
-		time: '1 month ago',
+		id: 'gr-kamlesh',
+		name: 'Kamlesh Kumar',
+		service: 'Dental Treatment & Scaling',
+		time: '3 weeks ago',
 		rating: 5,
+		quote: 'Nice treatment and excellent staff. The doctors are very attentive and the clinic is maintained with highest level of hygiene.',
 		source: 'Google Review',
 		avatarColor: '#4285F4'
 	},
 	{
-		id: 'gr-2',
-		quote: 'Brought my child here for teeth cleaning and cavity care. The doctor was gentle, patient, and made the visit completely pain-free and fun. Best pediatric dental care in Pileru!',
-		name: 'Anand Reddy',
-		service: 'Pediatric Dental Care',
-		time: '2 weeks ago',
+		id: 'gr-madhan',
+		name: 'Madhan Mohan Reddy',
+		service: 'Checkup & Restoration',
+		time: '1 month ago',
 		rating: 5,
-		source: 'Google Review',
-		avatarColor: '#EA4335'
-	},
-	{
-		id: 'gr-3',
-		quote: 'Very convenient location near Kotapalli Circle with warm reception staff. Got my single-visit root canal done with zero pain, and the ceramic crown matches my natural teeth perfectly.',
-		name: 'M. Surendra',
-		service: 'Root Canal & Crown',
-		time: '3 weeks ago',
-		rating: 5,
+		quote: 'I had a great experience with the staff and friendly doctors. Everything was explained clearly and the treatment was totally pain-free.',
 		source: 'Google Review',
 		avatarColor: '#34A853'
 	},
 	{
-		id: 'gr-4',
-		quote: 'Exceptional dental treatment and surgical precision. Dr. Rishitha and the specialists are polite, attentive, and highly skilled. Hospital-grade sterilization and spotless clinic.',
-		name: 'V. Chandu',
-		service: 'Smile Rehabilitation',
+		id: 'gr-guru',
+		name: 'Guru Prakash',
+		service: 'Dental Implants & Checkup',
 		time: '1 month ago',
 		rating: 5,
+		quote: 'Highest standard of dental care in Pileru. Clean clinic, modern technology, quick appointment booking, and reasonable pricing.',
 		source: 'Google Review',
 		avatarColor: '#FBBC05'
 	},
 	{
-		id: 'gr-5',
-		quote: 'Dr. Rishitha and the team are exceptionally knowledgeable. The advanced laser treatment resolved my bleeding gums with zero post-procedure discomfort. Very happy with the results!',
-		name: 'Viswa',
-		service: 'Laser Periodontics',
-		time: '2 months ago',
+		id: 'gr-anand',
+		name: 'Anand Reddy',
+		service: 'Pediatric Dental Care',
+		time: '2 weeks ago',
 		rating: 5,
+		quote: 'Brought my kid for teeth cleaning and cavity care. The doctor was gentle, patient, and made the visit completely pain-free and fun. Best clinic in Pileru!',
+		source: 'Google Review',
+		avatarColor: '#EA4335'
+	},
+	{
+		id: 'gr-surendra',
+		name: 'M. Surendra',
+		service: 'Root Canal & Crown',
+		time: '3 weeks ago',
+		rating: 5,
+		quote: 'Very convenient location near Kotapalli Circle with warm reception staff. Got my root canal done with zero pain, and the ceramic crown matches my natural teeth.',
 		source: 'Google Review',
 		avatarColor: '#9C27B0'
 	},
 	{
-		id: 'gr-6',
-		quote: 'Exceptionally clean and hygienic clinic that immediately puts you at ease. The doctors are compassionate, skilled, and took time to address all my dental concerns.',
-		name: 'Gandar',
-		service: 'Preventive Care & Scaling',
-		time: '3 weeks ago',
+		id: 'gr-chandu',
+		name: 'V. Chandu',
+		service: 'Smile Rehabilitation',
+		time: '1 month ago',
 		rating: 5,
+		quote: 'Exceptional dental treatment. Medical staff and specialists are polite, attentive, and highly skilled. Hospital-grade sterilization and spotless clinic.',
 		source: 'Google Review',
 		avatarColor: '#00897B'
 	},
 	{
-		id: 'gr-7',
-		quote: 'Caring specialists, humble staff, and top-tier clinical quality. They give honest guidance without pushing unnecessary procedures, and the pricing is very reasonable.',
-		name: 'Suzi',
-		service: 'Cosmetic Dentistry',
-		time: '1 month ago',
+		id: 'gr-viswa',
+		name: 'Viswa',
+		service: 'Laser Periodontics',
+		time: '2 months ago',
 		rating: 5,
+		quote: 'Dr. Rishitha and the team are exceptionally knowledgeable. The advanced laser treatment resolved my bleeding gums with zero discomfort. Very happy with the results!',
 		source: 'Google Review',
 		avatarColor: '#E91E63'
 	},
 	{
-		id: 'gr-8',
-		quote: 'Clear explanation of my aligner treatment plan from day one. Visible improvement in my smile within weeks. The team is always responsive and supportive.',
-		name: 'Purushotham Reddy',
-		service: 'Clear Aligners',
-		time: '2 months ago',
+		id: 'gr-gandar',
+		name: 'Gandar',
+		service: 'Preventive Care & Cleaning',
+		time: '3 weeks ago',
 		rating: 5,
+		quote: 'Exceptionally clean and hygienic clinic that immediately puts you at ease. The doctors are compassionate, skilled, and took time to address all my concerns.',
 		source: 'Google Review',
 		avatarColor: '#3949AB'
 	},
 	{
-		id: 'gr-9',
-		quote: 'I had severe anxiety about wisdom tooth extraction, but the doctor made it 100% painless with gentle surgical technique. Very fast healing without complications.',
-		name: 'Kavitha Naidu',
-		service: 'Wisdom Tooth Surgery',
+		id: 'gr-suzi',
+		name: 'Suzi',
+		service: 'Cosmetic Dentistry',
 		time: '1 month ago',
 		rating: 5,
+		quote: 'Caring specialists, humble staff, and top-tier clinical quality. They give honest guidance without pushing unnecessary procedures, and pricing is fair and reasonable.',
 		source: 'Google Review',
 		avatarColor: '#FB8C00'
 	},
 	{
-		id: 'gr-10',
-		quote: 'Had monolithic zirconia crowns placed here. Flawless color match with my natural enamel and chewing comfort restored. Highly recommended dental clinic in Pileru.',
-		name: 'Ramesh Babu',
-		service: 'Zirconia Crown',
-		time: '3 weeks ago',
+		id: 'gr-purushotham',
+		name: 'Purushotham',
+		service: 'Clear Aligners',
+		time: '2 months ago',
 		rating: 5,
+		quote: 'Clear explanation of my dental treatment plan from day one. Smooth procedure and good communication from the staff throughout. Highly recommended!',
 		source: 'Google Review',
 		avatarColor: '#43A047'
 	}
@@ -123,7 +124,17 @@ function getCombinedTestimonials() {
 		if (!raw) return googleTestimonials;
 		const parsed = JSON.parse(raw);
 		if (Array.isArray(parsed) && parsed.length > 0) {
-			return [...parsed, ...googleTestimonials];
+			const validUserReviews = parsed.filter((r) => r.id && String(r.id).startsWith('user-'));
+			const seen = new Set();
+			const combined = [];
+			for (const r of [...validUserReviews, ...googleTestimonials]) {
+				const key = (r.name || '').trim().toLowerCase();
+				if (!seen.has(key)) {
+					seen.add(key);
+					combined.push(r);
+				}
+			}
+			return combined;
 		}
 	} catch (e) {
 		// ignore
@@ -164,9 +175,9 @@ function Testimonials() {
 			<div className="testimonials-grid" role="region" aria-label="Patient reviews" tabIndex={0}>
 				<div className="testimonials-track">
 					{[false, true].map((isDuplicate) => (
-						<div className="testimonials-group" aria-hidden={isDuplicate} key={isDuplicate ? 'duplicate' : 'original'}>
-							{allTestimonials.map((testimonial, idx) => (
-								<article className="testimonial-card" key={testimonial.id || `${testimonial.name}-${idx}`}>
+						<div className="testimonials-group" aria-hidden={isDuplicate} key={isDuplicate ? 'duplicate-group' : 'original-group'}>
+							{allTestimonials.map((testimonial) => (
+								<article className="testimonial-card" key={isDuplicate ? `dup-${testimonial.id}` : testimonial.id}>
 									<div className="testimonial-card-header">
 										<div className="review-stars" aria-label="5 out of 5 stars">
 											{'★'.repeat(testimonial.rating || 5)}{'☆'.repeat(Math.max(0, 5 - (testimonial.rating || 5)))}
