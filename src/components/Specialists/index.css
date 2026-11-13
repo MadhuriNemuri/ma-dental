@@ -87,6 +87,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 10px;
 	padding-top: 14px;
 	border-top: 1px solid #f1f5f9;
 }
@@ -96,6 +97,7 @@
 	font-size: 12px;
 	font-weight: 500;
 	letter-spacing: 0.01em;
+	line-height: 1.35;
 }
 
 .specialist-footer a {
@@ -106,6 +108,8 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 4px;
+	white-space: nowrap;
+	flex-shrink: 0;
 	transition: color 0.15s ease;
 }
 

@@ -14,9 +14,9 @@ const specialists = [
 		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.webp`,
 		experience: '8 Yrs Exp',
 		name: 'Dr. G. RISHITHA REDDY',
-		qualification: 'M.D.S., • PERIODONTIST & IMPLANTITIS',
-		description: 'Expert in clear aligner therapy and interceptive orthodontics for teens and adults.',
-		category: 'Periodontist'
+		qualification: 'M.D.S., • PERIODONTIST & ORAL IMPLANTOLOGIST',
+		description: 'Specializing in advanced gum therapies, laser periodontics, precision dental implantology, and periodontal bone regeneration.',
+		category: 'Periodontist & Oral Implantologist'
 	},
 	{
 		image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Group 1000003419.webp`,

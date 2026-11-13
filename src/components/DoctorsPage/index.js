@@ -42,13 +42,13 @@ const doctors = [
   },
   {
     name: 'Dr. G. Rishitha Reddy',
-    degree: 'M.D.S. • Periodontist & Implantitis',
-    description: 'Expert in clear aligner therapy, smile enhancement, and interceptive orthodontics for teens and adults with gentle techniques.',
+    degree: 'M.D.S. • Periodontist & Oral Implantologist',
+    description: 'Specializing in advanced gum therapies, laser periodontics, precision dental implantology, and periodontal bone regeneration.',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.webp`,
     category: 'Periodontics',
-    categories: ['Periodontics', 'Cosmetic'],
+    categories: ['Periodontics', 'Oral Implantology', 'Oral Surgery'],
     years: '8 Yrs Exp',
-    specialty: 'Periodontics & Implantitis',
+    specialty: 'Periodontist & Oral Implantologist',
     rating: '4.98',
     reviewCount: '388',
     languages: ['English', 'Telugu']

@@ -32,11 +32,11 @@ const GALLERY_ITEMS = [
     id: 2,
     title: 'Dr. G. Rishitha Reddy',
     category: 'Doctors & Team',
-    role: 'Periodontics & Implants',
+    role: 'Periodontist & Oral Implantologist',
     image: `${process.env.PUBLIC_URL || ''}/Assets/specialists_images/Background.webp`,
     badge: 'DOCTOR',
     iconType: 'tooth',
-    description: 'Specialist in minimally invasive gum therapies, bone grafting, and dental implants.'
+    description: 'Specialist in advanced gum therapies, laser periodontics, and precision dental implants.'
   },
   {
     id: 99,
