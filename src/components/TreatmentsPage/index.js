@@ -9,7 +9,7 @@ const treatmentsData = [
     category: 'Endodontics (Root Canal)',
     title: 'Root Canal Treatment (RCT)',
     description: "Precision microscopic root disinfection and warm bioactive obturation to permanently resolve pulpal infection while preserving the tooth's natural root architecture.",
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-01.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/treatment_page_rootcanal_out.jpg`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/rct-microscopic.webp`,
     overview: 'Root Canal Treatment (Endodontic therapy) is a specialized procedure designed to eliminate infection from the tooth innermost pulp chamber while saving your natural tooth from extraction. At Ma Dental, our specialists use computer-guided digital apex locators, microscopic rotary instruments, and bioactive bioceramic sealers to thoroughly disinfect the root canals with near-zero discomfort.',
     duration: '45 – 60 Mins',
