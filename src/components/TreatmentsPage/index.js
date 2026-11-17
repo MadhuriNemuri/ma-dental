@@ -282,7 +282,7 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Flap Surgery (Periodontal)',
     description: 'Micro-surgical access for deep subgingival debridement, bone contouring, and regenerative biologics to rescue compromised periodontal foundations.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-14.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 415.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 390 (3).webp`,
     overview: 'When periodontal disease progresses and creates pockets deeper than 5mm, standard scaling cannot reach the infected bone foundation. Periodontal flap surgery gently separates the gingiva to give the periodontist direct visual access to debride deep bacteria, reshape irregular bone contours, and place regenerative bone grafts.',
     duration: '45 – 60 Mins',
