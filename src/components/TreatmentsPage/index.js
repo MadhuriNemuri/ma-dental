@@ -30,7 +30,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Ceramic & Zirconia Crowns',
     description: 'Custom multi-layered monolithic restorations crafted to flawlessly mirror natural enamel translucency, structural flexure, and optimal chewing resistance.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-02.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 399.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 355.webp`,
     overview: 'Our precision-milled Zirconia and E-Max lithium disilicate crowns offer extraordinary mechanical strength paired with lifelike optical translucency. Engineered using 3D digital intraoral scanning, each restoration replicates the natural anatomy, color gradients, and chewing functionality of healthy human enamel.',
     duration: '2 Quick Sessions',
