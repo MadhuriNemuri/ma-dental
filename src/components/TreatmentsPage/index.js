@@ -198,7 +198,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Teeth Whitening',
     description: 'pH-balanced, biological oxygenation therapies that brighten enamel multiple shades without abrasive micro-scratching or post-procedure dentin sensitivity.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-10.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 410.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/teeth-whitening.webp`,
     overview: 'Experience a dramatically brighter, luminous smile in a single 45-minute clinic session. Our advanced, pH-buffered in-office whitening system activates active oxygen molecules to break down stubborn tea, coffee, smoking, and aging stains safely within the enamel pores without harming tooth structure.',
     duration: '45 – 60 Mins',
