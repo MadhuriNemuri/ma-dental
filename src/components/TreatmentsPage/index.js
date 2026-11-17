@@ -93,7 +93,7 @@ const treatmentsData = [
     category: 'Pediatric & Preventive Care',
     title: "Special Care for Children's Teeth",
     description: 'Gentle, anxiety-free developmental dentistry focusing on remineralization, airway development, and positive oral habits in an unhurried sanctuary.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-05.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 404.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/pediatric-care.webp`,
     overview: 'Pediatric dental care at Ma Dental is tailored for gentle, positive, and anxiety-free visits. From infant oral health checks and gentle fluoride remineralization to pit-and-fissure sealants and interceptive myofunctional coaching, we safeguard developing milk teeth to foster a lifetime of confident smiles.',
     duration: '30 Mins Gentle',
