@@ -303,7 +303,7 @@ const treatmentsData = [
     category: 'Orthodontics & Clear Aligners',
     title: 'Clear Aligners',
     description: 'Virtually invisible multi-layered polyurethane aligners engineered via digital motion forecasting to guide teeth smoothly into harmonious alignment.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-15.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 416.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 391.webp`,
     overview: 'Clear Aligners are virtually invisible, removable orthodontic trays engineered through 3D intraoral optical scans and computer simulation. Each custom tray applies calibrated, gentle forces to guide your teeth into pristine alignment without metal wires, bracket abrasions, or dietary restrictions.',
     duration: '6 – 14 Months',
