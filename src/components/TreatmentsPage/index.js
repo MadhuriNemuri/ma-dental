@@ -114,7 +114,7 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Extraction of Wisdom Teeth',
     description: 'Atraumatic, minimally invasive surgical removal utilizing 3D CBCT navigation and PRF autologous healing for rapid, painless tissue recovery.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-06.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 405.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 388.webp`,
     overview: 'Impacted or misaligned third molars (wisdom teeth) can cause severe pain, pericoronitis infection, cyst formation, and crowding of front teeth. Our oral surgeons perform atraumatic, minimally invasive removals guided by 3D CBCT nerve mapping for ultra-fast, smooth recovery.',
     duration: '20 – 40 Mins / Tooth',
