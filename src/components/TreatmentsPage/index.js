@@ -177,7 +177,7 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Jaw Joint Treatment (TMJ / TMD)',
     description: 'Neuromuscular diagnostic deprogramming and customized physiological splint orthotics to relieve jaw tension, clenching pain, and chronic facial headaches.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-09.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 409.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 359.webp`,
     overview: 'Temporomandibular Joint Disorder (TMD) causes clicking noises, jaw locking, chronic facial headaches, earache, and bruxism (nighttime teeth grinding). Our neuromuscular therapy combines digital occlusal bite mapping, physiological deprogramming splints, and muscle relaxation to achieve long-term orthopedic balance.',
     duration: '45 Min Evaluation',
