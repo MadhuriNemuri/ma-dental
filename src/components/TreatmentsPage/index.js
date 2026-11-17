@@ -51,7 +51,7 @@ const treatmentsData = [
     category: 'Implantology & Oral Surgery',
     title: 'Dental Implants',
     description: '3D computer-guided osseointegration delivering permanent, natural-feeling tooth replacements that preserve bone density and youthful facial symmetry.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-03.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 401.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/dental-implants.webp`,
     overview: 'Dental implants are the gold standard for permanent tooth replacement. Using 3D CBCT bone diagnostics and surgical navigation templates, medical-grade titanium or zirconia posts are placed seamlessly into the jawbone, fusing securely through osseointegration to function exactly like natural tooth roots.',
     duration: '30 – 45 Mins / Tooth',
