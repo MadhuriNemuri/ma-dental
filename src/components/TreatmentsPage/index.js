@@ -72,7 +72,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Teeth Replacement',
     description: 'Holistic full-arch and bridge reconstructions that seamlessly restore full bite mechanics, confident phonetic articulation, and lifelike aesthetics.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-04.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 403.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 390 (2).webp`,
     overview: 'Whether replacing a single lost tooth or an entire dental arch, our modern prosthodontic solutions—including fixed bridges, implant-supported crowns, and hybrid arches—restore pristine phonetic articulation, confident smiles, and full occlusal harmony.',
     duration: '1 – 3 Weeks Custom',
