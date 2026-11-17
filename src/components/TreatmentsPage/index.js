@@ -240,7 +240,7 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Ultrasonic Scaling',
     description: 'Piezoelectric acoustic micro-vibrations and warm guided biofilm therapy to gently dislodge calculus and bacterial stains while protecting root surfaces.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-12.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 412.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/Container.webp`,
     overview: 'Professional ultrasonic scaling utilizes piezoelectric acoustic micro-vibrations paired with warm fluid irrigation to thoroughly break down stubborn calculus (tartar) and subgingival bacterial biofilm. Unlike manual scraping, ultrasonic instruments protect the delicate root cementum while leaving teeth silky-smooth.',
     duration: '30 – 40 Mins',
