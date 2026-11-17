@@ -324,7 +324,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Dental Filling (Biomimetic)',
     description: 'Sub-micron nano-hybrid composites layered under rubber dam isolation to recreate pristine tooth anatomy, natural fluorescence, and long-lasting margins.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-16.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 418.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 390 (1).webp`,
     overview: 'Biomimetic dental restorations go beyond traditional fillings. Using dental rubber dam isolation and sub-micron nano-hybrid composites, we mimic the physical properties, flexibility, and layered shade structure of natural tooth enamel and dentin, conserving healthy tooth structure and sealing against micro-leakage.',
     duration: '30 – 45 Mins',
