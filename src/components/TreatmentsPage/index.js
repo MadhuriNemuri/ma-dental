@@ -219,7 +219,7 @@ const treatmentsData = [
     category: 'Orthodontics & Clear Aligners',
     title: 'Alignment of Teeth (Braces)',
     description: 'Ultra-low profile sapphire and ceramic self-ligating brackets engineered for controlled tooth biomechanics and immaculate long-term arch harmonization.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-11.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 411.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/braces-orthodontics.webp`,
     overview: 'Orthodontic braces gently guide crowded, rotated, or spaced teeth into immaculate alignment and functional bite harmony. We offer modern ultra-low-profile metal brackets, tooth-colored ceramic brackets, and self-ligating systems that shorten appointment times and reduce friction.',
     duration: '8 – 18 Months',
