@@ -156,7 +156,7 @@ const treatmentsData = [
     category: 'Periodontics & Gum Care',
     title: 'Laser Treatment for Gum Problems',
     description: 'Targeted photonic therapy that sterilizes deep periodontal pockets, eradicates harmful bacteria, and stimulates natural tissue regeneration without sutures.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-08.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 408.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/laser-gum-care.webp`,
     overview: 'Modern soft-tissue dental lasers allow us to treat gingivitis, deep periodontal pockets, and gum disease without scalpels, incisions, or sutures. The concentrated wavelength selectively targets pathogenic bacteria and diseased sulcular lining while biostimulating healthy collagen and bone regeneration.',
     duration: '30 – 45 Mins',
