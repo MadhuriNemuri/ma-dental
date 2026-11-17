@@ -261,7 +261,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'GIC Filling (Glass Ionomer)',
     description: 'Biocompatible glass-hybrid restorations that continuously release essential minerals to remineralize affected dentin and prevent recurrent margins.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-13.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 414.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 390.webp`,
     overview: 'Glass Ionomer Cement (GIC) is a bioactive, tooth-colored restorative material that forms a direct chemical bond with tooth enamel and dentin. A major clinical benefit of GIC is its continuous fluoride release, which acts as a permanent shield remineralizing surrounding tooth structure and halting secondary decay.',
     duration: '20 – 30 Mins',
