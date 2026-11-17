@@ -135,7 +135,7 @@ const treatmentsData = [
     category: 'Cosmetic Dentistry',
     title: 'Removable & BPS Dentures',
     description: 'Biofunctional Prosthetic System (BPS) engineering offering exceptional suction, stable chewing dynamics, and lifelike individualized gum aesthetics.',
-    image: `${process.env.PUBLIC_URL || ''}/treatment_images/treatment-07.webp`,
+    image: `${process.env.PUBLIC_URL || ''}/treatment_page__updated_imgs/image 407.png`,
     popupImage: `${process.env.PUBLIC_URL || ''}/treatment_popup/image 357.webp`,
     overview: 'Biofunctional Prosthetic System (BPS) dentures represent the pinnacle of removable prosthodontics. Fabricated under controlled high-pressure injection molding with biocompatible composite teeth, BPS dentures offer unmatched suction retention, natural gum aesthetics, and supreme chewing stability.',
     duration: '4 – 5 Precision Steps',
