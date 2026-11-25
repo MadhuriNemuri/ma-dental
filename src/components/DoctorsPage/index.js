@@ -82,30 +82,6 @@ const doctors = [
   }
 ];
 
-const testimonials = [
-  {
-    quote: 'Dr. Michael Evans handled my complex implant rehabilitation with such astonishing calmness. I had severe dental anxiety from childhood, but his team made every surgical phase 100% painless.',
-    author: 'Marcus R.',
-    role: 'Full-Mouth Implant Patient',
-    time: '2 weeks ago',
-    initials: 'MR'
-  },
-  {
-    quote: 'Dr. Sarah Chen’s digital 3D planning for my Invisalign was mind-blowing. In just 9 months, my severe crowding was entirely corrected with zero discomfort.',
-    author: 'Helena Lindqvist',
-    role: 'Invisalign Diamond Case',
-    time: '1 month ago',
-    initials: 'HL'
-  },
-  {
-    quote: 'Dr. David Kim designed custom porcelain veneers that look completely natural. People tell me I look revitalized, not artificially capped.',
-    author: 'Julian Thorne',
-    role: 'Cosmetic Smile Design',
-    time: '3 weeks ago',
-    initials: 'JT'
-  }
-];
-
 function DoctorsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All Specialists');
   const [searchValue, setSearchValue] = useState('');
@@ -235,46 +211,6 @@ function DoctorsPage() {
               </div>
             </article>
           ))}
-        </section>
-
-        <section className="reviews-panel">
-          <div className="reviews-header">
-            <div className="reviews-title-wrap">
-              <span className="section-kicker">• REAL STORIES, REAL RELIEF</span>
-              <h2>Life-Changing Smiles</h2>
-              <p>Discover why our patients consistently entrust our clinical team with their most intricate treatments.</p>
-            </div>
-
-            <div className="rating-summary">
-              <div className="rating-score">4.9</div>
-              <div className="rating-text">
-                <span className="stars">★★★★★</span>
-                <span>2,000+ Verified Patients</span>
-                <span>Google &amp; Healthcare Top Tier</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="review-cards">
-            {testimonials.map((testimonial) => (
-              <article className="review-card" key={testimonial.author}>
-                <div className="review-topline">
-                  <span className="stars">★★★★★</span>
-                  <span className="review-time">{testimonial.time}</span>
-                </div>
-
-                <p className="review-quote">“{testimonial.quote}”</p>
-
-                <div className="review-author-row">
-                  <div className="avatar">{testimonial.initials}</div>
-                  <div>
-                    <strong>{testimonial.author}</strong>
-                    <span>{testimonial.role}</span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
         </section>
 
         <section className="cta-banner">
